@@ -20,14 +20,15 @@ for (let rank in ranks) {
   db[ranks[rank]] = new bookman(ranks[rank]);
 }
 
+
 const IDler = {
-  botID: "BOTUNUZUN IDSİ",
-  botToken: "BOTUNUZUN TOKENİ",
-  botSecret: "BOTUNUZUN SECRET KEYİ",
-  botCallbackURL: "CALLBACK URLNİZ",
-  sunucuID: "SUNUCU ID",
-  sunucuDavet: "SUNUCU DAVET",
-  kodLogKanalı: "LOG KANALI",
+  botID: "740564699594096678",
+  botToken: "NzQwNTY0Njk5NTk0MDk2Njc4.Xyq2nw.ilp_a9NlwES79g3ye7RTi2KTk5k",
+  botSecret: "kDSx_C7z0FRqNIfeMl9_FbENtRP7BTav",
+  botCallbackURL: "https://fynxcodes.glitch.me/callback",
+  sunucuID: "740564967199342642",
+  sunucuDavet: "https://discord.gg/ATQWcDx",
+  kodLogKanalı: "740564967199342645",
   sahipRolü: "SAHİP ROLÜ İD",
   adminRolü: "ADMİN ROLÜ İD",
   kodPaylaşımcıRolü: "PAYALŞIMCI ROLÜ İD",
