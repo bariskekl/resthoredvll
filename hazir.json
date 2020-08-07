@@ -1,5 +1,20 @@
 [
     {
-        "kodlar": {}
+        "kodlar": {
+            "Gelişmiş - Onayli Müzik Botu Altyapisi (Scinely tarafindan yapilmiştir": {
+                "isim": "Gelişmiş - Onayli Müzik Botu Altyapisi (Scinely tarafindan yapilmiştir.) v12",
+                "id": "jU3gvW6MXt",
+                "desc": "Açiklamaya gerek yok. Başlikta yaziyor. v12",
+                "modules": [
+                    "Altyapi"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "https://glitch.com/edit/#!/fynxcode-musicbot-scinely?path=.env%3A8%3A26\r\n",
+                "komutlar_code": "https://glitch.com/edit/#!/fynxcode-musicbot-scinely?path=.env%3A8%3A26\r\n",
+                "kod_rank": "hazir",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
+            }
+        }
     }
 ]

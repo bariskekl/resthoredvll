@@ -444,9 +444,7 @@ app.get("/sil/:rank/:id", (req, res) => {
       );
     } else {
       if (
-        member.roles.cache.has(IDler.sahipRolü) ||
-        member.roles.cache.has(IDler.adminRolü) ||
-        member.roles.cache.has(IDler.kodPaylaşımcıRolü)
+        member.roles.cache.has(IDler.sahipRolü)
       ) {
         let id = req.params.id;
         if (!id) {

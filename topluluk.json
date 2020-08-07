@@ -42,6 +42,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Dàrk",
                 "date": "8/7/2020"
+            },
+            "Bot Hosting": {
+                "isim": "Bot Hosting",
+                "id": "ORgislX54u",
+                "desc": "Main Dosyasına Atmanız Yeterlidir  Discord: Dàrk#0001",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/713378164251820112/a_4e3bd86f8796418051de9cc1c0b6e7ba.png",
+                "main_code": "const discord = require(\"discord.js\");\r\nconst client = new discord.Client({ disableEveryone: true, disabledEvents: [\"TYPING_START\"] });\r\nconst { readdirSync } = require(\"fs\");\r\nconst { join } = require(\"path\");\r\nconst { TOKEN, PREFIX } = require(\"./config.json\");\r\nconst express = require('express');\r\nconst http = require('http');\r\nconst app = express();\r\napp.get(\"/\", (request, response) => {\r\n  console.log(Date.now() + \" Ping tamamdır.\");\r\n  response.sendStatus(200);\r\n});\r\napp.listen(process.env.PORT);\r\nsetInterval(() => {\r\n  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);\r\n}, 60000);",
+                "komutlar_code": "Yoq",
+                "kod_rank": "topluluk",
+                "k_adi": "Dàrk",
+                "date": "8/7/2020"
             }
         }
     }
