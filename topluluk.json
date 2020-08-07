@@ -1,6 +1,20 @@
 [
     {
         "kodlar": {
+            "Deneme": {
+                "isim": "Deneme",
+                "id": "vKUJOJtTyh",
+                "desc": "Deneme",
+                "modules": [
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/236173144300191754/a_dff0d9411d631a6651711eb31f746c42.png",
+                "main_code": "sssss",
+                "komutlar_code": "ssssss",
+                "kod_rank": "topluluk",
+                "k_adi": "Lord Creative",
+                "date": "8/7/2020"
+            }
         }
     }
 ]
