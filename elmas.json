@@ -14,6 +14,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "Gweep Creative",
                 "date": "8/7/2020"
+            },
+            "Ryhtm gibi kendini sağirlaştirma (Gizlilik)": {
+                "isim": "Ryhtm gibi kendini sağirlaştirma (Gizlilik)",
+                "id": "XdEc2m3zi6",
+                "desc": "Genelde müzik botlari için kendini sağirlaştirma özelliğidir. Daha az ping alir. Gizlilik korunur.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on('voiceStateUpdate', async (___, newState) => {\r\n\r\n  if (\r\n    newState.member.user.bot &&\r\n    newState.channelID &&\r\n    newState.member.user.id == client.user.id &&\r\n    !newState.selfDeaf\r\n  ) {\r\n    newState.setSelfDeaf(true);\r\n  }\r\n});",
+                "komutlar_code": "Sadece Main",
+                "kod_rank": "elmas",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
             }
         }
     }

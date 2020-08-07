@@ -4,7 +4,7 @@
             "paylasilan": 0
         },
         "236173144300191754": {
-            "paylasilan": 4,
+            "paylasilan": 5,
             "silinen": 5
         },
         "707403727912304641": {
@@ -21,10 +21,17 @@
             "paylasilan": 2
         },
         "522136257321762847": {
-            "paylasilan": 1
+            "paylasilan": 2,
+            "silinen": 2
         },
         "327064201245753344": {
-            "paylasilan": 2
+            "paylasilan": 7
+        },
+        "604201849247105024": {
+            "paylasilan": 1
+        },
+        "713378164251820112": {
+            "paylasilan": 1
         }
     }
 ]

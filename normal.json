@@ -85,6 +85,63 @@
                 "kod_rank": "normal",
                 "k_adi": "nwa",
                 "date": "8/7/2020"
+            },
+            "Sesli Hoşgeldin Mesaji v11": {
+                "isim": "Sesli Hoşgeldin Mesaji v11",
+                "id": "iexVe8tfVQ",
+                "desc": "Sesli bir odaya girdiğinizde bot size hoşgeldin der.",
+                "modules": [
+                    "google-tts-api ",
+                    " discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on('voiceStateUpdate', async (oldMember, newMember) => {\r\n  let teyitkanali = '734881216553287801';  // SES TEYİT KANAL İD\r\n  const google = require(\"google-tts-api\");\r\n  let user = client.users.get(newMember.id);\r\n  let soylenecekmesaj = [\"Sunucumuza hoş geldin. Lütfen kayıt görevlileri'nin gelmesini bekleyiniz.\"]\r\n  let kayitsiz = newMember.user.username;\r\n  if (newMember.id !== client.user.id && newMember.voiceChannel && newMember.voiceChannel.id === teyitkanali) {\r\n    try {\r\n      await newMember.voiceChannel.join();\r\n    google(`${kayitsiz} ${soylenecekmesaj} ..............`, 'tr', 1).then(url => {\r\n        newMember.voiceChannel.join().then(connection => {\r\n            connection.playStream(url).on(\"end\", () => {\r\n                connection.disconnect();\r\n            })\r\n        })\r\n    })      \r\n      async kanal => {    \r\n      }\r\n    } catch (error) { console.error(error) };\r\n  };\r\n   });\r\n",
+                "komutlar_code": "BU KOD SADECE MAİN İÇİNDİR.",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
+            },
+            "Bot sunucuya eklenince eklediği sunucuda bir kanala mesaj atmasi v12": {
+                "isim": "Bot sunucuya eklenince eklediği sunucuda bir kanala mesaj atmasi v12",
+                "id": "D5niMQx9da",
+                "desc": "Açiklamaya gerek yok. Başlikta yaziyor.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "const emmmmbed = new Discord.MessageEmbed()\r\n.setThumbnail(`https://cdn.discordapp.com/attachments/703582257570644029/734646429833756732/HarmonyMusic.png`)\r\n.addField(`Harmony - Teşekkürler`, `Selamlar, ben Mustafa(Harmony Geliştiricisi) öncelikle botumu eklediğiniz ve bana destek olduğunuz için sizlere teşekkürl\r\nerimi sunarım`)\r\n.addField(`Harmony - Prefix(Ön Ek)`, `Harmony botun prefixi(ön eki) = \\`!\\`(ünlem işareti)'dir.`)\r\n.addField(`Harmony - Nasıl Kullanılır?`, `Harmony botun tüm özelliklerinden yararlanabilmek için sadece \\`!yardım\\` yazmanız gerekmektedir.`)\r\n.addField(`Harmony - Linkler`, `Websitemiz:\\nhttps://harmonybot.tk/\\n\\nDestek Sunucumuz:\\nhttps://discord.gg/invite/JwAfQ3a`)\r\n.setFooter(`Harmony`)\r\n.setTimestamp()\r\n.setImage(`https://i.pinimg.com/originals/a7/2e/dd/a72eddb090f20f7f8dd535c8390c2fba.gif`);\r\n\r\nclient.on(\"guildCreate\", guild => {\r\n\r\nlet defaultChannel = \"\";\r\nguild.channels.cache.forEach((channel) => {\r\n  if(channel.type == \"text\" && defaultChannel == \"\") {\r\n    if(channel.permissionsFor(guild.me).has(\"SEND_MESSAGES\")) {\r\n      defaultChannel = channel;\r\n    }\r\n  }\r\n})\r\ndefaultChannel.send(emmmmbed)\r\n\r\n});",
+                "komutlar_code": "Komutlar klasörüne atilacak bir şey yok",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
+            },
+            "Botun dm görme v11": {
+                "isim": "Botun dm görme v11",
+                "id": "K4WbmgFzTS",
+                "desc": "Bota dm'den yazilan her mesaji bir kanala aktarir.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on(\"message\", msg => {\r\nvar dm = client.channels.cache.get(\"734753284048289805\") //Gönderilecek Kanal İD\r\nif(msg.channel.type === \"dm\") {\r\nif(msg.author.id === client.user.id) return;\r\nconst botdm = new Discord.MessageEmbed()\r\n.setTitle(`${client.user.username} Direkt Mesajlar`)\r\n.setTimestamp()\r\n.setColor(\"RED\")\r\n.setThumbnail(`${msg.author.avatarURL()}`)\r\n.addField(\"Gönderen\", msg.author.tag)\r\n.addField(\"Gönderen ID\", msg.author.id)\r\n.addField(\"Gönderilen Mesaj\", msg.content)\r\n.setFooter(\"Harmony Bot 2020\")\r\n\r\ndm.send(botdm)\r\n\r\n}\r\nif(msg.channel.bot) return;\r\n});",
+                "komutlar_code": "Sadece Main",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
+            },
+            "Eval": {
+                "isim": "Eval",
+                "id": "bsFwIcx3G1",
+                "desc": "Botun komutlarini denemenize yarar. Sizden başka kimse kullanamaz.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "Sadece Komut",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\nconst bot = new Discord.Client();\r\nconst {RichEmbed} = require('discord.js');\r\nconst { promisify } = require(\"util\");\r\nconst readdir = promisify(require(\"fs\").readdir);\r\nconst chalk = require('chalk');\r\nconst fs = require('fs');\r\nconst { stripIndents } = require('common-tags');\r\nconst moment = require('moment');\r\nconst { Client, Util } = require('discord.js');\r\nconst db = require('quick.db');\r\nconst Jimp = require('jimp')\r\n \r\nexports.run = (client, message, args) => {\r\n   if(message.author.id !== \"SahipİD\") return message.channel.send(\"Bu komutu sadece bot sahibi kullanabilir.\");\r\n    try {\r\n      var code = args.join(\" \");\r\n      var evaled = eval(code);\r\n \r\n      if (typeof evaled !== \"string\")\r\n        evaled = require(\"util\").inspect(evaled);\r\n      let Embed = new Discord.MessageEmbed()\r\n                            .addField(\"Giriş\",\"```js\\n\" + code + \"```\")\r\n                            .setDescription(\"```js\\n\" + clean(evaled) + \"```\")\r\nif (Embed.description.length >= 2048)\r\n      Embed.description = Embed.description.substr(0, 2042) + \"```...\";\r\n    return message.channel.send(Embed)\r\n    } catch (err) {\r\n      message.channel.send(`\\`Hatali Kod Girişi\\` \\`\\`\\`xl\\n${clean(err)}\\n\\`\\`\\``);\r\n    }\r\nfunction clean(text) {\r\n  if (typeof(text) === \"string\")\r\n    return text.replace(/`/g, \"`\" + String.fromCharCode(8203)).replace(/@/g, \"@\" + String.fromCharCode(8203));\r\n  else\r\n      return text;\r\n}\r\n};\r\n \r\nexports.config = {\r\n  name: 'eval',\r\n  aliases: [],\r\n\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
             }
         }
     }
