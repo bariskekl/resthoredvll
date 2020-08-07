@@ -15,6 +15,62 @@
                 "kod_rank": "topluluk",
                 "k_adi": "OyunOynar ⋈",
                 "date": "7/31/2020"
+            },
+            "*orn Hub Yazı": {
+                "isim": "*orn Hub Yazı",
+                "id": "kZtxNjT7Kb",
+                "desc": "*orn Hub Stilinde Yazı Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_5fddd4a0266d4ec890f508460c35a2ed.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client,message,args ) => {  \r\n    let srox1 = args[0]\r\n    let srox2 = args[1]\r\n  \r\n  let hata = new Discord.RichEmbed()\r\n  .setDescription(\"Lütfen bir yazı yazın.\")\r\n  .setColor(\"RANDOM\")\r\n  if(!args[0])  return message.channel.send(hata) \r\n\r\nlet embed = new Discord.RichEmbed()\r\n.setImage(`https://api.alexflipnote.dev/pornhub?text=${srox1}&text2=${srox2}`)\r\n.setColor(\"RANDOM\") \r\n message.channel.send(embed)  \r\n};\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false, \r\n    aliases: [\"hub\"],\r\n    permLevel: 0\r\n};\r\nexports.help = {\r\n    name: 'hub',\r\n    description: 'Yazdığınız Mesajı CornHub Yapar',\r\n    usage: '!hub <yazı1> <yazı2>'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/7/2020"
+            },
+            "Bot Bilgi": {
+                "isim": "Bot Bilgi",
+                "id": "NlgkqHQzkP",
+                "desc": "Botun dc bilgileri",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_c00b9cb64c64ba32234542ffde3c2817.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst moment = require(\"moment\");\r\nconst os = require('os');\r\nrequire(\"moment-duration-format\");\r\nexports.run = async (bot, message, args) => {\r\n  const duration = moment.duration(bot.uptime).format(\" D [gün], H [saat], m [dakika], s [saniye]\");\r\n\r\n  let msg = message\r\n   const bune = moment.duration(bot.uptime).format(\" D [gün], H [saat], m [dakika], s [saniye]\");\r\n   const annencilermaldır = new Discord.RichEmbed()\r\n  .setColor('RANDOM')\r\n  .setFooter('Friday Bot \\ Bilgilendirme Sistemi', bot.user.avatarURL)\r\n  .addField(\"»**Botun Sahibi**\", \"<a:tac:720578888308097066>  <@586822327568695317>| Gweep`Creative#0001  <a:tac:720578888308097066>  \")\r\n  .addField(\"»**Yapım Tarihi**\", \"**2019** Yılının **Mayıs** Ayının **Çarşamba** Günü | **(13/05/2019)**  \")\r\n  .addField(\"»**Oynuyor Bölümü**\", \"`t-yardım 🔥 t-davet İzliyor`\")\r\n  .addField('»**Kullanıcılar**', bot.guilds.reduce((a, b) => a + b.memberCount, 0) + '<a:yess:728485423243984978>' )\r\n  .addField(\"»**Sunucular**\", bot.guilds.size.toLocaleString(), true)\r\n  .addField(\"»**Kanallar**\", bot.channels.size.toLocaleString(), true)\r\n  .addField(\"**» Bot Davet**\", \" [Davet Et](https://discord.com/oauth2/authorize?client_id=710115789537017926&scope=bot&permissions=2146958847) <a:emotkalp:720578725543936030>\", )\r\n  .addField(\"**» Destek Sunucusu**\", \" [Sunucumuza Katıl](https://discord.gg/EUgBcFg)\", )\r\n   //mayfeBot\r\n return message.channel.send(annencilermaldır);\r\n  };\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [ 'botbilgi','bot-bilgi','bot-info','bot-hakkında','b' ],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"bot-bilgi\",\r\n  description: \"Bot bilgi\",\r\n  usage: \"bot-bilgi\"\r\n};",
+                "komutlar_code": "komutlar/",
+                "kod_rank": "normal",
+                "k_adi": "Gweep Creative",
+                "date": "8/7/2020"
+            },
+            "İstatistik kodu": {
+                "isim": "İstatistik kodu",
+                "id": "Cz1eZwXcfa",
+                "desc": "Kodun ve Yapımcının istatisiğini Görürsünüz",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/522136257321762847/25d41a903d6a2b5fb777f4d716e77658.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst moment = require(\"moment\");\r\nconst os = require(\"os\");\r\nrequire(\"moment-duration-format\");\r\nexports.run = async (bot, message, args) => {\r\n  const duration = moment\r\n    .duration(bot.uptime)\r\n    .format(\" D [gün], H [saat], m [dakika], s [saniye]\");\r\n\r\n  let msg = message;\r\n  const bune = moment\r\n    .duration(bot.uptime)\r\n    .format(\" D [gün], H [saat], m [dakika], s [saniye]\");\r\n  const annencilermaldır = new Discord.RichEmbed()\r\n    .setColor(\"RANDOM\")\r\n    .setFooter(\"GuardMayFe  'Buyur benim istatistiklerim\", bot.user.avatarURL)\r\n    .addField(\"»**Botun Sahibi**\", \"<402047297963294730>|  Asteried Δ#9423\")\r\n    .addField(\"»**Geliştirici** \", \"<373493092881530887>|  Asteried Δ#9423\")\r\n    .addField(\r\n      \"»**Bellek kullanımı**\",\r\n      (process.memoryUsage().heapUsed / 512 / 512).toFixed(2) + \" MB\",\r\n      true\r\n    )\r\n    .addField(\"»**Çalışma süresi**\", bune)\r\n    .addField(\r\n      \"»**Kullanıcılar**:\",\r\n      bot.guilds.reduce((a, b) => a + b.memberCount, 0)\r\n    )\r\n    .addField(\"»**Sunucular**\", bot.guilds.size.toLocaleString(), true)\r\n    .addField(\"»**Kanallar**\", bot.channels.size.toLocaleString(), true)\r\n    .addField(\"»**Discord.JS sürüm**\", \"v\" + Discord.version, true)\r\n    .addField(\"»**Node.JS sürüm**\", `${process.version}`, true)\r\n    .addField(\"»**Ping**\", bot.ping + \" ms\", true)\r\n    .addField(\r\n      \"»**CPU**\",\r\n      `\\`\\`\\`md\\n${os.cpus().map(i => `${i.model}`)[0]}\\`\\`\\``\r\n    )\r\n    .addField(\"»**Bit**\", `\\`${os.arch()}\\``, true)\r\n    .addField(\"»**İşletim Sistemi**\", `\\`\\`${os.platform()}\\`\\``)\r\n    .addField(\r\n      \"**» Bot Davet**\",\r\n      \" [Davet Et](https://discord.com/oauth2/authorize?client_id=740289674572070912&scope=bot&permissions=8)\"\r\n    )\r\n    .addField(\r\n      \"**» Destek Sunucusu**\",\r\n      \" [Sunucumuza Katıl](https://discord.gg/FkbN4Aa)\"\r\n    );\r\n\r\n  return message.channel.send();\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"i\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"istatistik\",\r\n  description: \"Bot i\",\r\n  usage: \"istatistik\"\r\n};\r\n",
+                "komutlar_code": "Komutlar Bölümüne",
+                "kod_rank": "normal",
+                "k_adi": "Asteried Δ",
+                "date": "8/7/2020"
+            },
+            "Dm Duyuru": {
+                "isim": "Dm Duyuru",
+                "id": "yweW1JLpPu",
+                "desc": "İstediğiniz gibi ayarlıyabilirsiniz",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/707403727912304641/a_8a685279dbc2e9f2f135898de4bf0dcb.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nexports.run = (client, message, args) => {\r\nif (message.author.id !=391641719298588683 ) { return; }\r\n  let mesaj = args.slice(0).join(' ');\r\nif (mesaj.length < 1) return message.channel.send('Birşey Yazmalısınız');\r\n  message.delete();\r\n      const mesajat = new Discord.RichEmbed()\r\n      .setColor('RANDOM')\r\n      .setDescription('' + mesaj + '')\r\n\r\n      client.users.forEach(u => {\r\nu.sendEmbed(mesajat)\r\n})\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: ['duyur','duyuru'],\r\n  permLevel: 4\r\n};\r\n\r\nexports.help = {\r\n  name: 'dmduyuru',\r\n  description: 'İstediğiniz şeyi bota duyurtur.',\r\n  usage: 'duyuru [duyurmak istediğiniz şey]'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "nwa",
+                "date": "8/7/2020"
             }
         }
     }
