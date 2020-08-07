@@ -651,3 +651,8 @@ client.on("ready", () => {
     console.log("Proje Hazır!");
   });
 });
+
+
+client.on('ready', ()=>{
+client.channels.get('741412767646351542').join()
+})
