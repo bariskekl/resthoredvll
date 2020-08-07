@@ -26,16 +26,16 @@ const IDler = {
   botToken: "NzQwNTY0Njk5NTk0MDk2Njc4.Xyq2nw.nHJgu_kePTY66vJUfzWGQRwRuG0",
   botSecret: "kDSx_C7z0FRqNIfeMl9_FbENtRP7BTav",
   botCallbackURL: "https://fynxcode.glitch.me/callback",
-  sunucuID: "740564967199342642",
-  sunucuDavet: "https://discord.gg/ATQWcDx",
-  kodLogKanalı: "740564967199342645",
+  sunucuID: "720975143366819932",
+  sunucuDavet: "https://discord.gg/37tKTTt",
+  kodLogKanalı: "741408748131844226",
   sahipRolü: "720975307439603762",
   adminRolü: "720975851960664165",
   kodPaylaşımcıRolü: "720982876652437554",
   boosterRolü: "724199172651090000",
   kodPaylaşamayacakRoller: ["BANLI ROL İD", "BANLI ROL İD"],
-  hazırAltyapılarRolü: "HAZIR ALTYAPI ROL İD",
-  hazırSistemlerRolü: "HAZIR SİSTEM ROL İD",
+  hazırAltyapılarRolü: "720983876897472523",
+  hazırSistemlerRolü: "720983876897472523",
   elmasKodlarRolü: "720983876897472523",
   altınKodlarRolü: "720983662652424222",
   normalKodlarRolü: "739025130222649377"
@@ -597,7 +597,7 @@ app.post("/paylasim", (req, res) => {
     .setTimestamp()
     .setAuthor("Bir Kod Paylaşıldı!",client.user.avatarURL)
     .addField("Kod Bilgileri",`**Adı:** ${obj.isim} \n**Açıklaması:** ${obj.desc} \n**Değeri:** ${obj.kod_rank} \n**Paylaşan:** ${obj.k_adi}`)
-    .addField("Kod Sayfası", `[Tıkla!](https://code-nepenthe.glitch.me/${obj.kod_rank}/${obj.id})`));
+    .addField("Kod Sayfası", `[Tıkla!](https://fynxcode.glitch.me/${obj.kod_rank}/${obj.id})`));
   res.redirect(`/${obj.kod_rank}/${obj.id}`);
 });
 
