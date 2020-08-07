@@ -31,6 +31,20 @@
                 "kod_rank": "altin",
                 "k_adi": "ღ scínєlч",
                 "date": "8/7/2020"
+            },
+            "Bot 7/24": {
+                "isim": "Bot 7/24",
+                "id": "4VtBdAv28V",
+                "desc": "Bot 7/24 Tutmak",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/522136257321762847/25d41a903d6a2b5fb777f4d716e77658.png",
+                "main_code": "Bot 7/24 Aktif Nasıl Olur?\r\n\r\n\r\nÖncelikle \"Site24x7\" sitesine giriş yapın.\r\n\r\nGiriş yaptıkdan sonra sol tarafdaki menüden Monitor ün yanındaki + simgesine basın.\r\n\r\nBastıkdan sonra Website seçenegini seçin.\r\n\r\nDaha sonra 1.kutucuğa monitor adınızı 2.kutucuğa glitch linkinizi yerleştirin.\r\n\r\nSon olarak Add Monitor diyin.\r\n\r\nArtık Botunuz 7/24 :tada:\r\n\r\nNot ; Eğer Congrulation Error alırsanız  monitor sayfanıza gelip eklediginiz monitoru secin ilk kısımda glitch adresiniz var onun yanında /Website yazmakta,ona tıklayın! Bunu 1-2 kere yapın,daha sonra bağlanıcaktır.\r\n\r\nNot 2; Eğer siteniz kapalıysa yada hatalıysa (Starting...) de kalıyorsa sitenizi tespit edemez.",
+                "komutlar_code": ".",
+                "kod_rank": "altin",
+                "k_adi": "Asteried Δ",
+                "date": "8/7/2020"
             }
         }
     }
