@@ -45,6 +45,20 @@
                 "kod_rank": "altin",
                 "k_adi": "Asteried Δ",
                 "date": "8/7/2020"
+            },
+            "X Sunucuya X Kullanıcıya Hizmet Veriyor": {
+                "isim": "X Sunucuya X Kullanıcıya Hizmet Veriyor",
+                "id": "Einf5sjX6D",
+                "desc": "X Sunucuya X Kullanıcıya Hizmet Veriyor Bot Durumu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/319866205068460033/6e6fa48d6899d10101992e9558b7a17f.png",
+                "main_code": "client.on('ready', () => {\r\n client.user.setActivity(`${client.guilds.size} Sunucu + ${client.users.size} Kullanıcı!`);\r\n})",
+                "komutlar_code": "YOK",
+                "kod_rank": "altin",
+                "k_adi": "ًًً .",
+                "date": "8/7/2020"
             }
         }
     }
