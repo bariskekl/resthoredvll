@@ -23,7 +23,7 @@ for (let rank in ranks) {
 
 const IDler = {
   botID: "740564699594096678",
-  botToken: "NzQwNTY0Njk5NTk0MDk2Njc4.Xyq2nw.TtJlEekWpbQe38jhTXR7z2mRn5o",
+  botToken: "NzQwNTY0Njk5NTk0MDk2Njc4.Xyq2nw.nHJgu_kePTY66vJUfzWGQRwRuG0",
   botSecret: "kDSx_C7z0FRqNIfeMl9_FbENtRP7BTav",
   botCallbackURL: "https://fynxcode.glitch.me/callback",
   sunucuID: "740564967199342642",
