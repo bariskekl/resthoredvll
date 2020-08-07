@@ -71,6 +71,20 @@
                 "kod_rank": "normal",
                 "k_adi": "nwa",
                 "date": "8/7/2020"
+            },
+            "Avatar": {
+                "isim": "Avatar",
+                "id": "55dWns5pEp",
+                "desc": "avatar komutu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/707403727912304641/a_8a685279dbc2e9f2f135898de4bf0dcb.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message) {\r\n\r\n    const embed = new Discord.RichEmbed()\r\n        .setAuthor(message.author.tag)\r\n        .setImage(message.author.avatarURL)\r\n\r\n    message.channel.send(embed);\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: true, \r\n  aliases: ['avatarım'],\r\n  permLevel: 0 \r\n};\r\n\r\nexports.help = {\r\n  name: 'avatar', \r\n  description: 'Avatarınızı gösterir',\r\n  usage: 'avatar'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "nwa",
+                "date": "8/7/2020"
             }
         }
     }
