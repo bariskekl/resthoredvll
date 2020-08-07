@@ -30,21 +30,21 @@ const IDler = {
   sunucuDavet: "https://discord.gg/ATQWcDx",
   kodLogKanalı: "740564967199342645",
   sahipRolü: "720975307439603762",
-  adminRolü: "ADMİN ROLÜ İD",
+  adminRolü: "720975851960664165",
   kodPaylaşımcıRolü: "720982876652437554",
-  boosterRolü: "BOOSTER ROLÜ İD",
+  boosterRolü: "724199172651090000",
   kodPaylaşamayacakRoller: ["BANLI ROL İD", "BANLI ROL İD"],
   hazırAltyapılarRolü: "HAZIR ALTYAPI ROL İD",
   hazırSistemlerRolü: "HAZIR SİSTEM ROL İD",
-  elmasKodlarRolü: "ELMAS KODLAR ID",
-  altınKodlarRolü: "ALTIN KODLAR ID",
-  normalKodlarRolü: "NORMAL KODLAR ID"
+  elmasKodlarRolü: "720983876897472523",
+  altınKodlarRolü: "720983662652424222",
+  normalKodlarRolü: "739025130222649377"
 };
 
 const app = express();
 
 setInterval(() => {
-  http.get(`http://link/`);
+  http.get(`http://fynxcode.glitch.me/`);
   console.log(Date.now() + " Ping tamamdır.");
 }, 60000);
 
