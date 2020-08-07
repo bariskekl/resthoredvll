@@ -142,6 +142,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/7/2020"
+            },
+            "Botun DM Görme": {
+                "isim": "Botun DM Görme",
+                "id": "yhim70YyU3",
+                "desc": "Botun DM Görme Kodu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/319866205068460033/6e6fa48d6899d10101992e9558b7a17f.png",
+                "main_code": "client.on(\"message\", msg => {\r\n  var dm = client.channels.get(\"652604373527953419\"); //mesajın geleceği kanal idsi//\r\n  if (msg.channel.type === \"dm\") {\r\n    if (msg.author.id === client.user.id) return;\r\n    const botdm = new Discord.RichEmbed()\r\n      .setTitle(`${client.user.username} Dm`)\r\n      .setTimestamp()\r\n      .setColor(\"BLUE\")\r\n      .setThumbnail(`${msg.author.avatarURL}`)\r\n      .addField(\":boy: Gönderen \", msg.author.tag)\r\n      .addField(\":id:  Gönderen ID :\", msg.author.id)\r\n      .addField(\":globe_with_meridians: Gönderilen Mesaj\", msg.content);\r\n\r\n    dm.send(botdm);\r\n  }\r\n  if (msg.channel.bot) return;\r\n}); //Lyublyu ve Elixxrade tarafından kodlanmıştır.",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "ًًً .",
+                "date": "8/7/2020"
             }
         }
     }

@@ -56,6 +56,50 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Bed¡rhan",
                 "date": "8/7/2020"
+            },
+            "Reboot": {
+                "isim": "Reboot",
+                "id": "xUEPmS7gWQ",
+                "desc": "Botunuzun Yeniden Başlamasını Sağlar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/714377057693335603/6adec31843fb7c4643dfe88d7c581784.png",
+                "main_code": "Main Dosyası Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message) {\r\n\r\n  if (!message.member.hasPermission(\"MANAGE_SERVER\")) return message.channel.send(`Bu komutu kullanabilmek için \"\\`Sunucuyu Yönet\\`\" yetkisine sahip olmalısın.`);\r\n\r\n    message.channel.send(\"Bot: yeniden başlatılıyor\").then(msg => {\r\n        console.log(\"[BOT]Yeniden başlatılıyor\");\r\n        process.exit(0);\r\n    });\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n  aliases: []\r\n};\r\n\r\nexports.help = {\r\n  name: 'reboot', \r\n  description: 'Botu yeniden başlatır',\r\n  usage: 'reboot'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "BDGO-By_DARKx",
+                "date": "8/7/2020"
+            },
+            "Ayarlamalı Sa-As": {
+                "isim": "Ayarlamalı Sa-As",
+                "id": "xF73ilth5H",
+                "desc": "Ayarlamalı Bir Sa-As Sistemidir açıp kapatmalıdır yani",
+                "modules": [
+                    "discord.js",
+                    "quick.db",
+                    "ayarlar-config"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/714377057693335603/6adec31843fb7c4643dfe88d7c581784.png",
+                "main_code": "client.on(\"message\", async message => {\r\n  const Bdgo = message.content.toLocaleLowerCase();\r\n  if(Bdgo === \"selam\" || Bdgo === \"sa\" || Bdgo === \"selamün aleyküm\" || Bdgo === \"selamun aleyküm\" || Bdgo === \"slm\" || Bdgo === \"sea\"){\r\n    let e = await db.fetch(`sa-as_${message.guild.id}`)\r\n    if(e === \"acik\"){\r\nmessage.channel.send(`Aleyküm Selam, Hoş Geldin ^^`)\r\n}\r\n  }\r\n});",
+                "komutlar_code": "const Discord = require(`discord.js`);\r\nconst ayarlar = require(`../ayarlar.json`)\r\nconst db = require(`quick.db`);\r\n\r\nexports.run = (client, message, args) => {\r\n    if (!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(\"Bu Komutu Kullanmak İçin `MESAJLARI YÖNET` yetkisine sahip olamlısınız!\")\r\n    const Bdgo = args.join(` `);\r\n    if(!Bdgo) message.channel.send(\r\n        new Discord.MessageEmbed()\r\n        .setTitle(`Doğru Kullanım`)\r\n        .setDescription(`Bu Komutu Çalıştımam İçin __+sa-as aç__ veya __+sa-as kapat__ yazınız!`)\r\n    .setColor(`RANDOM`)        \r\n)\r\nif(Bdgo === \"aç\") {\r\n    db.set(`sa-as_${message.guild.id}`, `acik`);\r\n    message.channel.send(\r\n        new Discord.MessageEmbed()\r\n        .setTitle(`Başarılı`)\r\n        .setDescription(`Bundan Sonra __sa__ Yazıldığında Cevap Vereceğim`)\r\n        .setColor(`RANDOM`)\r\n    )\r\n}\r\n\r\nelse if(Bdgo === \"kapat\") {\r\n    db.set(`sa-as_${message.guild.id}`, `kapali`);\r\n    message.channel.send(\r\n        new Discord.MessageEmbed()\r\n        .setTitle(`Başarılı`)\r\n        .setDescription(`Bundan Sonra __sa__ Yazıldığında Cevap Vermeyeceğim`)\r\n        .setColor(`RANDOM`)\r\n    )\r\n}\r\n\r\n};\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: [`,`]\r\n  };\r\n  \r\n  exports.help = {\r\n    name: `sa-as`\r\n  };",
+                "kod_rank": "topluluk",
+                "k_adi": "BDGO-By_DARKx",
+                "date": "8/7/2020"
+            },
+            "Sunucu Adı Değiştir": {
+                "isim": "Sunucu Adı Değiştir",
+                "id": "vOnn9UdIgA",
+                "desc": "Sunucu Adını Belirlediğiniz İsim Olarak Değiştirir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/714377057693335603/6adec31843fb7c4643dfe88d7c581784.png",
+                "main_code": "Main Dosyası Yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client, message, args) => {\r\n\r\n    if (!message.member.hasPermission(\"MANAGE_SERVER\")) return message.channel.send(`Bu komutu kullanabilmek için \"\\`Sunucuyu Yönet\\`\" yetkisine sahip olmalısın.`);\r\n\r\nmessage.guild.setName(args.join(\" \")).then(() => message.channel.send(`Sunucunun İsmi \\`${args.join(\" \")}\\` Yapıldı`)).catch(_ => message.channel.send(`Yeterli Yetkim YOK!`))\r\n}\r\n\r\nexports.conf = { \r\nenabled: true, guildOnly: true, \r\naliases: [\"guild-name-change\"]\r\n};\r\n\r\nexports.help = {\r\nname: \"sunucu-ismi-değiştir\"\r\n}; ",
+                "kod_rank": "topluluk",
+                "k_adi": "BDGO-By_DARKx",
+                "date": "8/7/2020"
             }
         }
     }
