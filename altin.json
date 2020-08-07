@@ -15,6 +15,22 @@
                 "kod_rank": "altin",
                 "k_adi": "ღ scínєlч",
                 "date": "8/7/2020"
+            },
+            "Namaz Vakti": {
+                "isim": "Namaz Vakti",
+                "id": "EG2QMIXvNQ",
+                "desc": "Belirttiğiniz şehirin namaz vakitlerini belirtir.",
+                "modules": [
+                    "superagent ",
+                    " moment ",
+                    " discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "Main dosyasi bulunmamaktadir.",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\nconst moment = require(\"moment\")\r\nvar prefix = ayarlar.prefix;\r\n\r\nexports.run = async(client, message, args) => {\r\n    const superagent = require('superagent')\r\n    if(!args[0]) return message.channel.send(`❌ Bir şehir girmelisinki Bende Göstereyim.`)\r\n    let {body} = await superagent \r\n    .get(`https://namazapi.glitch.me/namaz?sehir=${args[0]}`);\r\n    if(!{body}) return message.channel.send(`404! Bir Hata Oluştu! Lütfen Biraz Sonra Tekrar Dene!`)\r\n    if(body.hata) return message.channel.send(`Lütfen Geçerli Bir Şehir Gir!`)\r\n    let saat = moment().utc().add(3, \"hour\").format(\"HH:mm\") \r\n    const embed = new Discord.RichEmbed()\r\n    .setColor('ff000')\r\n    .setAuthor(`${args[0]} Namaz Vakitleri`, message.author.avatarURL)\r\n    .setThumbnail(\"https://cdn.discordapp.com/attachments/703327606883483789/703356887768367124/thumbs_b_c_c54dc19678389482e4f526e877b4b8cd.jpg\")\r\n    .addField(\"**Tarih:**\",`\\`${body.tarih} ${saat}\\``)\r\n    .addField(`${args[0]} **İmsak Ezan vakti:**`, `\\`${body.İmsak}\\``, true)\r\n    .addField(`${args[0]} **Sabah Ezan vakti:**`, `\\`${body.Güneş}\\``, true)\r\n    .addField(`${args[0]} **Öğle Ezan vakti:**`, `\\`${body.Öğle}\\``, true)\r\n    .addField(`${args[0]} **İkindi Ezan vakti:**`, `\\`${body.İkindi}\\``, true)\r\n    .addField(`${args[0]} **Akşam Ezan vakti:**`, `\\`${body.Akşam}\\``, true)\r\n    .addField(`${args[0]} **Yatsı Ezan vakti:**`, `\\`${body.Yatsı}\\``, true)\r\n    .setFooter(`API: https://namazapi.glitch.me/`, message.author.avatarURL)\r\n    .setTimestamp()\r\n    message.channel.send(embed)\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['iftar-vakti'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'namazvakti'\r\n};\r\n",
+                "kod_rank": "altin",
+                "k_adi": "ღ scínєlч",
+                "date": "8/7/2020"
             }
         }
     }

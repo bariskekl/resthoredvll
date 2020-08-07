@@ -38,7 +38,7 @@ const IDler = {
   hazırSistemlerRolü: "720983876897472523",
   elmasKodlarRolü: "720983876897472523",
   altınKodlarRolü: "720983662652424222",
-  normalKodlarRolü: "739025130222649377"
+  normalKodlarRolü: "720976464887152641"
 };
 
 const app = express();
@@ -652,7 +652,3 @@ client.on("ready", () => {
   });
 });
 
-
-client.on('ready', ()=>{
-client.channels.get('741412767646351542').join()
-})
