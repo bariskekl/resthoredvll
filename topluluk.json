@@ -198,6 +198,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "!                    Paora²⁵²",
                 "date": "8/8/2020"
+            },
+            "botu_seslide_tutma": {
+                "isim": "botu_seslide_tutma",
+                "id": "iafNUfhEI8",
+                "desc": "Botunuzu belirtiğiniz ses kanalında tutar.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/632844500745584660/700880d835b976f25d5bbb82780d43e5.png",
+                "main_code": "client.on('ready', ()=>{\r\nclient.channels.get('KANAL_ID').join()\r\n})",
+                "komutlar_code": "Yok.\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "✮†EvdeKal Ata avcı ★ŇØŘΜ★",
+                "date": "8/8/2020"
             }
         }
     }
