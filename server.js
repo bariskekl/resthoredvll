@@ -38,7 +38,7 @@ const IDler = {
   hazırSistemlerRolü: "720983876897472523",
   elmasKodlarRolü: "720983876897472523",
   altınKodlarRolü: "720983662652424222",
-  normalKodlarRolü: "720976464887152641"
+  normalKodlarRolü: "739025130222649377"
 };
 
 const app = express();

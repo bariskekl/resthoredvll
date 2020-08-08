@@ -425,6 +425,35 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "Bakim Komutu": {
+                "isim": "Bakim Komutu",
+                "id": "I4qKWbsJgP",
+                "desc": "Botu bakim moduna sokar. Main kismina yazdiğim kodu her komutun içine exports.run 'in altina yazin.",
+                "modules": [
+                    "discord.js ",
+                    " quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "const bakimmodu = Discord.RichEmbed()\r\n.setTitle(`Botumuz şuan da bakimdadir.`)//FynxCode\r\n.setDescription(Anlayişiniz için teşekkür ederiz.);\r\n\r\nif(db.fetch(`bakim`)) {//fynxcode\r\n  if(message.author.id !== \"sahip id\") {return message.channel.send(bakimmodu)}\r\n}\r\n",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db')\r\n\r\n\r\nexports.run = (client, message, args) => {//FynxCode\r\n  \r\n  if(message.author.id != \"SAHİP İD\") return\r\n  //FynxCode\r\n  if(!args[0]) return message.channel.send('Bakım modunu açmak için !bakım aç')\r\n  \r\n  if(args[0] === 'aç') {//FynxCode\r\n    if(db.fetch(`bakim`)) return message.channel.send(':x: Bakım modu zaten açık')\r\n    client.user.setActivity(`Bakim modu aktif!`)\r\n    message.channel.send(':white_check_mark: Bakım modu açıldı.')\r\n    db.set(`bakim`, 'acik')\r\n  }\r\n  if(args[0] === 'kapat'){//FynxCode\r\n    if(!db.fetch(`bakim`)) return message.channel.send(':x: Bakım modu zaten kapalı.')\r\n    client.user.setActivity(``)\r\n    message.channel.send(':white_check_mark: Bakım modu kapatıldı.')\r\n    db.delete(`bakim`)//FynxCode\r\n  }\r\n  //FynxCode\r\n}\r\n\r\n\r\n//FynxCode\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 0\r\n}\r\n//FynxCode\r\nexports.help = {\r\n  name: 'bakım'\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
+            },
+            "BanSay": {
+                "isim": "BanSay",
+                "id": "lIsnCKwDZU",
+                "desc": "Sunucudan kaç kişinin banlandiğini gösterir.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "Sadece Komut",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message, args) => {\r\n  var banlikullanici = message.guild.fetchBans().then(bans => {\r\n  message.channel.send(`Bu sunucuda **${bans.size}** banlı üye bulunmaktadir.`)\r\n  })\r\n };\r\n\r\n  exports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 1\r\n};\r\nexports.help = {\r\n  name: \"bansay\",\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }
