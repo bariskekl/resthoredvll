@@ -156,6 +156,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ًًً .",
                 "date": "8/7/2020"
+            },
+            "killa hakan fotosu atar": {
+                "isim": "killa hakan fotosu atar",
+                "id": "1Om7cvJzSx",
+                "desc": "killa hakanını fotosunu atar eglence komudu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\n    let mesaj = args.slice(0).join(' ');\r\n    const embed = new Discord.RichEmbed()\r\n    .setAuthor('')\r\n    .setColor(\"#36393F\")\r\n    .setDescription(`** ${mesaj} ` + message.author.username + ' Killa Hakan Geliyor** !')\r\n    .setImage(`https://www.izmirkenthaber.com.tr/images/haberler/2020/06/killa-hakan-gozluksuz-ve-bandanasiz-haliyle-sasirtti.png`)\r\n    return message.channel.sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: false,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'killa-hakan',\r\n  description: 'tanersins',\r\n  usage: 'Maximatus geldi beybi',\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
             }
         }
     }
