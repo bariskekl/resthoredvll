@@ -142,6 +142,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "OyunOynar ⋈",
                 "date": "8/8/2020"
+            },
+            "DmDuyuru": {
+                "isim": "DmDuyuru",
+                "id": "RCXRIJ5KGa",
+                "desc": "Dm den duyuru yapmanızı sağlar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/415873245493985282/8f568a1b42ce7c7562aedff46581be59.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\nexports.run = (client, message, args) => {\r\n    const mesaj = args.slice(0).join(' ');\r\n   if (message.author.id !== \"kullanacak kişi id\") return message.channel.send(\"Bunu sahibim kullanabilir!\")\r\n    if(mesaj.length < 1) return message.reply(\"Özelden Atılacak Mesajı Yazın\")\r\n      try {\r\n        message.guild.members.forEach(m=> {\r\n         \r\n        m.send(mesaj)\r\n        console.log(`${m.user.tag} Kişisine Attım.`)\r\n         \r\n          }) \r\n        message.channel.send(\"Özelden Mesajlar Gönderildi\")\r\n          }\r\n        catch(e) {\r\n        return console.log(`Bir Kişiye Atamadım`)\r\n       \r\n      } \r\n    \r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'dmduyuru',\r\n  description: 'dm mesajı atar.',\r\n  usage: 'dmduyuru'\r\n};\r\n\"",
+                "komutlar_code": "komutlar/dmduyuru.js",
+                "kod_rank": "topluluk",
+                "k_adi": "Bed¡rhan",
+                "date": "8/8/2020"
             }
         }
     }
