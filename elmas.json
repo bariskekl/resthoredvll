@@ -28,6 +28,21 @@
                 "kod_rank": "elmas",
                 "k_adi": "ღ scínєlч",
                 "date": "8/7/2020"
+            },
+            "antiraidbotsistemi": {
+                "isim": "antiraidbotsistemi",
+                "id": "atxo1Qz86U",
+                "desc": "Sunucunuza Kötü Amaçlı Gelen Botları Sunucunuzdan Atar.",
+                "modules": [
+                    "discord.js",
+                    " quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/728321757768843424/a_adbcdf40644b53f45030ad6661bd7329.png",
+                "main_code": "Maine Bişe Atılmayacak",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = (client, message, args) => { \r\n\r\nif (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(` Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n  \r\n  const sec = args[0]  \r\n\r\nif (!sec) {\r\n  return message.reply(`Anti Raid Bot Sistemi Nedir?\r\nEğer Açarsanız Sunucu Sahibinin İzni Olmadan Sunucuya Başka Bot Sokmaz. Giren Botlar Otomatik Atılır.\r\nÖrnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\`\r\n`)\r\n}\r\n  \r\n  if (sec == \"aç\") {\r\n    const kanal = message.mentions.channels.first()\r\n    if (db.has(`premium_${message.guild.id}`) == true) {\r\n    return message.channel.send(`<@${message.author.id}> Maalesef Premium Süresi Bitmiştir. Hizmetimizden Memnun Olduysanız Tekrar Alabilirsiniz \\`!premium\\``)\r\n  } else {\r\n  if (!kanal) {\r\n    return message.reply(`Anti Raid Bot Sistemi Örnek Kullanımı \\`!anti-raid-bot-sistemi aç/kapat #logkanalı\\``)\r\n  }\r\n    db.set(`antiraidK_${message.guild.id}`, kanal.id)\r\n    return message.channel.send(`${client.emojis.get(\"647746144155467786\")} Kayıt Kanalını ${kanal} Olarak Ayarladım.`)\r\n      }\r\n    \r\n  }\r\n  \r\n    if (sec == \"kapat\") {\r\n    const kanal = message.mentions.roles.first()\r\n    if (db.has(`premium_${message.guild.id}`) == true) {\r\n    return message.channel.send(`<@${message.author.id}> Maalesef Premium Süresi Bitmiştir. Hizmetimizden Memnun Olduysanız Tekrar Alabilirsiniz \\`!premium\\``)\r\n  } else {\r\n    db.delete(`antiraidK_${message.guild.id}`)\r\n    return message.channel.send(`${client.emojis.get(\"647746144155467786\")} Kayıt Kanalını Başarıyla Kapattım.`)\r\n  \r\n  }\r\n    \r\n  }\r\n};\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: ['antiraidbotsistemi'], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'anti-raid-bot-sistemi',\r\n  description: 'taslak', \r\n  usage: 'sayac-hg-msg'\r\n};",
+                "kod_rank": "elmas",
+                "k_adi": "ᵃˢᵖᶜᵗ Furkan Turk",
+                "date": "8/8/2020"
             }
         }
     }
