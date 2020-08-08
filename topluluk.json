@@ -212,6 +212,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "✮†EvdeKal Ata avcı ★ŇØŘΜ★",
                 "date": "8/8/2020"
+            },
+            "sunucubilgi": {
+                "isim": "sunucubilgi",
+                "id": "8HEZfLuGRX",
+                "desc": "Sunucunuzun veya sunucunun bilgilerini gösterir.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/632844500745584660/700880d835b976f25d5bbb82780d43e5.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst db = require('quick.db')\r\n\r\nexports.run = (client, message, params) => {\r\n\r\n  const embed = new Discord.RichEmbed()\r\n  .setColor(\"BLUE\")\r\n  .setAuthor(client.user.username, message.guild.iconURL)\r\n  .setThumbnail(message.guild.iconURL)\r\n    .addField('Sunucu Sahibi', ` ${message.guild.owner}`)\r\n    .addField('Sunucu İsmi',` ${ message.guild.name}`)\r\n   .addField('Sunucu ID',` ${ message.guild.id}`)\r\n    .addField('Bölge', ` ${message.guild.region}`)\r\n    .addField('Üye sayısı', ` ${message.guild.memberCount} Üye`)\r\n    .addField('Kanal sayısı',` ${message.guild.channels.size} Kanal`)\r\n    .addField('Oluşturulma tarihi', message.guild.createdAt)\r\n  .setFooter(`${client.user.username}`, client.user.avatarURL)\r\n  .setTimestamp()\r\n  message.channel.send(embed)\r\n\r\n  }//iCode\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"serverinfo\",\"sunucu\"],\r\n  kategori: \"sunucu\",\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'sunucubilgi',\r\n  description: 'Sunucu COM',\r\n  usage: 'sunucubilgi',\r\n};",
+                "komutlar_code": "Yok.\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "✮†EvdeKal Ata avcı ★ŇØŘΜ★",
+                "date": "8/8/2020"
             }
         }
     }
