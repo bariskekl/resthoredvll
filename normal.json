@@ -240,6 +240,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "BOT PİNG": {
+                "isim": "BOT PİNG",
+                "id": "hIZ0LHqcRO",
+                "desc": "BOT PİNG(RESİMLİ)",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_5fddd4a0266d4ec890f508460c35a2ed.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message, embed, params) {\r\n  const bymayfe = new Discord.RichEmbed()\r\n\r\n  .setColor('RED')\r\n  .setImage('https://api.alexflipnote.dev/supreme?text='+ client.ping +'%20Ping')\r\n\r\n    message.channel.send(bymayfe);\r\n\r\n};   \r\n  \r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: true, \r\n  aliases: ['p', 'ms'],\r\n  permLevel: 0 \r\n};\r\n\r\nexports.help = {\r\n  name: 'ping', \r\n  description: 'Botun pingini gösterir',\r\n  usage: 'ping'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/8/2020"
             }
         }
     }
