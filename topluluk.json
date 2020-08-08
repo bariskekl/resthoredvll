@@ -156,6 +156,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Bed¡rhan",
                 "date": "8/8/2020"
+            },
+            "Değişen Oynuyor": {
+                "isim": "Değişen Oynuyor",
+                "id": "qXE73000Nx",
+                "desc": "Oynuyor Kısmını ayarlamanızı sağlar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/415873245493985282/8f568a1b42ce7c7562aedff46581be59.png",
+                "main_code": "events/ready.js",
+                "komutlar_code": "const chalk = require('chalk');\r\nconst moment = require('moment');\r\nconst Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  console.log(`${client.user.username} ismi ile giriş yapıldı!`);\r\n  client.user.setStatus(\"online\");\r\n  //idle = boşta\r\n  //dnd = rahatsız etmeyin\r\n  //online = çevrimiçi\r\n  console.log(` `)\r\n  client.user.setActivity(`deneme`, { type: \"PLAYING\"});\r\n  //LISTENING = DİNLİYOR\r\n  //WATCHING = İZLİYOR\r\n  //PLAYING = OYNUYOR \r\n //STREAMİNG = YAYINDA\r\n  console.log(`${client.user.username}: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);\r\n};\r\n\"",
+                "kod_rank": "topluluk",
+                "k_adi": "Bed¡rhan",
+                "date": "8/8/2020"
             }
         }
     }
