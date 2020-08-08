@@ -353,6 +353,49 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "İP Sorgu": {
+                "isim": "İP Sorgu",
+                "id": "zRaxfnpdVV",
+                "desc": "Girilen ip adresinin bilgilerini ve konumunu gösterir.",
+                "modules": [
+                    "discord.js ",
+                    " get-ipinfo"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "sadece komut",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst IPinfo = require('get-ipinfo');\r\nexports.run = async (client, message, args) => {\r\nlet ipadresi = args[0]\r\nif(!ipadresi) return message.reply(\"Lütfen bir ip adresi giriniz.\")\r\nIPinfo(ipadresi, function(err, ip) {\r\nconst embed = new Discord.RichEmbed()\r\n    .setTitle('İp Bilgileri')\r\n    .addField('Oturduğu Şehir:', ip.city || \"NULL\")\r\n    .addField('İp Numarası:', ip.ip || \"NULL\")\r\n    .addField('Host:', ip.hostname || \"NULL\")\r\n    .addField('Yer:', ip.region || \"NULL\")\r\n    .addField('Kordinat:', ip.loc || \"NULL\")\r\n    .addField('Şirket:', ip.org || \"NULL\")\r\n    .addField('Posta Kodu:', ip.postal || \"NULL\")\r\n    .setColor('RANDOM');\r\nmessage.channel.send(embed)\r\n          })\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"ip\"],\r\n  permLevel: 0\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
+            },
+            "Bottaki komut sayisi": {
+                "isim": "Bottaki komut sayisi",
+                "id": "UcvBwKq6c6",
+                "desc": "Botunuzdaki komut sayisini gösterir.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "Main dosyasi bulunmamaktadir.",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nmodule.exports.run = async (client, message, args) => {\r\n  try {\r\n    const commands = new Discord.RichEmbed()\r\n    await message.channel.send(\r\n      `**_Toplam Komut Sayısı:_**` +\r\n        `\\`${client.commands.size}\\`` +\r\n        `\\n**Komutlar:** \\n${client.commands\r\n          .map(props => `\\`${props.help.name}\\``)\r\n          .join(\" | \")}`\r\n\r\n    );\r\n  } catch (e) {\r\n    throw e;\r\n  }\r\n};\r\n\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"tümkomutlar\", \"komutlar\"],\r\n  permLevel: 0\r\n};\r\nmodule.exports.help = {\r\n  name: \"komutsayisi\",\r\n  description: \"Bota eklenmiş tüm komutları listeler.\",\r\n  usage: \"all-commands\"\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
+            },
+            "Gelişmiş token komutu": {
+                "isim": "Gelişmiş token komutu",
+                "id": "EQwn1As1k6",
+                "desc": "Tokenin doğru veya yanliş olduğunu logda gösterir.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "  client.login(`FynxCode Token`)\r\n  .then(function() {\r\n    console.log('[FynxCode] Token doğru bir şekilde çalişiyor.')\r\n  }, function(err) {\r\n    console.log(\"[Hata] Token hata verdi:\\nHata: \" + err)\r\n        setInterval(function() {\r\n       process.exit(0)\r\n        }, 20000);\r\n        })",
+                "komutlar_code": "Sadece Main",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }
