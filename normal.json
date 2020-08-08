@@ -511,6 +511,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/8/2020"
+            },
+            "Slowmode \\ Yavaş Mod": {
+                "isim": "Slowmode \\ Yavaş Mod",
+                "id": "U93gYlaKtR",
+                "desc": "v12 YAVAŞ MOD Chat E Süre Ekleme !!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = async(client, message, args) => {\r\nif (message.channel.type !== \"text\") return;\r\nconst limit = args[0] ? args[0] : 0;\r\n  if(!limit) {\r\n              var embed = new Discord.MessageEmbed()\r\n                .setDescription(`Doğru kullanım: \\` .slowmode [0/15]\\``)\r\n                .setColor(\"RANDOM\")\r\n                .setTimestamp()\r\n            message.channel.send({embed})\r\n            return\r\n          }\r\nif (limit > 15) {\r\n    return message.channel.send(new Discord.MessageEmbed().setDescription(\"Süre limiti maksimum **15** saniye olabilir.\").setColor(\"#36393F\"));\r\n}\r\n    message.channel.send(new Discord.MessageEmbed().setDescription(`Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`).setColor(\"#36393F\"));\r\nvar request = require('request');\r\nrequest({\r\n    url: `https://discordapp.com/api/v7/channels/${message.channel.id}`,\r\n    method: \"PATCH\",\r\n    json: {\r\n        rate_limit_per_user: limit\r\n    },\r\n    headers: {\r\n        \"Authorization\": `Bot ${client.token}`\r\n    },\r\n})};\r\n  exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"slow-mode\", \"slowmode\", \"yavas-mod\", 'yavasmod', 'yavaşmod'],\r\n  permLevel: 3,\r\n};\r\n\r\nexports.help = {\r\n  name: 'yavaş-mod',\r\n  description: 'Sohbete yazma sınır (süre) ekler.',\r\n  usage: 'yavaş-mod [1/120]',\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
             }
         }
     }
