@@ -126,6 +126,20 @@
                 "kod_rank": "hazir",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "İnvite Manager Altyapi": {
+                "isim": "İnvite Manager Altyapi",
+                "id": "U3OoLnFqPQ",
+                "desc": "Açiklamaya gerek yok. Başlikta yaziyor. ",
+                "modules": [
+                    "Altyapi"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "https://glitch.com/edit/#!/fynxcode-invitemanager?path=bot.js%3A1%3A0",
+                "komutlar_code": "https://glitch.com/edit/#!/fynxcode-invitemanager?path=bot.js%3A1%3A0",
+                "kod_rank": "hazir",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }

@@ -296,6 +296,34 @@
                 "kod_rank": "normal",
                 "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
                 "date": "8/8/2020"
+            },
+            "Gelişmiş Bot Oy Vote Link": {
+                "isim": "Gelişmiş Bot Oy Vote Link",
+                "id": "QEXOaFBsXM",
+                "desc": "Bota Vote Linki",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "yOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, params) => {\r\n  const embed = new Discord.RichEmbed()\r\n  .setDescription('')\r\n  .setColor(\"RANDOM\")\r\n  .addField(\":point_down:\",`[ İşte Oy Linkim (Vote) Bana Oy Verirseniz Çok Sevinirim :heart:](https://top.gg/bot/691926656230752257/vote)`)\r\n\r\n \r\n  return message.channel.sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['oyver'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'vote',\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
+            },
+            "Kral Ol ": {
+                "isim": "Kral Ol ",
+                "id": "4qUsqE3LNU",
+                "desc": "Eğlence Komudu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\nexports.run = (client, message, params) => {\r\n    if (!message.guild) {\r\n    const ozelmesajuyari = new Discord.RichEmbed()\r\n    .setColor(0xFF0000)\r\n    .setTimestamp()\r\n    .setAuthor(message.author.username, message.author.avatarURL)\r\n    .addField('**Eğlence Komutları Özel Mesajlarda Kullanılamaz!**')\r\n    return message.author.sendEmbed(ozelmesajuyari); }\r\n    if (message.channel.type !== 'dm') {\r\n      const sunucubilgi = new Discord.RichEmbed()\r\n    .setAuthor(message.author.username + ' Artık Kral Oldun!!!')\r\n    .setColor(3447003)\r\n    .setTimestamp()\r\n    .setDescription('')\r\n        .setImage(`https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif`)\r\n    return message.channel.sendEmbed(sunucubilgi);\r\n    }\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: 'kralol',\r\n  description: 'kralol',\r\n  usage: 'kralol'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
             }
         }
     }
