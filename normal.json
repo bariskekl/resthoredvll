@@ -454,6 +454,49 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "Atatürk": {
+                "isim": "Atatürk",
+                "id": "5nL6n7Zs6D",
+                "desc": "Atatürk İle İlgili Gifler Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client, message, args) => {\r\n  if ( message.react(':flag_tr:')) {\r\n      var gif = [\r\n      'https://media1.tenor.com/images/a94792e86f19ac33924533a7ab4745ea/tenor.gif?itemid=13988802', 'https://media1.tenor.com/images/1f7bcdcb520c70451697341c7f570a15/tenor.gif?itemid=17191513', 'https://media1.tenor.com/images/743866440c5dc6c3b68ff7d5214d322e/tenor.gif?itemid=13878045', 'https://media.tenor.com/images/fcee28a92ebbf28a5dec28218879a72c/tenor.gif', 'https://media1.tenor.com/images/6b9ae4e229817d6e880db6fdc6585a85/tenor.gif?itemid=12506094', 'https://media.tenor.com/images/04c7329a85411baa687373bf1bf5e70e/tenor.gif'];\r\n      var gifler = gif[Math.floor(Math.random() * gif.length)];\r\n  }\r\n\r\n    if (message.react(':flag_tr:')) {\r\n    const op = new Discord.MessageEmbed()\r\n    .setDescription(`**NE MUTLU TÜRKÜM DİYENE!** :flag_tr: :love_letter: :heart: Mustafa Kemal Ataturk Aniyoruz.`)\r\n    .setColor('RANDOM')\r\n    .setImage(gifler)\r\n    .setFooter(`By İlbey Yapımcı`)\r\n    return message.channel.send(op)\r\n    }\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['Atatürk','atam','ATAM','Atam'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'atatürk',\r\n  description: 'Atatürk gifi  gönderir.',\r\n  usage: 'atatürk'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
+            },
+            "Hava Durumu": {
+                "isim": "Hava Durumu",
+                "id": "CShk0MnILn",
+                "desc": "İl İlçelerin hava durumunu gösterir V12 DİR !!!",
+                "modules": [
+                    "discord.js",
+                    "weather-js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst weather = require('weather-js');\r\n\r\nexports.run = (client, message, args) => {\r\n  weather.find({search: args.join(\" \"), degreeType: 'C'}, function(err, result) {\r\n      if (err) message.channel.send(err);\r\n      if (result === undefined || result.length === 0) {\r\n          message.channel.send(new Discord.MessageEmbed().setDescription('Lütfen bir yer gir.').setColor('RANDOM'));\r\n          return;\r\n      }\r\n      var current = result[0].current;\r\n      var location = result[0].location;\r\n      const embed = new Discord.MessageEmbed()\r\n          .setDescription(`**${current.skytext}**`)\r\n          .setAuthor(`${current.observationpoint} için hava durumu`)\r\n          .setThumbnail(current.imageUrl)\r\n          .setColor(0x00AE86)\r\n          .addField('Zaman Dilimi',`UTC${location.timezone}`, true)\r\n          .addField('Derece Türü',location.degreetype, true)\r\n          .addField('Sıcaklık',`${current.temperature} Derece`, true)\r\n          .addField('Hava', `${current.feelslike}`, true)\r\n          .addField('Rüzgar',current.winddisplay, true)\r\n          .addField('Nem', `${current.humidity}%`, true)\r\n          message.channel.send({embed});\r\n  })\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: \"0\"\r\n};\r\n\r\nexports.help = {\r\n  name: \"havadurumu\",\r\n  description: \"hava durumunu gösterir\",\r\n  usage: \"havadurumu\"\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
+            },
+            "Uyarı": {
+                "isim": "Uyarı",
+                "id": "dFOfybojSW",
+                "desc": "V12 UYARI KOMUTU",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, args) => {\r\n  if (!message.guild) {\r\n  const ozelmesajuyari = new Discord.MessageEmbed()\r\n  .setColor(0xFF0000)\r\n  .setTimestamp()\r\n  .setAuthor(message.author.username, message.author.avatarURL)\r\n  .addField(':warning: Uyarı :warning:', '`uyar` adlı komutu özel mesajlarda kullanamazsın.')\r\n  return message.author.send(ozelmesajuyari); }\r\n  let guild = message.guild\r\n  let uyarı = args.slice(0).join(\" \")\r\n  let reason = args.slice(1).join('');\r\n  let user = message.mentions.users.first();\r\n  let modlog = guild.channels.cache.find(x => x.name ===  'mod-log')\r\n  if (!modlog) return message.reply('mod-log kanalını bulamıyorum.');\r\n  if (reason.length < 1) return message.reply('Uyarı sebebini yazmalısın.');\r\n  if (uyarı > 1) return message.reply('Uyarma Başlığı Mesela Mute Uyarı.');\r\n  if (message.mentions.users.size < 1) return message.reply('Kimi uyaracağını yazmalısın.').catch(console.error);\r\n  const embed = new Discord.MessageEmbed()\r\n  .setColor(0xD97634)\r\n  .setTimestamp()\r\n  .addField('Eylem:', uyarı)\r\n  .addField('Kullanıcı:', `${user.username}#${user.discriminator}`)\r\n  .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)\r\n  .addField('Sebep', reason)\r\n  return guild.channels.cache.get(modlog.id).send(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'uyar',\r\n  description: 'İstediğiniz kişiyi uyarır.',\r\n  usage: 'uyar [kullanıcı] [sebep]'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
             }
         }
     }
