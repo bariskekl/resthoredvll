@@ -170,6 +170,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Bed¡rhan",
                 "date": "8/8/2020"
+            },
+            "Minecraft Başarım": {
+                "isim": "Minecraft Başarım",
+                "id": "PmiFpLtTGI",
+                "desc": "Başarım Kazanma",
+                "modules": [
+                    "snekfetch"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok",
+                "komutlar_code": "const snekfetch = require('snekfetch');\r\n\r\nexports.run = (client, msg, args) => {\r\n  let [title, contents] = args.join(\" \").split(\"|\");\r\n  if(!contents) {\r\n    [title, contents] = [\"Yeni basari kazandin!\", title];\r\n  }\r\n  let rnd = Math.floor((Math.random() * 39) + 1);\r\n  if(args.join(\" \").toLowerCase().includes(\"burn\")) rnd = 38;\r\n  if(args.join(\" \").toLowerCase().includes(\"cookie\")) rnd = 21;\r\n  if(args.join(\" \").toLowerCase().includes(\"cake\")) rnd = 10;\r\n\r\n  if(title.length > 22 || contents.length > 22) return msg.edit(\".Max 22 Karakter Kullanabilirsin\").then(msg.delete.bind(msg), 2000);\r\n  const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${encodeURIComponent(title)}&t=${encodeURIComponent(contents)}`;\r\n  snekfetch.get(url)\r\n   .then(r=>msg.channel.send(\"\", {files:[{attachment: r.body}]}));\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"mcödül\"]\r\n};\r\n\r\nexports.help = {\r\n  name: 'mcbaşarım',\r\n  description: 'Minecraft Başarımı Kazanırsınız.',\r\n  usage: 'mcbaşarım'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
             }
         }
     }

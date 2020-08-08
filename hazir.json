@@ -112,6 +112,20 @@
                 "kod_rank": "hazir",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "HASTEBİN SİTESİ": {
+                "isim": "HASTEBİN SİTESİ",
+                "id": "XWLRIH2fVy",
+                "desc": "ADİ ÜZERİNDE",
+                "modules": [
+                    "Altyapi"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "https://glitch.com/edit/#!/fynxcode-hastebin?path=server.js%3A65%3A0",
+                "komutlar_code": "https://glitch.com/edit/#!/fynxcode-hastebin?path=server.js%3A65%3A0",
+                "kod_rank": "hazir",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }

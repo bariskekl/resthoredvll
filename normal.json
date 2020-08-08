@@ -254,6 +254,34 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/8/2020"
+            },
+            "Kullanıcı Bilgi": {
+                "isim": "Kullanıcı Bilgi",
+                "id": "6QsacYHFCe",
+                "desc": "Kullanıcı Bilgileri(Discord'a ne zaman katıldı,sunucuya ne zaman katıldı,bot mu,şu an ki durumu vb.)",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_5fddd4a0266d4ec890f508460c35a2ed.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst moment = require(\"moment\")\r\n\r\nexports.run = async (client, message, args) => {\r\n  let user = message.mentions.users.first() || client.users.get(args[0]) || message.author\r\n  let durumm;\r\n  let durum = user.presence.status\r\n  \r\n    if(durum === \"online\") durumm = `Çevrimiçi`\r\n    if(durum === \"offline\") durumm = `Çevrimdışı/Görünmez`\r\n    if(durum === \"idle\") durumm = `Boşta`\r\n    if(durum === \"dnd\") durumm = `Rahatsız Etmeyin`\r\n    \r\n    const embeddd = new Discord.RichEmbed()\r\n    .setColor('RANDOM')\r\n    .setThumbnail(user.avatarURL)\r\n    .setAuthor(user.tag, user.avatarURL)\r\n    .addField(`Kullanıcı`, `• **Kullanıcı:** ${user} \\n• **ID:** ${user.id} \\n• **Ad:** \\`${user.tag}\\` \\n• **Durumu:** ${durumm} \\n• **Durum Açıklama:** ${user.presence.game ? user.presence.game : \"Bulunmuyor\"} \\n• **Bot mu?** ${user.bot ? \"Evet\" : \"Hayır\"}`, true)\r\n    .addField(`Katılım Tarihleri`, `• **Discord:** ${moment(user.createdAt).format('DD/MM/YYYY | HH:mm:ss')} \\n• **Sunucu:** ${moment(message.guild.member(user).joinedAt).format('DD/MM/YYYY | HH:mm:ss')}`, true)\r\n    .addField(`Rolleri`, message.guild.member(user).roles.filter(b => b.name !== \"@everyone\").map(a => a).join(', '), true)\r\n    message.channel.send(embeddd)\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['kullanıcı-bilgi', 'user-info', 'kb', 'userinfo'],\r\n  permLevel: 0,\r\n};\r\n\r\nexports.help = {\r\n  name: 'kullanıcıbilgi',\r\n  description: 'Belirttilen kullanıcının bilgilerini gösterir.',\r\n  usage: 'kullanıcıbilgi @üye',\r\n  kategori: 'kullanıcı'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/8/2020"
+            },
+            "İstek Kod": {
+                "isim": "İstek Kod",
+                "id": "uiuFy1y95A",
+                "desc": "İstek Kod Örnek: !istek-kod alt yapı filan",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nmodule.exports.run = async (bot, message, args) => {\r\nlet istekkod = args.join(\" \").slice(0);\r\nlet user = message.author.username;\r\nlet guild = message.guild.name;\r\nlet guildid = message.guild.id;\r\nlet kanal = message.channel.name;\r\nlet channel = bot.channels.get(\"677530203735719955\")//bug repot kanal id\r\nlet embed = new Discord.RichEmbed()\r\n.setTitle(\"İstek Kod\")\r\n.addField(\"İstek Kod\", istekkod)\r\n.addField(\"istek Kod İsteyen\", user, true)\r\n.setColor(\"#f49542\")\r\n\r\nmessage.channel.send(\"✅  **| İstek kodunuz Başarı İle İletildi.**\")\r\nchannel.send(embed).then(i => i.react(\"🔨\"))\r\n\r\n  \r\n\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"istek\"],\r\n  permLevel: 0  \r\n};\r\n\r\nexports.help = {\r\n  name: 'istekkod',\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
             }
         }
     }
