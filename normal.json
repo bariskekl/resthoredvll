@@ -497,6 +497,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/8/2020"
+            },
+            "Rol Oluştur": {
+                "isim": "Rol Oluştur",
+                "id": "Jj35ICTWGr",
+                "desc": "v12 Rol Oluşturma + Özel Renk Yapma !!!",
+                "modules": [
+                    "modül yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/96c06dd5830d82d2d0487b9333a2385e.png",
+                "main_code": "yok\r\n",
+                "komutlar_code": "exports.run = async (client, message, args, level) => {\r\n    try {\r\n      if (!args[0]) return message.reply('Lütfen Rol Adını Yazınız!')\r\n      if (!args[1]) return message.reply('Lütfen bir renk kodu girin!')\r\n\r\n message.guild.roles.create({\r\n  data: {\r\n    name: args[0],\r\n    color: args[1]\r\n  }\r\n})\r\nmessage.reply('oluşturuldu')\r\n} catch {\r\nmessage.reply('Bir hata oluştu!')\r\n}\r\n  }\r\n\r\n  \r\n  exports.conf = {\r\n    enabled: true,\r\n    aliases: ['rol'],\r\n    guildOnly: true,\r\n    permLevel: '4'\r\n  }\r\n  \r\n  exports.help = {\r\n    name: 'rololuştur',\r\n    description: 'sunucuda rol oluşturur.',\r\n    usage: 'rololuştur <name>'\r\n  }\r\n  ",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/8/2020"
             }
         }
     }
