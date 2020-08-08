@@ -128,6 +128,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Altuğ",
                 "date": "8/7/2020"
+            },
+            "Rol Ver": {
+                "isim": "Rol Ver",
+                "id": "Y4vykWSNsS",
+                "desc": "Prefix +rolver  Kullanıcıya Rol Verir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/735381912327159819/f5188df919eb9f89b23a87d4cb3a0dbf.png",
+                "main_code": "Main Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\nexports.run = async (bot, message, args) => {\r\n    if (!message.member.hasPermission(\"MANAGE_ROLES\")) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu komutu kullanmak için **Rolleri Yönet** yetkisine sahip olmalısın.').setColor(10038562));\r\n    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);\r\n    if (!rMember) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Lütfen bir kullanıcı ismi gir.\\nÖrnek: ` + ayarlar.prefix + `rolver **@İsim @Yetki**`).setColor(10038562).setAuthor(`${message.author.username} tarafından istendi.`, message.author.avatarURL).setTimestamp());\r\n    let role = message.mentions.roles.first()\r\n\r\n    if (!role) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Lütfen bir rol ismi gir.\\nÖrnek: ` + ayarlar.prefix + `rolver **@İsim @Yetki**`).setColor(10038562).setAuthor(`${message.author.username} tarafından istendi.`, message.author.avatarURL).setTimestamp());\r\n    let aRole = message.mentions.roles.first()\r\n    if (!aRole) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`Bu rolü bulamıyorum.\\nÖrnek: ` + ayarlar.prefix + `rolver **@İsim @Yetki**`).setColor(10038562).setAuthor(`${message.author.username} tarafından istendi.`, message.author.avatarURL).setTimestamp());\r\n\r\n    if (rMember.roles.has(aRole.id)) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('Bu kullanıcı zaten bu rolde.').setColor(10038562));\r\n    await (rMember.addRole(aRole.id))\r\n    message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`${rMember} isimli üyeye \\`${role.name}\\` isimli yetki başarıyla verildi! :white_check_mark:`).setColor('RANDOM'));\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['rolver', 'rolekle'],\r\n  permLevel: \"0\"\r\n};\r\n\r\nexports.help = {\r\n  name: \"rolver\",\r\n  description: \"Kişilere Rol Yetkisi Verir\",\r\n  usage: \"rolver <mesaj>\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "OyunOynar ⋈",
+                "date": "8/8/2020"
             }
         }
     }
