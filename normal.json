@@ -282,6 +282,20 @@
                 "kod_rank": "normal",
                 "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
                 "date": "8/8/2020"
+            },
+            "Banner Yazı": {
+                "isim": "Banner Yazı",
+                "id": "aaTzsyqz3p",
+                "desc": "Bannner Seklinde Yazı Yazar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nmodule.exports.run = async (client, message, args) => {\r\n  let txt = args.join('+');\r\n  if(!args[0]) return message.channel.send(\"Lütfen yazı yazın!\");\r\n  \r\n  let embed = new Discord.RichEmbed()\r\n  .setColor(\"GREEN\")\r\n  .setAuthor(\"Banner!\")\r\n  .setImage(\"https://dummyimage.com/2000x500/33363c/ffffff&text=\" + txt)\r\n  .setFooter(\"Banner Oluşturuldu!\");\r\n  \r\n  message.channel.send(embed);\r\n}\r\n\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"banneryazı\",\"yazıbanner\",\"banneryaz\"],\r\n  permLevel: 0\r\n};\r\n\r\nmodule.exports.help = {\r\n  name: 'yazı-banner',\r\n  description: 'Yazdığınız yazıyı banner olarak atar',\r\n  usage: 'yazıb <yazdırmak istediğiniz yazı>'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
             }
         }
     }
