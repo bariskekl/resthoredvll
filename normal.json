@@ -170,6 +170,76 @@
                 "kod_rank": "normal",
                 "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
                 "date": "8/8/2020"
+            },
+            "Etiket Atınca İD ": {
+                "isim": "Etiket Atınca İD ",
+                "id": "8anC0Hu5ta",
+                "desc": "Birini Etiketleyince İd Verir ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "yok ",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nexports.run = async (client, message, args) => {\r\n  let kişi = message.mentions.members.first() || message.author;\r\n  message.channel.send(`**İstediğiniz Kişinin ID Numarası:** **${kişi.id}**`);\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"Id\", \"ıd\", \"ID\"],\r\n  permLevel: 1\r\n};\r\n\r\nexports.help = {\r\n  name: \"id\",\r\n  description: \"Belirtilen Kişinin ID'sini Atar!\",\r\n  usage: \"id\"\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
+            },
+            "Tavsiye": {
+                "isim": "Tavsiye",
+                "id": "M0mJLXY1dN",
+                "desc": "tavsiye",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message, args) {\r\n    let type = args.slice(0).join(' ');\r\n    if (type.length < 1) return message.channel.send(\r\nnew Discord.RichEmbed()\r\n.setDescription('Kullanım: m!tavsiye <Tavsiyeniz>'));\r\nconst embed = new Discord.RichEmbed()\r\n.setColor('RANDOM')\r\n.setDescription('Tavsiyeniz Bildirildi!')\r\nmessage.channel.send(embed)\r\nconst embed2 = new Discord.RichEmbed()\r\n.setColor(\"RANDOM\")\r\n.setDescription(`**${message.author.tag}** adlı kullanıcının tavsiyesi:`)\r\n.addField(`Kulanıcı Bilgileri`, `Kullanıcı ID: ${message.author.id}\\nKullanıcı Adı: ${message.author.username}\\nKullanıcı Tagı: ${message.author.discriminator}`)\r\n.addField(\"Tavsiye\", type)\r\n.setThumbnail(message.author.avatarURL)\r\nclient.channels.get('597837988298489886').send(embed2); // Kanal ID \r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false, \r\n  aliases: [],\r\n  permLevel: 0 \r\n};\r\n\r\nexports.help = {\r\n  name: 'tavsiye',\r\n  description: 'Bot için tavsiye bildirirsiniz',\r\n  usage: 'tavsiye <tavsiyeniz>'\r\n}; ",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
+            },
+            "Gelişmiş Canlı-Destek": {
+                "isim": "Gelişmiş Canlı-Destek",
+                "id": "szJsz1Y11m",
+                "desc": "Canlı Destek",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nconst db = require(\"quick.db\");\r\n\r\nmodule.exports.run = async (bot, message, args,params,client) => {\r\nlet prefix = await db.fetch(`prefix_${message.guild.id}`);\r\n  let p_prefix;\r\n  if (prefix == null) p_prefix = '?'\r\n  else p_prefix = `${prefix}` \r\n    if(message.channel.type == \"dm\")  return;\r\n  if(message.channel.type !== \"text\") return;\r\n  var channel = client.channels.find('id', '678500000434487307')\r\n    const asdf = await client.channels.get(message.channel.id).createInvite()\r\n  message.delete();\r\n  const embed = new Discord.RichEmbed()\r\n    .setAuthor(`${client.user.username}`, client.user.avatarURL)\r\n  .setTitle(\"»  Bot | Canlı Destek\")\r\n  .setDescription(\"** <a:loading3:690574497987821588> Canlı Desteği kullandğın için teşekkür ederiz, Seninle ekibim ilgilenicektir lütfen bekle!**\")\r\n  .setDescription(\"30 Saniye İinde Geri Dönülmezse Lütfen İletişime Geçin \\nCanlı Destek Ekibimiz  》 <@399121637720588298> \")\r\n  .setColor(\"#31ff00\")\r\n message.channel.send(embed)\r\n      const invite = new Discord.RichEmbed()\r\n  .setAuthor(\"» Canlı Destek | Talep\")\r\n  .addField('**» Kullanıcı Adı: **', message.author.username + '#' + message.author.discriminator)\r\n  .addField('**» Sunucu Adı: **', message.guild.name)\r\n  .setDescription(asdf.url)\r\n      channel.send(invite)\r\n};\r\n  \r\n  exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['canlıdestek'],\r\n  permLevel: 1\r\n};\r\n\r\nexports.help = {\r\n  name: 'canlı-destek',\r\n  description: 'Canlı Destek Tablebi Oluşturur.',\r\n  usage: 'c!canlı-destek'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
+            },
+            "Emojili Sa As ": {
+                "isim": "Emojili Sa As ",
+                "id": "77VFB2GYNd",
+                "desc": "S a As ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/688402666103111790/08fd4b547e4acc786a3630685989f310.png",
+                "main_code": "client.on('message', async msg => { \r\nif (msg.content.toLowerCase() === 'sa') { \r\nawait msg.react('🇦'); \r\nmsg.react('🇸'); \r\n} \r\n});\r\n\r\nclient.on('message', async msg => { \r\nif (msg.content.toLowerCase() === 'selam') { \r\nawait msg.react('🇦'); \r\nmsg.react('🇸'); \r\n} \r\n}); \r\n\r\nclient.on('message', async msg => { \r\nif (msg.content.toLowerCase() === 'selamın aleyküm') { \r\nawait msg.react('🇦'); \r\nmsg.react('🇸'); \r\n} \r\n}); \r\n\r\nclient.on('message', async msg => { \r\nif (msg.content.toLowerCase() === 'selamun aleyküm') { //ENDLESSCODE\r\nawait msg.react('🇦'); \r\nmsg.react('🇸'); \r\n} \r\n});\r\n",
+                "komutlar_code": "Üstdeki Bot.js Atın",
+                "kod_rank": "normal",
+                "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
+                "date": "8/8/2020"
+            },
+            "MC-AT ALTYAPİ": {
+                "isim": "MC-AT ALTYAPİ",
+                "id": "fz7LIkqbqG",
+                "desc": "MC-AT ALTYAPİ V11",
+                "modules": [
+                    "Altyapi"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "https://glitch.com/edit/#!/fynx-mcat-altyapi?path=bot.js%3A1%3A0",
+                "komutlar_code": "https://glitch.com/edit/#!/fynx-mcat-altyapi?path=bot.js%3A1%3A0",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }
