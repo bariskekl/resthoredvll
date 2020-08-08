@@ -324,6 +324,35 @@
                 "kod_rank": "normal",
                 "k_adi": "Yavuzhan.ExEᴿᴵᴼ",
                 "date": "8/8/2020"
+            },
+            "Ayarlamali sa-as komutu": {
+                "isim": "Ayarlamali sa-as komutu",
+                "id": "j0hh3FGvqf",
+                "desc": "Açiklamaya gerek yok. Başlikta yaziyor.",
+                "modules": [
+                    "discord.js ",
+                    " quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on(\"message\", async msg => {\r\n\r\n\r\n  const i = await db.fetch(`saassistemi_${msg.guild.id}`);\r\n    if (i == 'acik') {\r\n      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm') {\r\n          try {\r\n\r\n                  return msg.reply('**Aleyküm Selam, Hoşgeldin :)** ')\r\n          } catch(err) {\r\n            console.log(err);\r\n          }\r\n      }\r\n    }\r\n    else if (i == 'kapali') {\r\n    \r\n    }\r\n    if (!i) return;\r\n\r\n    });",
+                "komutlar_code": "const db = require('quick.db')\r\nconst Discord = require('discord.js')\r\n\r\n\r\nexports.run = async (bot, message, args) => {\r\n  if (!args[0]) return message.channel.send(`**HATALİ KULLANİM: Örnek Kullanim: !saas aç/kapat**`)\r\n  if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(' Bu komutu kullanmak için \\`MESAJLARI_YÖNET\\` yetkisine sahip olmalısın!')\r\n\r\n  if (args[0] == 'aç') {\r\n    db.set(`saassistemi_${message.guild.id}`, 'acik').then(i => {\r\n      message.channel.send(`Sa-as sistemi açildi. Kapatmak için \"\\`!sa-as kapat\\`\" yazmalısın.`)\r\n    })\r\n  }\r\n  if (args[0] == 'kapat') {\r\n    db.set(`saassistemi_${message.guild.id}`, 'kapali').then(i => {\r\n      message.channel.send(`SA-AS Sistemi kapatildi`)\r\n    })\r\n  }\r\n\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['sa-as-sistemi', \"saas\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'sa-as',\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
+            },
+            "Bot belirli kanala yaziyor komutu": {
+                "isim": "Bot belirli kanala yaziyor komutu",
+                "id": "iQVJYuDmdR",
+                "desc": "Bot belirtilen kanala sürekli yaziyor gibi durur.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on('ready', ()=>{\r\nclient.channels.get('KANALİD').startTyping()\r\n})\r\n ",
+                "komutlar_code": "SADECE MAİN",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }
