@@ -114,6 +114,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "BDGO-By_DARKx",
                 "date": "8/7/2020"
+            },
+            "Fucked": {
+                "isim": "Fucked",
+                "id": "WeQW7Lxuyq",
+                "desc": "Şimdi Kodlarda PHub Yazısı Yazdıran Komut Varsa Bende Bunu Paylaşayım Dedim :D (Emojileri Ellemeyin Çalışıyor)",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/387137154729377792/08fa01b4a3d51c41a122c1475b121aea.png",
+                "main_code": ".",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\n\r\nexports.run = (client, message, params) => {\r\n  \r\n  let user = message.mentions.users.first()\r\n  \r\n      if (!user)\r\n  return message.channel.send(\"<a:carpi:733683139335159901> | Birisini Etiketlemen Lazım!\");\r\n      if (message.author.id == 717802447728410696)\r\n  return message.channel.send(\"<a:carpi:733683139335159901> | Bu Komudu Kullanamazsın, Kara Listedesin!\");\r\n      if (message.author.id == user)\r\n  return message.channel.send(\"<a:carpi:733683139335159901> | Kendini Fuckedlayamazsın!\")\r\n      if (user)\r\n  return message.channel.send(`${user} ${message.author} Tarafından F*ck#dladı\\n<:fucked:736997610388193330> :sweat_drops: <a:fucked2:736997353940320348>`)\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"fucked\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"fucked\",\r\n  description: \"Kuralları yazar.\",\r\n  usage: \"fucked\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "Altuğ",
+                "date": "8/7/2020"
             }
         }
     }
