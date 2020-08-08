@@ -396,6 +396,35 @@
                 "kod_rank": "normal",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "Komut bulunamadi events/message": {
+                "isim": "Komut bulunamadi events/message.js",
+                "id": "qpFZBIy7FQ",
+                "desc": "Bot.js'in içinde ayarlanan komut var ise algilamaz.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "//events/message.js'ye\r\n\r\nconst ayarlar = require('../ayarlar.json');\r\nmodule.exports = message => {\r\n  let client = message.client;\r\n  if (message.author.bot) return;\r\n  if (!message.content.startsWith(ayarlar.prefix)) return;\r\n  let command = message.content.split(' ')[0].slice(ayarlar.prefix.length);\r\n  let params = message.content.split(' ').slice(1);\r\n  let perms = client.elevation(message);\r\n  let cmd;\r\n  \r\n  if (!client.commands.has(command)) {\r\n    if (client.aliases.has(command)) {\r\n      cmd = client.commands.get(client.aliases.get(command));\r\n    } else {\r\n      message.channel.send(` \\`\\`${command}\\`\\` adında bir komut bulunamadı! Komut listesine bakmak için: \\`\\`${ayarlar.prefix}yardım\\`\\` yazabilirsiniz.`)\r\n    }\r\n  }\r\n  \r\n  if (client.commands.has(command)) {\r\n    cmd = client.commands.get(command);\r\n  } else if (client.aliases.has(command)) {\r\n    cmd = client.commands.get(client.aliases.get(command));\r\n  }\r\n  if (cmd) {\r\n    if (perms < cmd.conf.permLevel) return;\r\n    cmd.run(client, message, params, perms);\r\n  }\r\n\r\n};",
+                "komutlar_code": "events/message.js \r\nye atılacaktır.",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
+            },
+            "Anti-Capslock": {
+                "isim": "Anti-Capslock",
+                "id": "Lh7kRFGOZ0",
+                "desc": "Gereğinden fazla capslock kullanimini engeller.",
+                "modules": [
+                    "discord.js ",
+                    " quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "client.on(\"message\", async msg => {\r\n    if (msg.channel.type === \"dm\") return;\r\n      if(msg.author.bot) return;  \r\n        if (msg.content.length > 4) {\r\n         if (db.fetch(`capslock_${msg.guild.id}`)) {\r\n           let caps = msg.content.toUpperCase()\r\n           if (msg.content == caps) {\r\n             if (!msg.member.hasPermission(\"ADMINISTRATOR\")) {\r\n               if (!msg.mentions.users.first()) {\r\n                 msg.delete()\r\n                 return msg.channel.send(`:x: ${msg.author}, bre susak capslock kapat.`).then(m => m.delete(5000))\r\n     }\r\n       }\r\n     }\r\n   }\r\n  }\r\n});\r\n\r\nclient.on(\"messageUpdate\", async newmsg => {\r\n    if (newmsg.channel.type === \"dm\") return;\r\n      if(newmsg.author.bot) return;  \r\n        if (newmsg.content.length > 4) {\r\n         if (db.fetch(`capslock_${newmsg.guild.id}`)) {\r\n           let caps = newmsg.content.toUpperCase()\r\n           if (newmsg.content == caps) {\r\n             if (!newmsg.member.hasPermission(\"ADMINISTRATOR\")) {\r\n               if (!newmsg.mentions.users.first()) {\r\n                 newmsg.delete()\r\n                 return newmsg.channel.send(`:x: ${newmsg.author}, bre susak capslock kapat.`).then(m => m.delete(5000))\r\n     }\r\n       }\r\n     }\r\n   }\r\n  }\r\n});",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nconst ayarlar = require('../ayarlar.json')\r\n\r\nexports.run = async (client, message, args) => {\r\n  \r\n  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix\r\n    if (!message.member.hasPermission(\"MANAGE_GUILD\")) return message.channel.send(`YETKİNİZ BULUNMAMAKTADİR.!`)\r\n  \r\n  let capslock = await db.fetch(`capslock_${message.guild.id}`)\r\n  if (capslock) {\r\n    db.delete(`capslock_${message.guild.id}`)\r\n    message.channel.send(`:fire: Capslock engelleme sistemi, kapatıldı!`)\r\n  }\r\n \r\n  if (!capslock) {\r\n    db.set(`capslock_${message.guild.id}`, 'acik')\r\n    message.channel.send(`:fire: Capslock engelleme sistemi, aktif!`)\r\n  }\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['capslock-engel'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'capslock-engelleme'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ღ scínєlч",
+                "date": "8/8/2020"
             }
         }
     }
