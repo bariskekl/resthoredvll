@@ -34,8 +34,8 @@ const IDler = {
   kodPaylaşımcıRolü: "720982876652437554",
   boosterRolü: "724199172651090000",
   kodPaylaşamayacakRoller: ["BANLI ROL İD", "BANLI ROL İD"],
-  hazırAltyapılarRolü: "720983876897472523",
-  hazırSistemlerRolü: "720983876897472523",
+  hazırAltyapılarRolü: "742072972826640395",
+  hazırSistemlerRolü: "742072972826640395",
   elmasKodlarRolü: "720983876897472523",
   altınKodlarRolü: "720983662652424222",
   normalKodlarRolü: "739025130222649377"
