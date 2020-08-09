@@ -613,6 +613,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/9/2020"
+            },
+            "Minecraft Bot Altyapı": {
+                "isim": "Minecraft Bot Altyapı",
+                "id": "ZgROPP6i75",
+                "desc": "Sunucuda Kaç Kişi Olduğunu Gösterir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "https://glitch.com/~mc-sunucu-altyapi",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/9/2020"
             }
         }
     }
