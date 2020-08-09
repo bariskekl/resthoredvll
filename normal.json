@@ -598,6 +598,21 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/9/2020"
+            },
+            "Reklam Taraması": {
+                "isim": "Reklam Taraması",
+                "id": "yXfAFmITSO",
+                "desc": "Sunucuda Reklam Oldu İse reklam-taraması yazıdığında gösterir",
+                "modules": [
+                    "discord.js",
+                    "../ayarlar.json"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst ayarlar = require('../ayarlar.json')\r\n\r\nexports.run = (client, message, args) => {\r\n\r\n  if (!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);\r\n\r\n    const members = message.guild.members.cache.filter(member => member.user.presence.game && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.presence.game.name));\r\n    const memberss = message.guild.members.cache.filter(member => member.user.username && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.username));\r\n    const embed = new Discord.MessageEmbed()\r\n        .addField('Oynuyor Mesajı Reklam İçeren Kullanıcılar', members.map(member => `${member} = ${member.user.presence.game.name}`).join(\"\\n\") || \"Kimsenin oynuyor mesajı reklam içermiyor.\")\r\n        .addField('Kullanıcı Adı Reklam İçeren Kullanıcılar', memberss.map(member => `${member} = ${member.user.username}`).join(\"\\n\") || \"Kimsenin kullanıcı adı reklam içermiyor.\")\r\n        .setColor(\"RANDOM\")\r\n    message.channel.send({embed})\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: ['reklam-ara', 'reklamara', 'reklamtaraması'],\r\n    permLevel: 1\r\n}\r\n\r\nexports.help = {\r\n    name: 'reklam-taraması',\r\n  category: 'moderasyon',\r\n    description: 'Kullanıcıların Oynuyor mesajındaki ve Kullanıcı adlarındaki reklamları tarar.',\r\n    usage: 'reklam-taraması'\r\n}\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/9/2020"
             }
         }
     }
