@@ -683,20 +683,6 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/10/2020"
-            },
-            "V11 Botun DM GÖRME": {
-                "isim": "V11 Botun DM GÖRME",
-                "id": "kkWiK5PZDC",
-                "desc": "Bota Gelen Mesajları Görürsünüz.",
-                "modules": [
-                    "modül yok"
-                ],
-                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
-                "main_code": "client.on(\"message\", msg => {\r\n  var dm = client.users.get(\"KENDİ İDİNİZ\"); \r\n  if (msg.author.id === client.user.id) return\r\n  if (msg.channel.type === \"dm\") {\r\n  const DMEmbed = new Discord.MessageEmbed()\r\n  .setTitle('Bir Mesaj Geldi!')\r\n  .setAuthor(msg.author.tag, msg.author.avatarURL({size: 1024}))\r\n  .setDescription(`${msg.content}`)\r\n  .setThumbnail(msg.author.avatarURL({size: 1024}))\r\n  dm.send(DMEmbed)}\r\n  if (msg.channel.bot) return});",
-                "komutlar_code": "yok",
-                "kod_rank": "normal",
-                "k_adi": "ilbey",
-                "date": "8/10/2020"
             }
         }
     }
