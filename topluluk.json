@@ -254,6 +254,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "! DΞLI SIVΛSLI 🖤",
                 "date": "8/10/2020"
+            },
+            "Log Sistemli Ban": {
+                "isim": "Log Sistemli Ban",
+                "id": "Je4VnECW0X",
+                "desc": "Sadece sunucunuzda ban-log metin kanalı oluşturmalısınız yoksa komut çalışmaz. Sonra da kimlerin kimi banladığını vs. görebilirsiniz.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/539038522540294145/a_c26ca0ff1a783ea9a59413eeeb16be1d.png",
+                "main_code": "Main dosyanıza (bot.js, server.js vs.) bir şey atmanıza gerek yok.",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message, args) => {\r\n  if (!message.guild) {\r\n  const ozelmesajuyari = new Discord.RichEmbed()\r\n  .setColor(\"BLUE\")\r\n  .setTimestamp()\r\n  .setAuthor(message.author.username, message.author.avatarURL)\r\n  .addField(':warning: Uyarı :warning:', '`ban` adlı komutu özel mesajlarda kullanamazsın.')\r\n  return message.author.sendEmbed(ozelmesajuyari); }\r\n  let guild = message.guild\r\n  let reason = args.slice(1).join(' ');\r\n  let user = message.mentions.users.first();\r\n  let modlog = guild.channels.find('name', 'ban-log');\r\n  if (!modlog) return message.reply('**ban-log kanalını bulamıyorum.**');\r\n  if (reason.length < 1) return message.reply('**Ban sebebini yazmalısın.**');\r\n  if (message.mentions.users.size < 1) return message.reply('**Kimi banlayacağını yazmalısın.**').catch(console.error);\r\n\r\n  if (!message.guild.member(user).bannable) return message.reply('**Yetkilileri banlayamam.**');\r\n  message.guild.ban(user, 2);\r\n\r\n  const embed = new Discord.RichEmbed()\r\n   .setAuthor(message.author.username, message.author.avatarURL)\r\n    .setColor(\"BLUE\")\r\n    .setTimestamp()\r\n    .addField('Eylem:', 'Ban')\r\n    .addField('Kullanıcı:', `${user.username}#${user.discriminator}`)\r\n    .addField('ID:', `(${user.id})`)\r\n    .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)\r\n    .addField('Sebep', reason);\r\n  return guild.channels.get(modlog.id).sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'ban',\r\n  description: 'İstediğiniz kişiyi banlar.',\r\n  usage: 'ban [kullanıcı] [sebep]'\r\n};\r\n\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "` taha §",
+                "date": "8/10/2020"
             }
         }
     }
