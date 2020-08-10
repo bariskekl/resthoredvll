@@ -683,6 +683,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/10/2020"
+            },
+            "Genel Altyapı": {
+                "isim": "Genel Altyapı",
+                "id": "WwgjcP4ei6",
+                "desc": "Genel Kodları İçeren Altyapı",
+                "modules": [
+                    "Altyapının İçinde"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "https://glitch.com/~v12-genel-bot",
+                "komutlar_code": "https://glitch.com/~v12-genel-bot",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/10/2020"
             }
         }
     }
