@@ -226,6 +226,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "✮†EvdeKal Ata avcı ★ŇØŘΜ★",
                 "date": "8/8/2020"
+            },
+            "doğruluk-cesaret": {
+                "isim": "doğruluk-cesaret.js",
+                "id": "QAPon4eWOK",
+                "desc": "Başka bir serverden aldım... benim değil ",
+                "modules": [
+                    "''"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/698489456264478750/d7b726ec263814d76dcae64ca47debd3.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = async (bot, message, args) => {\r\n    var dogruluk = ['Telefonunda arattığın en son şey nedir ?', 'Bir sabah karşı cins olarak uyansaydın ilk yapacağın şey ne olurdu ?', 'Sokakta yere bir şey düşürdüğünde hiç bir şey olmamış gibi alıp ağzına attın mı ?', '']\r\n    var cesaret = ['İğrenç bir ses tonuyla şarkı söyle', 'Bugün yaptığın bir şeyle alakalı uydurma kısa, komik bir hikaye anlat', 'Whatsappındaki son mesajlaşmanı bize oku', 'Çok yüksek bir sesle 3 saniye bağır']\r\n    var dogrulukcevap = dogruluk[Math.floor(Math.random() * dogruluk.length)];\r\n    var cesaretcevap = cesaret[Math.floor(Math.random() * cesaret.length)]\r\n\r\n    message.channel.send('\\`Doğruluk\\` mu yoksa \\`cesaret\\` mi?')\r\n    let uwu = false;\r\n    while (!uwu) {\r\n        const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 30000 });\r\n        const choice = response.first().content\r\n        if (choice == 'doğruluk' || choice == 'd') return message.channel.send(`${dogrulukcevap}`)\r\n        if (choice !== 'cesaret' && choice !== 'c') {\r\n            message.channel.send(`Lütfen sadece **doğruluk (d)** veya **cesaret (c)** ile cevap verin.`) \r\n        }\r\n        if (choice == 'cesaret' || choice == 'c') uwu = true\r\n    }\r\n    if (uwu) {\r\n        message.channel.send(`${cesaretcevap}`)\r\n\r\n    }\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: ['doğruluk-cesaret'],\r\n    permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: 'doğrulukcesaret',\r\n    description: 'Doğruluk cesaret oynarsınız',\r\n    usage: 'doğrulukcesaret'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "❖ Gurat Hazretleri",
+                "date": "8/10/2020"
             }
         }
     }
