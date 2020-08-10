@@ -87,6 +87,20 @@
                 "kod_rank": "altin",
                 "k_adi": "`TosunPasa",
                 "date": "8/8/2020"
+            },
+            "süreli rol ver": {
+                "isim": "süreli rol ver",
+                "id": "3HUWKhCcTZ",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    Kullanım  süreli-rol @kullanıcı @rol süresi       1d gün 1s saniye 1m dakika 1h saat",
+                "modules": [
+                    "\" ms \""
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7310e30806633bd255dbbd5c9ab0a343.png",
+                "main_code": "main dosyası yok beyler",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst ms = require(\"ms\");\r\n\r\nexports.run = async (client, message, args) => {  // €LĘCTUS#0001\r\nconst mb = new Discord.RichEmbed()\r\n.setAuthor(client.user.username, client.user.avatarURL)\r\n.setFooter(`Fynx`)\r\n.setTimestamp()\r\n\r\nconst emb = new Discord.RichEmbed()\r\n.setAuthor(client.user.username, client.user.avatarURL)\r\n.setFooter(`Fynx`)\r\n.setTimestamp()\r\n\r\nif(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(mb.setDescripton(`Bu komutu kullanabilmek için yetkiniz yetersiz.`))\r\nlet fynx= message.mentions.users.first()\r\nlet fynx1= message.mentions.roles.first()\r\n\r\nif(!args[0]) return message.channel.send(mb.setDescription(`Bir kullanıcı etiketlemelisin.`))\r\nif(!fynx) return message.channel.send(mb.setDescription(`**${args[0]}**, kişisini sunucuda bulamıyorum.`))\r\n  \r\nif(!args[1]) return message.channel.send(mb.setDescription(`Bir rol etiketlemelisin.`))\r\nif(!fynx1) return message.channel.send(mb.setDescription(`**${args[1]}**, rolünü sunucuda bulamıyorum.`))\r\n  \r\nif(!args[2]) return message.channel.send(mb.setDescription(`Ne kadar süre rolün kalacağını belirtmelisin.`))\r\nlet süre = args[2];\r\n\r\nmessage.guild.members.get(fynx.id).addRole(fynx1.id)\r\nmessage.channel.send(emb.setDescription(`${fynx1} isimli kişiye ${message.author.username} tarafından ${süre.replace(/d/, ' gün').replace(/s/, ' saniye').replace(/m/, ' dakika').replace(/h/, ' saat')} boyunca ${fynx} rolü verildi.`)).then(m => {\r\nsetTimeout(async () =>{  \r\nmessage.guild.members.get(fynx.id).removeRole(fynx1.id)\r\nm.edit(emb.setDescription(`${fynx1}, için rol süresi doldu.`))\r\n}, ms(süre))\r\n})\r\n  \r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'süreli-rol'\r\n};// ",
+                "kod_rank": "altin",
+                "k_adi": "€LĘCTUS",
+                "date": "8/10/2020"
             }
         }
     }
