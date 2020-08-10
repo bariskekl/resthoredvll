@@ -655,6 +655,48 @@
                 "kod_rank": "normal",
                 "k_adi": "❦RC Deneyzamani",
                 "date": "8/10/2020"
+            },
+            "Sohbet Temizle V11": {
+                "isim": "Sohbet Temizle V11",
+                "id": "6wdbf3Jo1r",
+                "desc": "Üye Susturur Önceki v12 idi Bu V11 !!!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nexports.run = function(client, message, args) {\r\n  \r\n  if (!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);\r\n  \r\nif(isNaN(args[0])) {\r\n  var errembed = new Discord.RichEmbed()\r\n    .setColor(\"RANDOM\")\r\n    .addField(`Yanlış Kullanım!`, `Bir rakam yazmalısın!`)\r\n    .addField(`Doğru Kullanım:`, `${ayarlar.prefix}sil <temizlenecek mesaj sayısı>`)\r\nreturn message.channel.send(errembed);\r\n}\r\n  \r\nif (args[0] < 1) return message.reply(\"**1** adetten az mesaj silemem!\")\r\nif (args[0] > 100) return message.reply(\"**100** adetten fazla mesaj silemem!\")\r\n  \r\nmessage.channel.bulkDelete(args[0]).then(deletedMessages => {\r\nif (deletedMessages.size < 1) return message.reply(\"Hiç mesaj silemedim! _(**14** günden önceki mesajları silemem!)_\");\r\n})\r\nmessage.channel.send(`**${args[0]}** adet mesaj başarıyla silindi!`)\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n  aliases: [\"sil\", \"mesaj-sil\", \"mesajları-sil\", \"temizle\"],\r\n  permLevel: `Mesajları yönet yetkisine sahip olmak gerekir.`\r\n};\r\n\r\nexports.help = {\r\n  name: 'sil',\r\n  category: 'moderasyon',\r\n  description: 'Belirtilen miktarda mesaj siler.',\r\n  usage: '.sil <miktar>'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/10/2020"
+            },
+            "V12 Botun Dm Görme": {
+                "isim": "V12 Botun Dm Görme",
+                "id": "8xPu2FI420",
+                "desc": "Bota Gelen Mesajları Görürsünüz.",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "client.on(\"message\", msg => {\r\n  var dm = client.users.cache.get(\"KENDİ İDİNİZ\"); \r\n  if (msg.author.id === client.user.id) return\r\n  if (msg.channel.type === \"dm\") {\r\n  const DMEmbed = new Discord.MessageEmbed()\r\n  .setTitle('Bir Mesaj Geldi!')\r\n  .setAuthor(msg.author.tag, msg.author.avatarURL({size: 1024}))\r\n  .setDescription(`${msg.content}`)\r\n  .setThumbnail(msg.author.avatarURL({size: 1024}))\r\n  dm.send(DMEmbed)}\r\n  if (msg.channel.bot) return});",
+                "komutlar_code": "yok",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/10/2020"
+            },
+            "V11 Botun DM GÖRME": {
+                "isim": "V11 Botun DM GÖRME",
+                "id": "kkWiK5PZDC",
+                "desc": "Bota Gelen Mesajları Görürsünüz.",
+                "modules": [
+                    "modül yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "client.on(\"message\", msg => {\r\n  var dm = client.users.get(\"KENDİ İDİNİZ\"); \r\n  if (msg.author.id === client.user.id) return\r\n  if (msg.channel.type === \"dm\") {\r\n  const DMEmbed = new Discord.MessageEmbed()\r\n  .setTitle('Bir Mesaj Geldi!')\r\n  .setAuthor(msg.author.tag, msg.author.avatarURL({size: 1024}))\r\n  .setDescription(`${msg.content}`)\r\n  .setThumbnail(msg.author.avatarURL({size: 1024}))\r\n  dm.send(DMEmbed)}\r\n  if (msg.channel.bot) return});",
+                "komutlar_code": "yok",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/10/2020"
             }
         }
     }
