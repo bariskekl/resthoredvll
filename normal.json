@@ -641,6 +641,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ᵃˢᵖᶜᵗ Furkan Turk ヤ",
                 "date": "8/9/2020"
+            },
+            "Bakım": {
+                "isim": "Bakım",
+                "id": "Qqhd5VDCRG",
+                "desc": "bakım kodudur",
+                "modules": [
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db')\r\n\r\n\r\nexports.run = (client, message, args) => {\r\n  \r\n\r\n  \r\n  if(!args[0]) return message.channel.send('Bakım modunu açmak için !bakım aç')\r\n  \r\n  if(args[0] === 'aç') {\r\n    if(db.fetch(`bakim`)) return message.channel.send('Bakım modu zaten açık')\r\n    message.channel.send('Bakım modu açıldı.')\r\n    db.set(`bakim`, 'acik')\r\n  }\r\n  if(args[0] === 'kapat'){\r\n    if(!db.fetch(`bakim`)) return message.channel.send('Bakım modu zaten kapalı.')\r\n    message.channel.send('Bakım modu kapatıldı.')\r\n    db.delete(`bakim`)\r\n  }\r\n  \r\n}\r\n\r\n\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 4\r\n}\r\n\r\nexports.help = {\r\n  name: 'bakım'\r\n}",
+                "komutlar_code": "\r\n    if(db.fetch(`bakim`)) {\r\n  if(message.author.id !== \"ıdınız\") {return message.channel.send('Şuanda Bakım Modu Açıktır.')}\r\n \r\n//Export.runun altına",
+                "kod_rank": "normal",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/10/2020"
             }
         }
     }
