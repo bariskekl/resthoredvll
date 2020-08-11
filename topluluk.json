@@ -268,6 +268,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "` taha §",
                 "date": "8/10/2020"
+            },
+            "Rol Koruma": {
+                "isim": "Rol Koruma",
+                "id": "jbU1ViN2EV",
+                "desc": "Yetkiliniz Sizi Tuzağı Düşürüp Herhangi bi kanalı silmeye çalışırsa,silemez! ve sildiği rol yeniden oluşturur",
+                "modules": [
+                    "Bu Kod bot.js ye atılıcak"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/426784890948943873/a_de5eb4e62a4d6da5c0d1881373fd3861.png",
+                "main_code": "//rolkoruma\r\n///////\r\n  client.on(\"roleDelete\", async(role , guild) => {\r\n  let a = await db.fetch(`rol_${role.guild.id}`);\r\n    if (a == \"açık\") {\r\n  role.guild.createRole({name: role.name, color: role.color,  permissions: role.permissions}) \r\n        role.guild.owner.send(` **${role.name}** Adlı Rol Sılındı Aynısından Ben Tekrar Olusturdum Efendim`)\r\n\r\n  \r\n}\r\n})\r\n",
+                "komutlar_code": "Ğ",
+                "kod_rank": "topluluk",
+                "k_adi": "∾`Leͥgeͣnͫd",
+                "date": "8/11/2020"
+            },
+            "Sayaç hg": {
+                "isim": "Sayaç hg",
+                "id": "GdjElv5GDH",
+                "desc": "bu komut ile belirttiğiniz kanalda sayaç yapıcaktır örnek olarak  biri geldiğinde \"sunucuya hosgeldin\" vb şeyler yazıcaktır.",
+                "modules": [
+                    "Bu Kod bot.js ye atılıcak"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/426784890948943873/a_de5eb4e62a4d6da5c0d1881373fd3861.png",
+                "main_code": "//sayaç hg\r\nclient.on(\"guildMemberAdd\", async member => {\r\n  let sayı = await db.fetch(`sayaç_${member.guild.id}`)\r\n  let kanal = await db.fetch(`sayaçK_${member.guild.id}`) \r\n  if(!sayı) return\r\n  if(!kanal) return\r\n  client.channels.get(kanal).send(`:loudspeaker: :inbox_tray: ${member} adlı üye sunucuya girdi **${sayı}** kişi olamamıza **${sayı - member.guild.members.size}** üye kaldı! Şuan **${member.guild.memberCount}** kişiyiz`)\r\n})",
+                "komutlar_code": "EN ÜSTTEKİ KODU Main dosyasına atıcaksınız!",
+                "kod_rank": "topluluk",
+                "k_adi": "∾`Leͥgeͣnͫd",
+                "date": "8/11/2020"
             }
         }
     }
