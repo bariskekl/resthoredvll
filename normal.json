@@ -894,6 +894,21 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/11/2020"
+            },
+            "KANAL BİLGİ": {
+                "isim": "KANAL BİLGİ",
+                "id": "x08QNwPC4K",
+                "desc": "KANAL BİLGİ (KANAL İD - NSFW İÇERME/İÇERMEME - OLUŞTURULDUĞU TARİH)",
+                "modules": [
+                    "discord.js",
+                    "moment"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_8570b7f80e3d03509ef9eddcd3861532.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst moment = require('moment');\r\n\r\nmodule.exports.run = async (client, message, args) => {\r\n  const ok = message.client.emojis.get(\"\");\r\n           var embed = new Discord.RichEmbed()\r\n                .setAuthor('#' + message.channel.name, message.guild.iconURL)\r\n                .addField(\"KANAL ID\", message.channel.id)\r\n                if (message.channel.nsfw) {\r\n                    embed.addField(\" Uygunsuz İçerik\", \"Evet\", true)\r\n                }\r\n                else {\r\n                    embed.addField(\" Uygunsuz İçerik\", \"Hayır\", true)\r\n                }\r\n                embed.addField('Oluşturulduğu Tarih:', moment(message.channel.createdAt).format('DD/MM/YYYY'), true)\r\n                .setColor(3447003)\r\n                .setThumbnail(message.guild.iconURL)\r\n                .setFooter('BOT ADI | © 2020 Tüm Hakları Saklıdır', client.user.avatarURL)\r\n            message.channel.send(embed)\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['kanal-bilgi'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'kanalbilgi',\r\n  description: 'Kanal ile ilgili bilgi verir.',\r\n  usage: 'kanalbilgi'\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
             }
         }
     }
