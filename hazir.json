@@ -140,6 +140,20 @@
                 "kod_rank": "hazir",
                 "k_adi": "ღ scínєlч",
                 "date": "8/8/2020"
+            },
+            "V12 Boş Genel Bot Altyapısıdır": {
+                "isim": "V12 Boş Genel Bot Altyapısıdır",
+                "id": "cnxMmaTtCI",
+                "desc": "EFSO BOŞ ALTYAPI",
+                "modules": [
+                    "Altyapının İçinde"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "https://glitch.com/~v12-genel-bot",
+                "komutlar_code": "https://glitch.com/~v12-genel-bot",
+                "kod_rank": "hazir",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
             }
         }
     }
