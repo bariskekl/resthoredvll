@@ -311,6 +311,35 @@
                 "kod_rank": "topluluk",
                 "k_adi": "✦ H1P3R",
                 "date": "8/11/2020"
+            },
+            "Public Sunucuları İçin Hoşgeldin Mesajı": {
+                "isim": "Public Sunucuları İçin Hoşgeldin Mesajı",
+                "id": "GMZ0NRC6y7",
+                "desc": "Public Sunucuları İçin Yaptığımız Hoşgeldin Mesajı Bot.js Dosyasına Yazmanız Yeterli Olacaktır",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432226678010281995/a_8a474ef6a35cc1b7ef01dfcd56e3418d.png",
+                "main_code": "client.on(\"guildMemberAdd\", member => {\r\n  var kanal = client.channels.get(\"KANAL İDSİ\")\r\n  const embed = new Discord.RichEmbed()\r\n    .setColor(\"BLUE\")\r\n    .setFooter(new Date().getTime() - member.user.createdAt.getTime() < 2592000000 ? \" \\:9330_tickred: /:no1: Bu Hesap Tehlikeli!\" : \"\\:5845_tickgreen: :tik3: Bu Hesap Güvenli!\")\r\n    .setImage(\"EKLEMEK İSTEDİĞİNİZ GİF\")\r\n    .addField(`Mesaj`, [`  \r\n\r\n• **${member.user} Sunucumuza Hoş Geldin**     \r\n\r\n• Seninle Beraber **${member.guild.memberCount}** Kişiyiz\r\n\r\n• Kaydının Yapılması İçin **İsmi**ni Ve **Yaş**ını Buraya Yaz\r\n\r\n• **<@&ROL IDSİ> yetkisine sahip arkadaşlar seninle ilgilenecekler.**\r\n\r\n• Sunucumuzun Sınırsız Davet Bağlantısı **https://discord.gg/U96FwxH**\r\n\r\nBu hesap ${(new Date().getTime() - member.user.createdAt.getTime() ) / 108000 } zaman once kuruldu.\r\n    `]);\r\n  kanal.send(embed);\r\n});",
+                "komutlar_code": "Bot.js Dosyasına Yazmanız Yeterli Olacaktır",
+                "kod_rank": "topluluk",
+                "k_adi": "CaB",
+                "date": "8/11/2020"
+            },
+            "Sunucuya Özel Prefix Ayarlama": {
+                "isim": "Sunucuya Özel Prefix Ayarlama",
+                "id": "48UUKHgMAM",
+                "desc": "Her Sunucuya Özel Prefix Ayarlar Bu Arada Proton Arkasından Ping Komutunu Da Getiriyor  [(discord.js v12) Alıntıdır!!!]",
+                "modules": [
+                    "npm i wio.db ",
+                    " npm install proton-io"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/718065229027737701/19f6dd76001b76016a50a754c81bbf1e.png",
+                "main_code": "const Discord = require(\"discord.js\");\r\nconst client = new Discord.Client();\r\nconst proton = require(\"proton-io\")\r\nconst db = require(\"wio.db\")\r\n\r\nlet komutDosya = \"./komutlar\"\r\nlet event = \"./eventlar\"\r\nlet gelistiricler = [\"ID\",\"ID\"]      //İki Geliştirici İseniz 2 Kişilik ID yeri Eğer Tekseniz (Benim Gibi) ,\"ID\" yi silebilirsiniz \r\nlet owner = true;       //kurucular olsunmu önerilen:true (true:açık false:kapalı)\r\nlet defaultCommands = [\"ping\"];  //protonun yanında gelen ping komutu olsunmu evetse bırak hayırsa ping i sil\r\n\r\nconst komutYukle = new proton(client,komutDosya,event,gelistiricler,{owner,defaultCommands})\r\n\r\nlet botlaraCevapVer = false;   //botlara cevap versinmi? (true:açık false:kapalı)\r\nlet etiketlePrefixOgren = true;   //botu etiketleyince prefix\r\nlet etiketiPrefixOlarakKullan = true;\r\n\r\nclient.on('message', async(msg) => {\r\n\r\n    if(!await db.has(\"prefix_\" + msg.guild.id)) {\r\n       var prefix = \"!\"   //varsayılan prefixiniz\r\n    } else {\r\n       var prefix = await db.fetch(\"prefix_\" + msg.guild.id)\r\n    }\r\n\r\n    komutYukle.message(msg,prefix,{botlaraCevapVer,etiketiPrefixOlarakKullan,etiketlePrefixOgren})\r\n})\r\n\r\nclient.on(\"message\", (message) => {\r\n\r\n   if(message.content.toLowerCase() === \"ping\") {\r\n    message.channel.send(\"Pong!\")\r\n}\r\n})\r\n\r\nclient.login(\"TOKENİNİZ\")  //Botunuzun Tokeni",
+                "komutlar_code": "const db = require('wio.db')  //elleme\r\n\r\nmodule.exports = {\r\n    name: \"prefixdegistir\",   //komutunuzun adı\r\n    aliases: [\"prefix\"],    //bende bilmiyom ama ikincil komut gibi bişey \r\n    description: \"sdsdsdsdsdsd\",  //açıklama\r\n    usage: \"prefixdegistir\",   //komutunuzu nasıl çalıştıracaksınız\r\n    ownerOnly: false,    //sadece kurucularmı kullanabilsin eğer herkese açık bir sunucu kuruyorsanız açık yapın (true:açık false:kapalı) eğer sadece kuruculara özelse açık yapın. (eğer bot çalışmazsa burayı sil)\r\n    run: async (message,args,client) => {\r\n\r\n        if(!message.guild.members.cache.get(message.author.id).hasPermission(\"ADMINISTRATOR\")) {   //hangi yetkisi olanlar bunu kullanabilsin discorddeveloper bot kısmından aşağı inince görebilirsiniz (komut çalışmazsa burayı silmeyi deneyin)\r\n           return message.channel.send(\"Bu işlem için gerekli yetkiniz bulunmamaktadır.\")  //eğer yetkisi yoksa ne desin\r\n        }\r\n\r\n    var args = args[0]\r\n\r\n    if(!args) {\r\n        return message.channel.send(\"Lütfen bir prefix belirtiniz.\")    //prefix belirtilmemişse ne desin\r\n    }\r\n\r\n    db.set(\"prefix_\" + message.guild.id, args)\r\n\r\n    message.channel.send(\"Başarı ile prefixiniz (ön-ekiniz) \" + args + \" olarak ayarlandı.\")  //komut başarılı olursa ne desin \" + args + \" ı silmeyin\r\n        \r\n    }\r\n}",
+                "kod_rank": "topluluk",
+                "k_adi": "⁂𝓜𝓾𝓼𝓽𝓪𝓯𝓪 𝓡𝓮𝔂𝓲𝔃⁂",
+                "date": "8/11/2020"
             }
         }
     }
