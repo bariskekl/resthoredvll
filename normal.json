@@ -923,6 +923,34 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/11/2020"
+            },
+            "FARKLI BİR ÇEKİLİŞ YHA": {
+                "isim": "FARKLI BİR ÇEKİLİŞ YHA",
+                "id": "UlE5mVRDir",
+                "desc": "FARKLI BİR ÇEKİLİŞ YHA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_8570b7f80e3d03509ef9eddcd3861532.png",
+                "main_code": "client.on(\"message\", message => {\r\nif (message.content.toLowerCase() === ayarlar.prefix + \"çekiliş\") {\r\nlet taksimdayı = message.guild.members.filter(a => !a.user.bot).random()\r\nreturn message.channel.send(new Discord.RichEmbed().setTitle(`Şanslı Üyemiz; ${taksimdayı.user.username}`)\r\n.setColor(\"GREEN\")\r\n.setThumbnail(taksimdayı.user.avatarURL))\r\n}\r\n})",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
+            },
+            "TAG ALINCA ROL VERME": {
+                "isim": "TAG ALINCA ROL VERME",
+                "id": "OKsaY5dxHV",
+                "desc": "ALIN TAG ALINCA ROL VERME",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_8570b7f80e3d03509ef9eddcd3861532.png",
+                "main_code": "client.on(\"userUpdate\", async(old, rm) => {\r\n\r\n  let tag = \"\";\r\n  let rolid = \"\";\r\n  let kanal = \"\";\r\n  let sunucuid = \"\";\r\n  \r\n  if(old.username !== rm.username) {\r\n  if(!rm.username.includes(tag) && client.guilds.get(sunucuid).members.get(rm.id).roles.has(rolid)) {\r\n     client.guilds.get(sunucuid).members.get(rm.id).removeRole(rolid)\r\n     client.channels.get(kanal).send(`**${rm}, \"${tag}\" tagını çıkardığı için <@&${rolid}> rolü alındı!**`)\r\n    } \r\n    \r\n     if(rm.username.includes(tag) && !client.guilds.get(sunucuid).members.get(rm.id).roles.has(rolid)) {\r\n      client.channels.get(kanal).send(`**${rm}, \"${tag}\" tagını aldığı için <@&${rolid}> rolü verildi!**`) \r\n      client.guilds.get(sunucuid).members.get(rm.id).addRole(rolid)\r\n     }\r\n  }\r\n  })",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
             }
         }
     }
