@@ -909,6 +909,20 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/11/2020"
+            },
+            "SIRADAKİ SAYI OYUNU": {
+                "isim": "SIRADAKİ SAYI OYUNU",
+                "id": "88wlaGMrwM",
+                "desc": "SIRADAKİ SAYI OYUNU",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_8570b7f80e3d03509ef9eddcd3861532.png",
+                "main_code": "//sıradakisayı\r\nclient.on('message', async message => {\r\nif(message.channel.id === 'kanal id') { //<<Kanalİd>>\r\n  \r\nconst sayma = await db.fetch(`sayı1`)\r\nif(message.content != sayma ? sayma : 0) return message.delete(); \r\nif(message.author.bot) return message.delete();\r\ndb.add(`sayı1`, 1)\r\nconst sayma2 = await db.fetch(`sayı1`) \r\nclient.channels.get(message.channel.id).setTopic(':ykleniyor: Sırada ki sayı: '+sayma2) }\r\n  \r\n})",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
             }
         }
     }
