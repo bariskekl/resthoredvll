@@ -101,6 +101,22 @@
                 "kod_rank": "altin",
                 "k_adi": "€LĘCTUS",
                 "date": "8/10/2020"
+            },
+            "Gelişmiş Bot İstatistik": {
+                "isim": "Gelişmiş Bot İstatistik",
+                "id": "AHHFjNLLU9",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    ",
+                "modules": [
+                    "'os'",
+                    "'moment-duration-format'",
+                    " 'moment'"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7310e30806633bd255dbbd5c9ab0a343.png",
+                "main_code": "main dosyası yok",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst moment = require(\"moment\");\r\nconst os = require('os');\r\nrequire(\"moment-duration-format\");\r\nexports.run = async (bot, message, args) => {\r\n   const seksizaman = moment.duration(bot.uptime).format(\" D [gün], H [saat], m [dakika], s [saniye]\");\r\n   const istatistikler = new Discord.RichEmbed()\r\n  .setColor('RANDOM')\r\n  .setFooter('BOT ADI  \\'Buyur benim istatistiklerim', bot.user.avatarURL)\r\n  .addField(\"» **Botun Sahibi**\", \"<@KENDI ID>| İSTERSENİZ NİCKİNİZ\")\r\n  .addField(\"»  **Geliştirici** \",\"<@geliştirici varsa ID>\")\r\n  .addField(\"» **Bellek kullanımı**\", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + ' MB', true)  \r\n  .addField(\"» **Çalışma süresi**\", seksizaman)\r\n  .addField(\"» **Kullanıcılar**\" , bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)\r\n  .addField(\"» **Sunucular**\", bot.guilds.size.toLocaleString(), true)\r\n  .addField(\"» **Kanallar**\", bot.channels.size.toLocaleString(), true)\r\n  .addField(\"» **Discord.JS sürüm**\", \"v\"+Discord.version, true)\r\n  .addField(\"» **Node.JS sürüm**\", `${process.version}`, true)\r\n  .addField(\"» **Ping**\", bot.ping+\" ms\", true)\r\n  .addField(\"» **CPU**\", `\\`\\`\\`md\\n${os.cpus().map(i => `${i.model}`)[0]}\\`\\`\\``)\r\n  .addField(\"» **Bit**\", `\\`${os.arch()}\\``, true)\r\n  .addField(\"» **İşletim Sistemi**\", `\\`\\`${os.platform()}\\`\\``) \r\n  .addField(\"**» Bot Davet**\", \" [Davet Et](Botunuzun davet linki)\", )\r\n  .addField(\"**» Destek Sunucusu**\", \" [Sunucumuza Katıl](destek sunucunuz)\", )\r\n  .addField(\"**» Voteleme sayfası**\", \" [Botu votele](dbl onaylıysa vote linki)\", )\r\n return message.channel.send(istatistikler);\r\n  };\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [ 'i', 'YEDEK KOMUT2'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"istatistik\",\r\n  description: \"Bot i\",\r\n  usage: \"istatistik\"\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "€LĘCTUS",
+                "date": "8/11/2020"
             }
         }
     }

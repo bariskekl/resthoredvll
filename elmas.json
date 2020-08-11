@@ -59,6 +59,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "nwa",
                 "date": "8/11/2020"
+            },
+            "süreli mute": {
+                "isim": "süreli mute",
+                "id": "Yq1tx5jS1q",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   mute @kullanıcı (1d gün)  (1s saniye) (1m dakika)   (1h saat)",
+                "modules": [
+                    "ms"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7310e30806633bd255dbbd5c9ab0a343.png",
+                "main_code": "main dosyası yok ",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst ms = require(\"ms\");\r\nvar mutelu = \"\"; //buraya muteli rolünün id'sini koyunuz\r\nvar muteyetkisi = \"\"; // buraya mute yetkis irolünün id yazınız.\r\nexports.run = async (client, msg, args) => {\r\n  if (!msg.member.roles.has(muteyetkisi)) {\r\n  } else {\r\n    let muted =\r\n      msg.mentions.members.first() ||\r\n      msg.guild.members.find(c => c.id === args[0]);\r\n    if (!muted) {\r\n      msg.reply(\"lütfena susturulacak üyeyi etiketleyiniz.\");\r\n    } else {\r\n      if (\r\n        muted.highestRole.calculatedPosition >=\r\n        msg.member.highestRole.calculatedPosition\r\n      ) {\r\n        msg.reply(\"bu kullanıcı senden daha üst pozisyonda.\");\r\n      } else {\r\n        let mutezaman = args[1]\r\n          .replace(\"gün\", \"d\");\r\n          .replace(\"sn\", \"s\")\r\n          .replace(\"dk\", \"m\")\r\n          .replace(\"sa\", \"h\")\r\n        if (!mutezaman) {\r\n          msg.reply(\"bir zaman girmediniz!\");\r\n        } else {\r\n          let sebep = args.splice(2, args.length).join(\" \");\r\n          //!!sustur @etiket 0 zaman 1 sebep 2\r\n          let log = msg.guild.channels.find(c =>\r\n            c.name.toLowerCase().includes(\"mute-log\")\r\n          );\r\n          let vakit = mutezaman\r\n            .replace(\"d\", \" gün\");\r\n            .replace(\"m\", \" dakika\")\r\n            .replace(\"s\", \" saniye\")\r\n            .replace(\"h\", \" saat\")\r\n          try {\r\n            log.send(\r\n              new Discord.RichEmbed()\r\n                .setTitle(\"Bir kullanıcı susturuldu!\")\r\n                .setFooter(`ID: ${muted.id}`, muted.user.displayAvatarURL)\r\n                .setColor(\"RED\")\r\n                .setThumbnail(msg.author.displayAvatarURL)\r\n                .addField(`İşlem sahibi`, `<@${msg.author.id}>`)\r\n                .addField(`Susturulan`, `<@${muted.id}>`)\r\n                .addField(\r\n                  `Sebebi`,\r\n                  `${sebep === \"\" ? \"Sebep belirtilmemiş.\" : sebep}`\r\n                )\r\n                .addField(`Süre`, `${vakit}`)\r\n            );\r\n            muted.addRole(mutelu);\r\n            msg.channel.send(\r\n              `**${muted.user.tag}** kullanıcısı, **${msg.author.tag}** tarafından **${vakit}** süreyle susturuldu!`\r\n            );\r\n          } catch (e) {\r\n            console.log(e);\r\n          }\r\n\r\n          setTimeout(async function() {\r\n            muted.removeRole(\r\n              mutelu,\r\n              \"Susturulma cezası, sürenin bitmesi sebebiyle kaldırıldı.\"\r\n            );\r\n          }, ms(mutezaman));\r\n        }\r\n      }\r\n    }\r\n  }\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"mute\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"tempmute\",\r\n  description: \"Belirtilen kişiye belirtilen süreyle muteler\",\r\n  usage: \"mute\"\r\n};",
+                "kod_rank": "elmas",
+                "k_adi": "€LĘCTUS",
+                "date": "8/11/2020"
             }
         }
     }

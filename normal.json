@@ -753,6 +753,34 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/11/2020"
+            },
+            "KANAL ETİKETLEME KANALI DIŞINDA ETİKETLEYEMEME": {
+                "isim": "KANAL ETİKETLEME KANALI DIŞINDA ETİKETLEYEMEME",
+                "id": "R5gpYVcPfq",
+                "desc": "CODE SUNUCULARI İÇİN KANAL ETİKETLEME KANALI DIŞINDA KANAL ETİKETLEYEMEME KODU",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_a34e951bd85745a998b9384a9b7cda5f.png",
+                "main_code": "let fynxcode = `kanal id` //KANAL ETİKETLEME KANALININ İDSİ\r\nclient.on('message', async fynxcode => {\r\n\r\nif(fynxcode.mentions.channels.size < 1) return;\r\nif(fynxcode.channel.id === fynxcode) return;\r\n\r\nfynxcode.delete().then(mesaj => {\r\nfynxcode.channel.send(`:x: Kanal Etiket Kanalı Dışında Kanal Etiketleyemezsin.Lütfen Kanalları Kurallarına Göre Kullan! :x:`).then(dc => dc.delete(10000))\r\n})\r\n})\r\n",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
+            },
+            "ÇOK İYİ BİR ADAM ASMACA(TAVSİYE EDERİM)": {
+                "isim": "ÇOK İYİ BİR ADAM ASMACA(TAVSİYE EDERİM)",
+                "id": "Rwic2bU36s",
+                "desc": "ADAM ASMACA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_a34e951bd85745a998b9384a9b7cda5f.png",
+                "main_code": "var usage = \"`!adam-asmaca <oyunun-oynanacak-kanal-idsi-(SADECE İD)> <kelimeniz>`\\n`örnek:!adam-asmaca 736676913166418000 kardes`\";\r\nvar letters = [\"🇦\", \"🇧\", \"🇨\", \"🇩\", \"🇪\", \"🇫\", \"🇬\", \"🇭\", \"🇮\", \"🇯\", \"🇰\", \"🇱\", \"🇲\", \"🇳\", \"🇴\", \"🇵\", \"🇶\", \"🇷\", \"🇸\", \"🇹\", \"🇺\", \"🇻\", \"🇼\", \"🇽\", \"🇾\", \"🇿\"];\r\nvar unicode = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"];\r\n\r\nvar games = [];\r\n\r\nvar stages = [`\\`\\`\\`\r\n/---|\r\n|   \r\n|\r\n|\r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o\r\n|\r\n|\r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o\r\n|   |\r\n| \r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o\r\n|  /|\r\n|\r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o\r\n|  /|\\\\\r\n|\r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o\r\n|  /|\\\\\r\n|  /\r\n|\r\n\\`\\`\\`\r\n`, `\\`\\`\\`\r\n/---|\r\n|   o ~ Yenildin\r\n|  /|\\\\\r\n|  / \\\\\r\n|\r\n\\`\\`\\`\r\n`];\r\n\r\nfunction generateMessage(phrase, guesses) {\r\n    var s = \"\";\r\n    for(var i = 0; i < phrase.length; i++) {\r\n        if(phrase[i] == ' ')\r\n            s += \" \";\r\n        else {\r\n            var c = phrase[i];\r\n            if(guesses.indexOf(c) == -1)\r\n                c = \"\\\\_\";\r\n            s += \"__\" + c + \"__ \";\r\n        }\r\n    }\r\n    return s;\r\n}\r\n\r\nfunction nextLetter(message, index, word) {\r\n    message.react(letters[index]).then(r => {\r\n        index++;\r\n        if(index < letters.length) {\r\n            if(index == 13) {\r\n                message.channel.send(generateMessage(word, [])).then(m => {\r\n                    games.push({\r\n                        stage: 0,\r\n                        msg0: message,\r\n                        msg1: m,\r\n                        phrase: word,\r\n                        guesses: []\r\n                    });\r\n                    nextLetter(m, index);\r\n                });\r\n            } else {\r\n                nextLetter(message, index, word);\r\n            }\r\n        }\r\n    });\r\n}\r\n\r\nclient.on('messageReactionAdd', (reaction, user) => {\r\n    var msg = reaction.message;\r\n    if(!user.bot) {\r\n        for(var i = 0; i < games.length; i++) {\r\n            var game = games[i];\r\n            if((msg.id == game.msg0.id || msg.id == game.msg1.id) && game.stage < stages.length) {\r\n                var letter = unicode[letters.indexOf(reaction.emoji.name)];\r\n                \r\n                reaction.fetchUsers().then(usrs => {\r\n                    var reactors = usrs.array();\r\n                    var remove_next = function(index) {\r\n                        if(index < reactors.length)\r\n                            reaction.remove(reactors[index]).then(() => remove_next(index + 1));\r\n                    };\r\n                    \r\n                    remove_next(0);\r\n                });\r\n                \r\n                if(game.guesses.indexOf(letter) == -1) {\r\n                    game.guesses.push(letter);\r\n                    if(game.phrase.indexOf(letter) == -1) {\r\n                        game.stage ++;\r\n                        game.msg0.edit(stages[game.stage]);\r\n                    } else {\r\n                        var sik = true;\r\n                        for(var j = 0; j < game.phrase.length; j++) {\r\n                            var c = game.phrase[j];\r\n                            if(c != ' ' && game.guesses.indexOf(c) == -1) {\r\n                                sik = false;\r\n                            }\r\n                        }\r\n                        \r\n                        if(sik) {\r\n                            game.msg0.edit(stages[game.stage].replace(\"o\", \"o ~ Kazandın!\"));\r\n                        }\r\n                        \r\n                        game.msg1.edit(generateMessage(game.phrase, game.guesses));\r\n                    }\r\n                }\r\n            }\r\n            games[i] = game;\r\n        }\r\n    }\r\n});\r\n\r\nclient.on('message', msg => {\r\n    if(msg.content.startsWith(\"!adam-asmaca\")) {\r\n        var words = msg.content.split('\\n')[0].split(' ');\r\n        if(words.length < 2) {\r\n            msg.reply(usage);\r\n        } else {\r\n            var channel = client.channels.find('id', words[1]);\r\n            var word = words.slice(2).join(' ').toLowerCase().replace(/[^a-z\\s:]/g, '');\r\n            if(channel != null) {\r\n                channel.send(stages[0]).then(m => {\r\n                    nextLetter(m, 0, word);\r\n                });\r\n            } else {\r\n                msg.reply(\"Böyle bir kanal yok: `\" + words[1] + \"` <! \\n\" + usage);\r\n            }\r\n        }\r\n    }\r\n});",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
             }
         }
     }
