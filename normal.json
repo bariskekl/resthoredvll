@@ -601,18 +601,17 @@
             },
             "Reklam Taraması": {
                 "isim": "Reklam Taraması",
-                "id": "yXfAFmITSO",
-                "desc": "Sunucuda Reklam Oldu İse reklam-taraması yazıdığında gösterir",
+                "id": "YCBrZ9HdnZ",
+                "desc": "Bi Önceki V12 İdi Bu V11 SÜRÜME DİKKAT SÜRÜM Ü package.json a girip discord.js sürüm var ordan bakabilirsiniz",
                 "modules": [
-                    "discord.js",
-                    "../ayarlar.json"
+                    "discord.js"
                 ],
                 "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
                 "main_code": "yok",
-                "komutlar_code": "const Discord = require('discord.js')\r\nconst ayarlar = require('../ayarlar.json')\r\n\r\nexports.run = (client, message, args) => {\r\n\r\n  if (!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);\r\n\r\n    const members = message.guild.members.cache.filter(member => member.user.presence.game && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.presence.game.name));\r\n    const memberss = message.guild.members.cache.filter(member => member.user.username && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.username));\r\n    const embed = new Discord.MessageEmbed()\r\n        .addField('Oynuyor Mesajı Reklam İçeren Kullanıcılar', members.map(member => `${member} = ${member.user.presence.game.name}`).join(\"\\n\") || \"Kimsenin oynuyor mesajı reklam içermiyor.\")\r\n        .addField('Kullanıcı Adı Reklam İçeren Kullanıcılar', memberss.map(member => `${member} = ${member.user.username}`).join(\"\\n\") || \"Kimsenin kullanıcı adı reklam içermiyor.\")\r\n        .setColor(\"RANDOM\")\r\n    message.channel.send({embed})\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: ['reklam-ara', 'reklamara', 'reklamtaraması'],\r\n    permLevel: 1\r\n}\r\n\r\nexports.help = {\r\n    name: 'reklam-taraması',\r\n  category: 'moderasyon',\r\n    description: 'Kullanıcıların Oynuyor mesajındaki ve Kullanıcı adlarındaki reklamları tarar.',\r\n    usage: 'reklam-taraması'\r\n}\r\n",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst ayarlar = require('../ayarlar.json')\r\n\r\nexports.run = (client, message, args) => {\r\n\r\n  if (!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);\r\n\r\n    const members = message.guild.members.filter(member => member.user.presence.game && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.presence.game.name));\r\n    const memberss = message.guild.members.filter(member => member.user.username && /(discord|http|.com|.net|.org|invite|İnstagram|Facebook|watch|Youtube|youtube|facebook|instagram)/g.test(member.user.username));\r\n    const embed = new Discord.RichEmbed()\r\n        .addField('Oynuyor Mesajı Reklam İçeren Kullanıcılar', members.map(member => `${member} = ${member.user.presence.game.name}`).join(\"\\n\") || \"Kimsenin oynuyor mesajı reklam içermiyor.\")\r\n        .addField('Kullanıcı Adı Reklam İçeren Kullanıcılar', memberss.map(member => `${member} = ${member.user.username}`).join(\"\\n\") || \"Kimsenin kullanıcı adı reklam içermiyor.\")\r\n        .setColor(\"RANDOM\")\r\n    message.channel.send({embed})\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: ['reklam-ara', 'reklamara', 'reklamtaraması'],\r\n    permLevel: 1\r\n}\r\n\r\nexports.help = {\r\n    name: 'reklam-taraması',\r\n  category: 'moderasyon',\r\n    description: 'Kullanıcıların Oynuyor mesajındaki ve Kullanıcı adlarındaki reklamları tarar.',\r\n    usage: 'reklam-taraması'\r\n}",
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
-                "date": "8/9/2020"
+                "date": "8/11/2020"
             },
             "Minecraft Bot Altyapı": {
                 "isim": "Minecraft Bot Altyapı",
@@ -780,6 +779,62 @@
                 "komutlar_code": "YOK",
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
+            },
+            "stres çarkı": {
+                "isim": "stres çarkı",
+                "id": "UWH7o8acVa",
+                "desc": "Eğlence Komutudur",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\n\r\nexports.run = async (client, message) => {\r\n    let dönme = await message.channel.send({\r\n        embed: {\r\n            color: 0x00AE86,\r\n            description: `${message.author.tag} bir stres çarkı çevirdi!`,\r\n            image: {\r\n                url: \"https://i.imgur.com/KJJxVi4.gif\"\r\n            }\r\n        }\r\n    });\r\n\r\n    let bitiş = (Math.random() * (60 - 5 +1)) + 5;\r\n    setTimeout(() => {\r\n        dönme.edit({\r\n            embed: {\r\n                color: 0x00AE86,\r\n                description: `${message.author.tag}, stres çarkın ${bitiş.toFixed(2)} saniye döndü.`\r\n            }\r\n        });\r\n    }, 5 * 1000);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'stresçarkı',\r\n  description: 'Sizin için bir stres çarkı çevirir.',\r\n  usage: 'stresçarkı'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
+            },
+            "Sunucudaki Roller": {
+                "isim": "Sunucudaki Roller",
+                "id": "C47SqEll3T",
+                "desc": "Sunucudaki Rolleri Gösterir v12 Dİr !!!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require(\"discord.js\")\r\nconst {MessageEmbed} = require('discord.js');\r\nconst client = new Discord.Client()\r\n\r\nconst moment = require('moment');\r\n\r\nexports.run = async (client, msg, args) => {\r\n            const embed = new Discord.MessageEmbed()\r\n            .setColor(\"RANDOM\")\r\n            .setAuthor(msg.guild.name, msg.guild.iconURL)\r\n            .setTitle(`Roller [${msg.guild.roles.cache.size}]`)\r\n            .setDescription(`<@&${msg.guild.roles.cache.map(roles => `${roles.id}`).join('>, <@&')}>`)\r\n            return msg.channel.send(embed)\r\n    }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"rols\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'roller',\r\n  description: 'rolleri gösterir',\r\n  usage: 'roller'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
+            },
+            "botun pingi": {
+                "isim": "botun pingi",
+                "id": "JKStz32CgA",
+                "desc": "bot pingini gösterir v12 dir v11 i yakında !!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = async (client, message, args, color) => {\r\n \r\n    let start = Date.now(); message.channel.send( 'Yükleniyor! ').then(message => {\r\n    let diff = (Date.now() - start);\r\n    let API = (client.ws.ping).toFixed(2)\r\n\r\n        let embed = new Discord.MessageEmbed()\r\n        .setTitle(`Bot Pingim !`)\r\n        .setColor(0xff2f2f)\r\n        .addField(\"📶 Mesaj Gecikmesi\", `${diff}ms`, true)\r\n        .addField(\"💻 Bot Gecikmesi\", `${API}ms`, true)\r\n        message.edit(embed);\r\n\r\n    });\r\n\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [\"ping\"],\r\n    permLevel: 0\r\n  };\r\n\r\nexports.help = {\r\n    name: 'bping',\r\n    category: 'INFO'\r\n}\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
+            },
+            "Coffing Dance": {
+                "isim": "Coffing Dance",
+                "id": "EJkzexQ3Lz",
+                "desc": "Coffing Dance Gifi Atar Eğlence Komutudur",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client, message, args) => {\r\n  if ( message.react(':flag_tr:')) {\r\n      var gif = [\r\n      'https://media.tenor.com/images/a406d4c835aa1c31dcb45105975575ac/tenor.gif', 'https://media.giphy.com/media/ggF7lWJROMXcfgXDox/giphy.gif', 'https://media.tenor.com/images/7d91ed9a7280b838b40bba2602922fdb/tenor.gif', 'https://media0.giphy.com/media/dX3JH7ry1aJMW5yYAC/giphy.gif'];\r\n\r\n      var gifler = gif[Math.floor(Math.random() * gif.length)];\r\n  }\r\n  let kullanıcı = message.mentions.members.first() || message.member;\r\n    if (message.react(':flag_tr:')) {\r\n    const op = new Discord.MessageEmbed()\r\n    .setDescription(`**${kullanıcı} öldü!**`)\r\n    .setColor('RANDOM')\r\n    .setImage(gifler)\r\n    .setFooter(`By İlbey Yapımcı`)\r\n    return message.channel.send(op)\r\n    }\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['cofdance','died','öl','öldür'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'coffindance',\r\n  description: 'Coffindance gifi gönderir.',\r\n  usage: 'coffindance'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
                 "date": "8/11/2020"
             }
         }
