@@ -340,6 +340,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "⁂𝓜𝓾𝓼𝓽𝓪𝓯𝓪 𝓡𝓮𝔂𝓲𝔃⁂",
                 "date": "8/11/2020"
+            },
+            "Özel Sesli Sohbet ": {
+                "isim": "Özel Sesli Sohbet ",
+                "id": "PiKUw6PbfJ",
+                "desc": "Belirlenen ses odasına girdiğinde sizin adınıza bir oda oluşturur. Oda boşalınca otomatik silinir.     [prefix]limit <sayı> şeklinde kullanıcı limitini ayarlayabilirsiniz.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/301044320251805697/a_0f6e556d90f509db380fbfe1489a69ee.png",
+                "main_code": "client.on('voiceStateUpdate', async (oldMember, newMember) => {\r\n  let geciciOda = \"GEÇİCİ ODA IDSİ (SESLİ)\";\r\n  let geciciOdaSembol = \"•\"; // GEÇİCİ ODANIN BAŞINA EKLENECEK SEMBOL (DEĞİŞTİREBİLİRSİNİZ) (BUNU KOYMAZSANIZ TÜM KANALLARI SİLER)\r\n  \r\n  if (!newMember.user.bot && newMember.guild.channels.has(geciciOda) && newMember.voiceChannel && newMember.voiceChannel.id === geciciOda) {\r\n    try {\r\n      newMember.guild.createChannel(geciciOdaSembol + \" \" + (newMember.displayName).replace(/[^a-zA-ZığüşöçĞÜŞİÖÇ0123456789 ]+/g, ''), { type: \"voice\", parent: newMember.guild.channels.get(geciciOda).parentID }).then(async kanal => {\r\n        await kanal.overwritePermissions(newMember.id, { VIEW_CHANNEL: true, CONNECT: true, SPEAK: true, MUTE_MEMBERS: true, MOVE_MEMBERS: true, DEAFEN_MEMBERS: true, MANAGE_CHANNELS: false, MANAGE_ROLES: false, MANAGE_WEBHOOKS: false });\r\n        await newMember.setVoiceChannel(kanal.id);\r\n      });\r\n    } catch (benonur) { console.error(benonur) };\r\n  };\r\n  \r\n  if (oldMember.voiceChannel && (oldMember.voiceChannel.name).startsWith(geciciOdaSembol) && oldMember.voiceChannel.members.filter(uye => !uye.user.bot).size < 1) await oldMember.guild.channels.filter(kanal => kanal.type === \"voice\" && kanal.members.filter(uye => !uye.user.bot).size < 1 && (kanal.name).startsWith(geciciOdaSembol)).forEach(kanal => kanal.delete());\r\n});",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = async(client, message, args) => {\r\n  let geciciOdaSembol = \"•\"; // GEÇİCİ ODANIN BAŞINA EKLENECEK SEMBOL MAIN ILE AYNI OLACAK\r\n  if (!message.member.voiceChannel || !(message.member.voiceChannel.name).startsWith(geciciOdaSembol) || !message.member.voiceChannel.permissionsFor(message.author).has('MUTE_MEMBERS') || !args[0] || isNaN(args[0]) || Number(args[0]) > 99) return message.react('❌');\r\n  message.member.voiceChannel.setUserLimit(args[0]);\r\n  message.react('✅');\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'limit', \r\n  description: 'Özel odanızın limitini değiştirirsiniz.',\r\n  usage: 'limit'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "Ben Onur ✣",
+                "date": "8/11/2020"
             }
         }
     }
