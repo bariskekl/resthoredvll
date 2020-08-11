@@ -836,6 +836,50 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/11/2020"
+            },
+            "çekiliş": {
+                "isim": "çekiliş",
+                "id": "BkM0kSRDHs",
+                "desc": "çekiliş komutudur v12",
+                "modules": [
+                    "discord.js",
+                    "ms",
+                    "moment"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst moment = require('moment');\r\nconst ms = require('ms')\r\nexports.run = async (client, message) => {\r\nvar time = moment().format('Do MMMM YYYY , hh:mm');\r\nvar room;\r\nvar title;\r\nvar duration;\r\nvar currentTime = new Date(),\r\nhours = currentTime.getHours() + 3 ,\r\nminutes = currentTime.getMinutes(),\r\ndone = currentTime.getMinutes() + duration,\r\nseconds = currentTime.getSeconds();\r\nif (minutes < 10) {\r\nminutes = \"0\" + minutes;\r\n}\r\nvar suffix = \"AM\";\r\nif (hours >= 12) {\r\nsuffix = \"PM\";\r\nhours = hours - 12;\r\n}\r\nif (hours == 0) {\r\nhours = 12;\r\n}\r\nvar filter = m => m.author.id === message.author.id;\r\n\r\n\r\n\r\n      message.channel.send(`:eight_pointed_black_star:| **Çekilişin yapılacağı kanalın adını yaz**`).then(msg => {\r\n      message.channel.awaitMessages(filter, {\r\n        max: 1,\r\n        time: 20000,\r\n        errors: ['time']\r\n      }).then(collected => {\r\n        let room = message.guild.channels.cache.find(x => x.name ===  collected.first().content);\r\n        if(!room) return message.channel.send(':heavy_multiplication_x:| **Böyle bir kanal bulamadım**');\r\n        room = collected.first().content;\r\n        collected.first().delete();\r\n        msg.edit(':eight_pointed_black_star:| **Çekilişin süresini belirle (1s, 1m, 1h, 1d, 1w)**').then(msg => {\r\n          message.channel.awaitMessages(filter, {\r\n            max: 1,\r\n            time: 20000,\r\n            errors: ['time']\r\n          }).then(collected => {\r\n            if(!collected.first().content.match(/[1-60][s,m,h,d,w]/g)) return message.channel.send(':heavy_multiplication_x:| **Böyle bir süre bilmiyorum :(**');\r\n            duration = collected.first().content\r\n            collected.first().delete();\r\n            msg.edit(':eight_pointed_black_star:| **Şimdi de ödülü yaz bakalım**').then(msg => {\r\n              message.channel.awaitMessages(filter, {\r\n                max: 1,\r\n                time: 20000,\r\n                errors: ['time']\r\n              }).then(collected => {\r\n                title = collected.first().content;\r\n                collected.first().delete();\r\n                msg.delete();\r\n                message.delete();\r\n                try {\r\n                  let giveEmbed = new Discord.MessageEmbed()\r\n                  .setColor(\"#f558c9\")\r\n                  .setDescription(`**Ödül: ${title}** \\n🎉'a Basarak Katıl \\nKalan Süre : ${duration} \\n **Başlama Zamanı :** ${hours}:${minutes}:${seconds} ${suffix}`)\r\n                  .setFooter(message.author.username + \" (Guzzy-Bot çekiliş sistemi)\", message.author.avatarURL);\r\n                  message.guild.channels.cache.find(x => x.name ===  room).send(' :heavy_check_mark: **ÇEKİLİŞ BAŞLADI** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {\r\n                     let re = m.react('🎉');\r\n                     setTimeout(() => {\r\n                       let users = m.reactions.cache.get(\"🎉\").users\r\n                       let list = users.cache.array().filter(u => u.id !== m.author.id !== client.user.id);\r\n                       let gFilter = list[Math.floor(Math.random() * list.length) + 0]\r\n                       let endEmbed = new Discord.MessageEmbed()\r\n                       .setAuthor(message.author.username, message.author.avatarURL)\r\n                       .setTitle(title)\r\n                       .setColor(\"#f558c9\")\r\n            .setFooter(\"(Guzzy-Bot çekiliş sistemi)\")\r\n                       .addField('Çekiliş Bitti !🎉',`Kazanan : ${gFilter} \\nBitiş zamanı :`)\r\n                       .setTimestamp()\r\n                     m.edit('** 🎉 ÇEKİLİŞ BİTTİ 🎉**' , {embed: endEmbed});\r\n\r\n                       var embedLel = new Discord.MessageEmbed()\r\n                        .setColor(\"RANDOM\")\r\n                        .setDescription(\"Ödülünü Moderatörleri Etiketleyerek Alabilirsin!\").setFooter(\"(Guzzy çekiliş sistemi)\")\r\n                        message.guild.channels.cache.find(x => x.name ===  room).send(`**Tebrikler ${gFilter}! \\`${title}\\` kazandın!**` , embedLel)                }, ms(duration));\r\n            });\r\n                } catch(e) {\r\n                message.channel.send(`:heavy_multiplication_x:| **Maalesef gerekli yetkilerim bulunmamakta**`);\r\n                  console.log(e);\r\n                }\r\n              });\r\n            });\r\n          });\r\n        });\r\n      });\r\n    });\r\n  \r\n  \r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\nexports.help = {\r\n  name: 'çekiliş',\r\n  description: 'Çekiliş mi?? Sunucunda güzel şeyler olacak :3',\r\n  usage: 'çekiliş'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
+            },
+            "avatar": {
+                "isim": "avatar",
+                "id": "V58aI11xoA",
+                "desc": "v12 avatar komutu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n  \r\n  \r\n  \r\nexports.run = async (client, message, args) => {\r\n  \r\n  let user;\r\n    \r\n    if (message.mentions.users.first()) {\r\n      user = message.mentions.users.first();\r\n    } else {\r\n        user = message.author;\r\n    }\r\n\r\n const avatar = new Discord.MessageEmbed()\r\n        .setColor(\"RANDOM\")\r\n       .setAuthor(\"» Buyur Avatarın,\")\r\n        .setImage(user.avatarURL())\r\n    message.channel.send(avatar)\r\n    \r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n  aliases: [\"pp\"],\r\n  permLevel: `Yetki gerekmiyor.` \r\n};\r\n\r\nexports.help = {\r\n  name: 'avatar',\r\n  category: 'kullanıcı',\r\n  description: 'Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.',\r\n   usage:'avatar <@kişi-etiket> veya avatar'\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
+            },
+            "Öneri ": {
+                "isim": "Öneri ",
+                "id": "btkHiobdS1",
+                "desc": "v12 Öneri Komutu v11 İ Çok Yakında Sitede :d",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "main_code": "yok",
+                "komutlar_code": "\r\nconst Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message, args) {\r\n\r\n\tlet mesaj = args.slice().join(' ')\r\nif (!mesaj) return message.reply('lütfen önerinizi yazın')\r\nmessage.delete()\r\nclient.users.cache.get(\"Kendi İD\").send(new Discord.MessageEmbed()\r\n.addField('Eylem', 'Öneri')\r\n.addField('Kullanıcı', message.author.tag)\r\n.addField('Sunucu', message.guild.name)\r\n.addField('Öneri', mesaj)\r\n).then(a => message.channel.send('öneriniz alındı'))\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"öner\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'öneri',\r\n  description: \"bot hakkındaki önerilerinizi bot sahiplerine ulaştırır\",\r\n  usage: 'öneri <mesaj>'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/11/2020"
             }
         }
     }
