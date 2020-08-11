@@ -697,6 +697,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/10/2020"
+            },
+            "oto-as": {
+                "isim": "oto-as",
+                "id": "0cArcjUraF",
+                "desc": "biri sa yazdında    ve aleyküm selam kardeeeeeş de",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/729586925517799439/1d15314aa0f5c4734235b10e4b33cedf.png",
+                "main_code": "client.on(\"message\", async msg => {\r\n  if (msg.content.toLowerCase() === 'sa') {\r\n    msg.reply('ve aleykum selam kardeeeeş');\r\n  }\r\n});",
+                "komutlar_code": "sadec main atın",
+                "kod_rank": "normal",
+                "k_adi": "sy | skynetwork",
+                "date": "8/11/2020"
             }
         }
     }
