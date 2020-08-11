@@ -711,6 +711,48 @@
                 "kod_rank": "normal",
                 "k_adi": "sy | skynetwork",
                 "date": "8/11/2020"
+            },
+            "Bottan birine dm atma": {
+                "isim": "Bottan birine dm atma",
+                "id": "Ra0Dttt34M",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   Kullanım ",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7310e30806633bd255dbbd5c9ab0a343.png",
+                "main_code": "SADECE komutlar var",
+                "komutlar_code": "const Discord = require('discord.js');\r\nlet ayarlar = require('../ayarlar.json');\r\nlet prefix = ayarlar.prefix;\r\n\r\n\r\nexports.run = function(client, msg) {\r\n//Kodlar\r\n  let mesaj = msg.mentions.members.first();\r\nlet msgd = msg.content.substring(3);\r\nif(!mesaj){\r\n  msg.reply('**❌ DM atmam için bir kullanıcı etiketlemelisin.! ['+prefix+'dm Mesaj @Kullanıcı]**');\r\n}if(mesaj){\r\n  if(!msg.member.hasPermissions(\"ADMISTRATOR\")){\r\n    msg.reply('**❌ Yetkiniz yetmiyor..**');\r\n  }else{\r\n    const Embed = new Discord.RichEmbed()\r\n    .setTitle('Bir mesaj')\r\n    .setDescription('Sana bir mesaj geldi;\\n**'+msgd+'**')\r\n    if(msg.author.id === 'fynx'){ //sahip id\r\n      mesaj.send(Embed);\r\n      msg.reply('**Mesaj gönderildi! ✅**');\r\n    }if(msg.author.id === 'fynx'){ //sahip id\r\n         mesaj.send(Embed);\r\n      msg.reply('**Mesaj gönderildi! ✅**');            // €LĘCTUS#0001\r\n    }\r\n    else{\r\n      msg.reply('**❌Bunu yapamazsınız....**');\r\n    }\r\n  }\r\n}\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, //komutut açtık\r\n  guildOnly: false, //sadece servere özel yapmadık\r\n  aliases: ['dm'], \r\n  permLevel: 4\r\n};\r\n\r\nexports.help = {\r\n  name:'dm', //adını belirledik (kullanmak için gereken komut)\r\n  description: 'Belirlediğiniz kişiye DMden mesaj atar.', //açıklaması\r\n  usage: 'dm' //komutun kullanım şekli (mesela hava <bölge>)\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "€LĘCTUS",
+                "date": "8/11/2020"
+            },
+            "kolay  logsuz oto rol": {
+                "isim": "kolay  logsuz oto rol",
+                "id": "mI8dTgzpUp",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   Yapmanız Gereken Tek Şey Sunucu Ayarlarından yeni gelen kişiye verilecek rolü oluşturup id sini kopyalamak ve FYNX yazan yere yapıştırmak",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7310e30806633bd255dbbd5c9ab0a343.png",
+                "main_code": "///OTOROL\r\nclient.on('guildMemberAdd', member => {\r\n  \r\n  let rol = 'FYNX'////GELECEK KISIYE VERILCEK ROL\r\n member.addRole(rol)\r\n})",
+                "komutlar_code": "yok",
+                "kod_rank": "normal",
+                "k_adi": "€LĘCTUS",
+                "date": "8/11/2020"
+            },
+            "EKLENDİM ATILDIM": {
+                "isim": "EKLENDİM ATILDIM",
+                "id": "fyw5knQX7B",
+                "desc": "BOT BİR SUNUCUYA EKLENDİĞİNDE KANALA ATILAN MESAJ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_a34e951bd85745a998b9384a9b7cda5f.png",
+                "main_code": "client.on(\"guildCreate\", guild => {  // sunucuya eklendim ve atıldım\r\nlet add = client.channels.get(\"kanal id\")//doldurulacak yer\r\nconst eklendim = new Discord.RichEmbed()\r\n\r\n.setTitle(`<:kalp:731966452512325704> | Sevgili Kullanıcılarımız Beni Ekledi`)\r\n.setFooter(\"BOT İSMİ • Sizin Sayenizde Güzelleşiyorum...\", client.user.avatarURL)\r\n.setColor(\"#F0F2F3\")\r\n.setThumbnail(guild.iconURL)\r\n.addField(`<:kus3:731966599267090575> **Sunucu İsmi**`,guild.name)//emojileri değiştirebilirsiniz\r\n.addField(`<:kus2:731966525396877412> **Sunucu İD**`, guild.id)//emojileri değiştirebilirsiniz\r\n.addField(`<:tac:731961717566996521> **Kurucu**`,guild.owner.user.tag)//emojileri değiştirebilirsiniz\r\n.addField(`<:kus1:731966497760608389> **Kurucu İD**`,guild.owner.user.id)//emojileri değiştirebilirsiniz\r\n.addField(`👥 **Üye Sayısı**`,guild.memberCount)//emojileri değiştirebilirsiniz\r\n\r\nadd.send(eklendim)\r\n\r\n});\r\n\r\nclient.on(\"guildDelete\", guild => {\r\nlet remove = client.channels.get(\"kanal id\")//doldurulacak yer\r\nconst atildim = new Discord.RichEmbed()\r\n\r\n.setTitle(`<:cikis:731970166547546113> | Sevgili Kullanıcılarım Beni Çıkarttı`)\r\n.setFooter(\"BOT İSMİ • Sizin Sayenizde Güzelleşiyorum...\", client.user.avatarURL)\r\n.setColor(\"#F0F2F3\")\r\n.setThumbnail(guild.iconURL)\r\n.addField(`<:kus3:731966599267090575> **Sunucu İsmi**`,guild.name)//emojileri değiştirebilirsiniz\r\n.addField(`<:kus2:731966525396877412> **Sunucu İd**`, guild.id)//emojileri değiştirebilirsiniz\r\n.addField(`<:tac:731961717566996521> **Kurucu**`,guild.owner.user.tag)//emojileri değiştirebilirsiniz\r\n.addField(`<:kus1:731966497760608389>**Kurucu İd**`,guild.owner.user.id)//emojileri değiştirebilirsiniz\r\n.addField(`👥 **Üye Sayısı**`,guild.memberCount)//emojileri değiştirebilirsiniz\r\n\r\nremove.send(atildim)\r\n\r\n});\r\n//////`TosunPasa Tarafından Atılmıştır.FYNX CODE\r\n////FYNX CODE(",
+                "komutlar_code": "Yok",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/11/2020"
             }
         }
     }
