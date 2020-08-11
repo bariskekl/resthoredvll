@@ -73,6 +73,21 @@
                 "kod_rank": "elmas",
                 "k_adi": "€LĘCTUS",
                 "date": "8/11/2020"
+            },
+            "Gelişmiş Anti-Raid": {
+                "isim": "Gelişmiş Anti-Raid",
+                "id": "YwibSfDAEZ",
+                "desc": "Anti-Raid komutunu sizlere sunuyorum bir eksiklik olursa nwa#0001",
+                "modules": [
+                    "discord.js",
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/707403727912304641/a_8a685279dbc2e9f2f135898de4bf0dcb.png",
+                "main_code": "client.on(\"guildMemberAdd\", async member => {\r\nlet kanal = await db.fetch(`antiraidK_${member.guild.id}`)== \"anti-raid-aç\"\r\n  if (!kanal) return;  //FYNX CODE TARAFINDAN YAPILMIŞTIR\r\n  var cod = member.guild.owner\r\n  if (member.user.bot === true) {\r\n     if (db.fetch(`botizin_${member.guild.id}.${member.id}`) == \"aktif\") {\r\n    let are = new Discord.RichEmbed()\r\n      .setColor(\"RANDOM\")//SIKINTI OLURSA DM NWA#0001\r\n      .setThumbnail(member.user.avatarURL)\r\n      .setDescription(`**${member.user.tag}** (${member.id}) adlı bota bir yetkili izin verdi eğer kaldırmak istiyorsanız **${prefix}bot-izni kaldır botun_id**.`);\r\n    cod.send(are);//FYNX CODE\r\n     } else {\r\n       let izinverilmemişbot = new Discord.RichEmbed()//NWA//NWA//NWA//NWA\r\n      .setColor(\"RANDOM\")//NWA\r\n      .setThumbnail(member.user.avatarURL)//NWA\r\n      .setDescription(\"**\" + member.user.tag +\"**\" + \" (\" + member.id+ \") \" + \"adlı bot sunucuya eklendi ve banladım eğer izin vermek istiyorsanız **\" + prefix + \"bot-izni ver botun_id**\")//NWA\r\n       member.ban();// Eğer sunucudan atmak istiyorsanız ban kısmını kick yapın\r\n       cod.send(izinverilmemişbot)//NWA\r\n}\r\n  }//NWA\r\n});//NWA\r\n",
+                "komutlar_code": "const Discord = require(\"discord.js\");//NWA\r\nconst db = require(\"quick.db\");//NWA\r\nexports.run = (client, message, args) => {//NWA\r\n  if (args[0] == \"aç\") {//NWA\r\n    if (db.has(`antiraidK_${message.guild.id}`) === true) {\r\n      return message.channel.send(\"Anti-raid zaten açılmış.\");//NWA\r\n    }\r\n    db.set(`antiraidK_${message.guild.id}`, \"anti-raid-aç\");//NWA\r\n    message.reply(\"Anti-raid sistemi başarıyla açıldı\");//NWA\r\n  }\r\n \r\n  if (args[0] == \"kapat\") {//NWA\r\n    if (db.has(`antiraidK_${message.guild.id}`) === false) {//NWA\r\n      return message.channel.send(\r\n        \"Anti-raid açılmamış. Açmak için **t+anti-raid aç**\"//NWA\r\n      );\r\n    }\r\n    db.delete(`antiraidK_${message.guild.id}`, \"anti-raid-aç\");//NWA\r\n    message.reply(\"Anti-raid sistemi başarıyla kapatıldı\");//NWA\r\n  }\r\n  if (!args[0])//NWA\r\n    return message.reply(//NWA\r\n      \"Lütfen geçerli işlem girin. Örnek: **t+anti-raid aç/kapat**\"//NWA\r\n    );\r\n};\r\nexports.conf = {\r\n  enabled: true,//NWA\r\n  guildOnly: true,//NWA//NWA\r\n  aliases: [],//NWA\r\n  permLevel: 0//NWA\r\n};//NWA\r\nexports.help = {\r\n  name: \"anti-raid\"//NWA\r\n};\r\n //NWA",
+                "kod_rank": "elmas",
+                "k_adi": "nwa",
+                "date": "8/11/2020"
             }
         }
     }
