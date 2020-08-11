@@ -43,6 +43,22 @@
                 "kod_rank": "elmas",
                 "k_adi": "ᵃˢᵖᶜᵗ Furkan Turk",
                 "date": "8/8/2020"
+            },
+            "Pirate Kullanıcı Komutu": {
+                "isim": "Pirate Kullanıcı Komutu",
+                "id": "lXUxk8m4A0",
+                "desc": "Pirate botun kullanıcı komutunu sizlere sunuyorum bir eksiklik olursa nwa#0001",
+                "modules": [
+                    "discord.js",
+                    "moment",
+                    "moment-duration-format"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/707403727912304641/a_8a685279dbc2e9f2f135898de4bf0dcb.png",
+                "main_code": "Maine Birşey Atılmayacak.",
+                "komutlar_code": "const Discord = require('discord.js')//NWA\r\nconst moment = require('moment')//NWA\r\nconst ayarlar = require('../ayarlar.json')//NWA\r\nconst client = new Discord.Client();//NWA\r\nrequire(\"moment-duration-format\");//NWA\r\n//NWA\r\n//NWA\r\nconst prefix = ayarlar.prefix//NWA\r\n\r\nexports.run = async (bot, msg, args) => {//NWA\r\n\r\n\r\n      let user = msg.mentions.users.first() || msg.author;//NWA\r\n          let simdikitarih = moment.utc(msg.createdAt).format('DD MM YYYY');\r\n    const kurulus = new Date().getTime() - user.createdAt.getTime();//NWA\r\n    var kontrol;    const gün = moment.duration(kurulus).format(\"D\")   //NWA\r\n\r\n    if (kurulus < 1296000000) kontrol = 'Evet'\r\n    if (kurulus > 1296000000) kontrol = 'Hayır'//NWA\r\n  //NWA\r\n      let userinfo = {};\r\n        //NWA\r\n      userinfo.avatar= user.displayAvatarURL;//NWA\r\n       //NWA\r\n      userinfo.id = user.id;//NWA\r\n        //NWA\r\n      userinfo.od1 = msg.guild.members.get(user.id).user.presence.game || \"Oynadığı bir oyun yok\"\r\n       \r\n      userinfo.status = user.presence.status.toString()\r\n        .replace(\"dnd\", `<:dnd:734462081251803236> Rahatsız Etmeyin`)\r\n        .replace(\"online\", `<:online:734462081088094249> Çevrimiçi`)\r\n        .replace(\"idle\", `<:dle:734462081448804392> Boşta`)\r\n        .replace(\"offline\", `<:offline:734462667229757440> Çevrimdışı`)  \r\n  //NWA\r\n        userinfo.dctarih = moment.utc(msg.guild.members.get(user.id).user.createdAt).format('DD/MM/YYYY HH:mm')//NWA\r\n  \r\n        userinfo.dctarihkatilma = moment.utc(msg.guild.members.get(user.id).joinedAt).format('DD/MM/YYYY HH:mm')//NWA\r\n  \r\n        const uembed = new Discord.RichEmbed()//NWA\r\n        .setAuthor(user.tag, userinfo.avatar)//NWA\r\n        .setThumbnail(userinfo.avatar)//NWA\r\n        .addField(`ID`, userinfo.id, false)//NWA\r\n        .setColor('BLUE')\r\n        .addField(`Katılım Tarihi`, userinfo.dctarihkatilma, false)//NWA//NWA\r\n        .addField(`Hesap Oluşturma Tarihi`, userinfo.dctarih, false)//NWA//NWA\r\n        .addField(`Durum`, userinfo.status, true)//NWA\r\n        .addField(`Botmu?`,kontrol  , true)//NWA\r\n    //NWA\r\n        .addField(`Roller:`, `${msg.guild.members.get(user.id).roles.filter(r => r.name !== \"@everyone\").map(r => r).join(' | ') || \"``Bu kullanıcıda hiçbir rol //NWAbulunmuyor.``\"}`, false)//NWA\r\n        //NWA\r\n        msg.channel.send(uembed)\r\n  \r\n    }\r\nexports.conf = {//NWA\r\n  enabled: true,//NWA\r\n  guildOnly: false,//NWA\r\n aliases: ['kullanıcı,profil','pf'],//NWA\r\n  kategori: 'kullanıcı',//NWA\r\n  permLevel: 0\r\n};//NWA\r\nexports.help = {//NWA\r\n  name: 'kullanıcı',//NWA\r\n  description: 'İstediğiniz kullanıcını bilgilerini gösterir.',//NWA\r\n  usage: 'kullanıcı'//NWA\r\n}; //NWA",
+                "kod_rank": "elmas",
+                "k_adi": "nwa",
+                "date": "8/11/2020"
             }
         }
     }
