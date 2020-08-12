@@ -383,6 +383,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "QuatisYT",
                 "date": "8/12/2020"
+            },
+            "Yardım ": {
+                "isim": "Yardım ",
+                "id": "FihASZExiH",
+                "desc": "Yardım Menüsü Sadece Komutu yapşıtırıp  **komutlar/yardım.js**",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/568547592548384800/e76099bb35a5d800b1848bb57d04dff8.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = async(client, message, args, params) => { \r\n  let preffix = db.fetch(`prefix_${message.guild.id}`)\r\n  if (preffix == null) preffix = '?'\r\n  const yardımkanal = new Discord.RichEmbed()\r\n    .setColor('BLACK')\r\n    .setAuthor(`Selam Keke`, client.user.avatarURL) \r\n      .setDescription('**[Destek Sunucumuz](https://discord.gg/d3brR7P) [Botu Davet Et](https://discordapp.com/oauth2/authorize?client_id=647792783020654629&scope=bot&permissions=805314622)**')\r\n.setThumbnail(client.user.avatarURL)\r\n      .addField('**Örnek Kullanım**', `${preffix}sunucutanıt`)\r\n      .addField('**Kullanıcı Komutları**', '`davet`, `istatistik`, `level`, `avatar`, `ping`, `sunucupp`, `alıntıla`')\r\n      .addField('**Moderasyon Komutları**', '`küfür-engel`, `modlog`, `otorol`, `reklam-taraması`, `reklam-engel`, `sayaç`, `ban`, `mute`, `kayıt-ayar`, `kick`, `rol-oluştur`, `prefix-ayarla`,`sunucu-panel`,`dm-hg-mesaj`,`ever-here-engel`,`güvenlik-kanal`,`davetlog`')\r\n      .addField('**Koruma Komutları**', '`kanal-koruma`, `anti-raid`, `ban-limit`, `kick-limit`')\r\n    .setFooter(client.user.tag , client.user.avatarURL)\r\n    .setTimestamp()\r\n    message.channel.send(yardımkanal).catch()\r\n  \r\n  };\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: [], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'yardım',\r\n  description: '.', \r\n  usage: 'yardım'\r\n};",
+                "komutlar_code": " komutlar/yardım.js",
+                "kod_rank": "topluluk",
+                "k_adi": "QuatisYT",
+                "date": "8/12/2020"
             }
         }
     }
