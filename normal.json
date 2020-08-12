@@ -1007,6 +1007,20 @@
                 "kod_rank": "normal",
                 "k_adi": "KucukTasel",
                 "date": "8/12/2020"
+            },
+            "davet": {
+                "isim": "davet",
+                "id": "4aFgRS8TVn",
+                "desc": "Fynx Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet Botun Linklerini Gösterir Siz ne link isterseniz o örnek destek sunucusu örnek sitesi örnek davet linki",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7c01c9262b7f8cd854aa094727da6bd9.png",
+                "main_code": "main dosyası yok",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\n//\r\n\r\nexports.run = (client, message, params) => {\r\n  const embedyardim = new Discord.RichEmbed()\r\n    .setTitle(`${client.user.username}`)\r\n    .setDescription(\"FYNX \")\r\n    .setColor(\"RED\") // iSTEDİGİNİZ REDİN İNGİLİZCESİNİ YAZIN\r\n    .setDescription(\"Linkler\")\r\n    .setDescription(\r\n      \"**Panelimize Gitmek İçin** [Tıkla]() \\n **Destek Sunucumuza Gelmek İçin** [Tıkla]() \\n **Botumu Sizde Sunucunuza Eklemek İçin** [Tıkla]() \"\r\n    )\r\n    .setFooter(`© ${client.user.username}`);\r\n\r\n  if (!params[0]) {\r\n    const commandNames = Array.from(client.commands.keys());\r\n    const longest = commandNames.reduce(\r\n      (long, str) => Math.max(long, str.length),\r\n      0\r\n    );\r\n    message.channel.send(embedyardim);\r\n  } else {\r\n    let command = params[0];\r\n    if (client.commands.has(command)) {\r\n      command = client.commands.get(command);\r\n      message.author.send(\r\n        \"asciidoc\",\r\n        `= ${command.help.name} = \\n${command.help.description}\\nDoğru kullanım: ` +\r\n          prefix +\r\n          `${command.help.usage}`\r\n      );\r\n    }\r\n  }\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"davet\", \"davet\", \"daavet\"],\r\n  kategori: \"kullanıcı\", // botunuzda kategori yoksa buryı silin\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"davet\",\r\n  description:\r\n    \"Botun Davet Linkini , Panel ini Ve Destek Sunucu Link Lerini Gösterir.\",\r\n  usage: \"!!davet\"\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "€LĘCTUS",
+                "date": "8/12/2020"
             }
         }
     }
