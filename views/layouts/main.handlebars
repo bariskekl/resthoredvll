@@ -55,14 +55,16 @@
         {{#if user}}
         
           <div class="dropdown">
-            <a class="btn btn-outline-warning nav-link text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.username}} <i class="fas fa-caret-down"></i></a>
+         <div class="utku">
+           
+               <a class="btn btn-outline-warning nav-link text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.username}} <i class="fas fa-caret-down"></i></a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item profilim" href="/profil/{{user.id}}"><i class="fas fa-user"></i> Profilim</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item cikis-yap" href="/cikis"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
             </div>
           </div>
-
+</div>
         
         {{else}}
            <a type="button" class="giris-yap" href="/giris" style="text-decoration:none"><i class="fas fa-sign-in-alt "></i> Giriş Yap</a>
