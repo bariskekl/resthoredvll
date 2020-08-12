@@ -1584,7 +1584,7 @@ pre code{
     background-color:#ffe8a1
 }
 .table-danger,.table-danger>td,.table-danger>th{
-    background-color:#f5c6cb
+    background-color:#811722
 }
 .table-danger tbody+tbody,.table-danger td,.table-danger th,.table-danger thead th{
     border-color:#ed969e
@@ -4379,9 +4379,9 @@ a.badge-dark.focus,a.badge-dark:focus{
     color:#533f03
 }
 .alert-danger{
-    color:#721c24;
-    background-color:#f8d7da;
-    border-color:#f5c6cb
+    color:white;
+    background-color:#400b10;
+    border-color:#811722
 }
 .alert-danger hr{
     border-top-color:#f1b0b7
@@ -4736,7 +4736,7 @@ a.badge-dark.focus,a.badge-dark:focus{
 }
 .list-group-item-danger{
     color:#721c24;
-    background-color:#f5c6cb
+    background-color:#811722
 }
 .list-group-item-danger.list-group-item-action:focus,.list-group-item-danger.list-group-item-action:hover{
     color:#721c24;

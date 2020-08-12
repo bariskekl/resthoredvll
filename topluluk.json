@@ -369,6 +369,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "! Bay Sarhoş",
                 "date": "8/12/2020"
+            },
+            "dashboard": {
+                "isim": "dashboard",
+                "id": "pDjdnP29a3",
+                "desc": "İndex VE Config Ayarlarını yaparsanız Zaten Biticekdir.",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/568547592548384800/e76099bb35a5d800b1848bb57d04dff8.png",
+                "main_code": "https://glitch.com/edit/#!/foam-amusing-holiday?path=index.js%3A2%3A12",
+                "komutlar_code": "https://glitch.com/edit/#!/foam-amusing-holiday?path=index.js%3A2%3A12",
+                "kod_rank": "topluluk",
+                "k_adi": "QuatisYT",
+                "date": "8/12/2020"
             }
         }
     }
