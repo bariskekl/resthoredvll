@@ -183,7 +183,7 @@ app.get("/altin/:id", (req, res) => {
         query: {
           statuscode: 137,
           message:
-            "Kodları görebilmek için Discord sunucumuza katılmanız ve siteye giriş yapmanız gerekmektedir."
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
         }
       })
     );
@@ -241,7 +241,7 @@ app.get("/elmas/:id", (req, res) => {
         query: {
           statuscode: 137,
           message:
-            "Kodları görebilmek için Discord sunucumuza katılmanız ve siteye giriş yapmanız gerekmektedir."
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
         }
       })
     );
@@ -271,7 +271,7 @@ app.get("/elmas/:id", (req, res) => {
           pathname: "/hata",
           query: {
             statuscode: 501,
-            message: "Bu kodu görmek için gerekli yetkiniz yok."
+            message: "Bu Kodu Görmek İçin Gerekli Rolün Yok."
           }
         })
       );
@@ -299,7 +299,7 @@ app.get("/hazir/:id", (req, res) => {
         query: {
           statuscode: 137,
           message:
-            "Kodları görebilmek için Discord sunucumuza katılmanız ve siteye giriş yapmanız gerekmektedir."
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
         }
       })
     );
@@ -329,7 +329,7 @@ app.get("/hazir/:id", (req, res) => {
           pathname: "/hata",
           query: {
             statuscode: 501,
-            message: "Bu kodu görmek için gerekli yetkiniz yok."
+            message: "Bu Kodu Görmek İçin Gerekli Rolünüz Yok."
           }
         })
       );
@@ -357,7 +357,7 @@ app.get("/topluluk/:id", (req, res) => {
         query: {
           statuscode: 137,
           message:
-            "Kodları görebilmek için Discord sunucumuza katılmanız ve siteye giriş yapmanız gerekmektedir."
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
         }
       })
     );
@@ -384,7 +384,7 @@ app.get("/profil/:id", (req, res) => {
         pathname: "/hata",
         query: {
           statuscode: 501,
-          message: "Profil bulunamadı..."
+          message: "Belirtilen Profil Bulunamadı"
         }
       })
     );
@@ -438,7 +438,7 @@ app.get("/sil/:rank/:id", (req, res) => {
           pathname: "/hata",
           query: {
             statuscode: 502,
-            message: "Bu sayfayı görmek için gerekli yetkiye sahip değilsiniz"
+            message: "Bu Sayfayı Görmek İçin Gerekli Yetkiye Sahip Değilsiniz"
           }
         })
       );
@@ -453,7 +453,7 @@ app.get("/sil/:rank/:id", (req, res) => {
               pathname: "/hata",
               query: {
                 statuscode: 504,
-                message: "Bir kod id'si belirtin"
+                message: "Bir Kod İd'si Belirtin"
               }
             })
           );
