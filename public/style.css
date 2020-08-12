@@ -130,7 +130,7 @@ ul.twPc-Arrange {
   color: white;
   padding: 5px 16px;
   text-align: center;
-  text-decoration: null;
+  text-decoration:none;
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
@@ -168,6 +168,6 @@ ul.twPc-Arrange {
   font-size: 16px;
   border-radius: 12px;
 }
-.index-box{
-    text-decoration: none;
+.index-button1:hover{
+  color:#ffffff
 }
