@@ -354,6 +354,21 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Ben Onur ✣",
                 "date": "8/11/2020"
+            },
+            "ban": {
+                "isim": "ban",
+                "id": "qG8unvxfoJ",
+                "desc": "İstedğiniz Bir Kişiyi Banlar",
+                "modules": [
+                    "quick.db",
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/712636009443098645/9e77bec3583008efad9537eed155d2da.png",
+                "main_code": "Made By Agethy\r\n\r\nKod Sadece Komutlardan Oluşmaktadır\r\n ",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\nexports.run = (client, message, args) => {\r\n\r\n   \r\n     let prefix = ayarlar.prefix\r\n    \r\n     let user = message.mentions.users.first()  \r\n \r\n  let hata3 = new Discord.RichEmbed()\r\n .setTitle('Bir Hata oluştu :(')\r\n .setDescription(message.member.user.username + '  \\n `❌`  \\n **${prefix}ban <kullanıcı>** şeklinde olmalı!')\r\n .setColor('000000')\r\n  let hata4 = new Discord.RichEmbed()\r\n .setTitle('Bir Hata oluştu :(')\r\n .setDescription(message.member.user.username + ', yetkilileri yasaklayamassın!')\r\n .setColor('000000')\r\n.setFooter('Ne kadar tuhaf dimi?')\r\n\r\nlet hata2 = new Discord.RichEmbed()\r\n .setTitle('Bir Hata oluştu :(')\r\n .setDescription(message.member.user.username + ' Sunucudan Birini yasaklamak için,**\"ÜYELERİ ENGELLE\"** Yetkisine,sahip olman gerekiyor.')\r\n .setColor('000000')\r\n\r\n///////////////////////////////////////////////////AGETHY\r\n\r\nif (!message.member.hasPermission(\"BAN_MEMBERS\")) return message.channel.sendEmbed(hata2) \r\nif (message.mentions.users.size < 1) return message.channel.sendEmbed(hata3)    \r\nif (message.guild.member(user).hasPermission(\"ADMINISTRATOR\")) return message.channel.sendEmbed(hata4)      \r\n\r\n    message.channel.send('**' + user + '**,**' + message.member.user.username + '** Tarafından Yasaklandı!')\r\n message.guild.ban(user, 2);\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'ban',\r\n  description: 'ban atmak',\r\n  usage: 'ban'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "! Bay Sarhoş",
+                "date": "8/12/2020"
             }
         }
     }
