@@ -168,6 +168,48 @@
                 "kod_rank": "hazir",
                 "k_adi": "KucukTasel",
                 "date": "8/12/2020"
+            },
+            "kucuktasel-musicv2": {
+                "isim": "kucuktasel-musicv2",
+                "id": "gSwQN2K9aW",
+                "desc": "KucukTasel Müzik Botu V2",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-muzikv2",
+                "komutlar_code": "https://bit.ly/kucuktasel-muzikv2",
+                "kod_rank": "hazir",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
+            },
+            "discord-sesli-mesaj-bot": {
+                "isim": "discord-sesli-mesaj-bot",
+                "id": "hUBKQRUycw",
+                "desc": "KucukTasel Sesli Mesaj Bot",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-soylet-botu",
+                "komutlar_code": "https://bit.ly/kucuktasel-soylet-botu",
+                "kod_rank": "hazir",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
+            },
+            "kucuktasel-musicv3": {
+                "isim": "kucuktasel-musicv3",
+                "id": "8xP1uFCcoZ",
+                "desc": "KucukTasel Müzik Botu V3",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "bit.ly/kucuktasel-musicv3",
+                "komutlar_code": "bit.ly/kucuktasel-musicv3",
+                "kod_rank": "hazir",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
             }
         }
     }
