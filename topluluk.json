@@ -397,6 +397,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "QuatisYT",
                 "date": "8/12/2020"
+            },
+            "Anında Davet Oluşturucu": {
+                "isim": "Anında Davet Oluşturucu",
+                "id": "IVos80lOy7",
+                "desc": "Bot sizin için anında davet oluşturur.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/505695245137346571/645f85ec9d62308270a95727a61040ac.png",
+                "main_code": "// Main Yok.",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\nexports.run = (client, message, args) => {\r\n  \r\n\r\n  message.channel.createInvite({maxAge: 0}).then(invite => { \r\n    //bkz: message.channel.createInvite({maxAge: 7200}).then(invite => { \r\n    \r\n    let sude = new Discord.RichEmbed()\r\n    \r\n.setAuthor(\"Bir Davet Kodu Belirdi!\")   \r\n.setColor('RANDOM')\r\n.setDescription(`**Davet Kodun:**: ${invite}`);\r\n  \r\n    message.channel.send(lordcreative);\r\n\r\n  });\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: ['davet'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'davet',\r\n  description: 'otomatik olarak Davet kodu oluşturur.',\r\n  usage: 'davet'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "LordXL",
+                "date": "8/12/2020"
             }
         }
     }
