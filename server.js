@@ -146,7 +146,7 @@ app.get("/normal/:id", (req, res) => {
         query: {
           statuscode: 137,
           message:
-            "Kodları görebilmek için Discord sunucumuza katılmanız ve siteye giriş yapmanız gerekmektedir."
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
         }
       })
     );

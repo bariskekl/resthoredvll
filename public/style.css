@@ -235,8 +235,19 @@ margin:0 350px 0 0;
 font-size:15px;
 font-family: cairo,sans-serif;
   
+}  
+.panel1{
+
+    height: 300px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #666;
 }
-.col-md-4{
-  padding:0px;
-  margin:0px;
+
+.allpanel{
+  
+  
+  width:100%;
+  height:100%;
 }
