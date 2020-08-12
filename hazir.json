@@ -140,6 +140,34 @@
                 "kod_rank": "hazir",
                 "k_adi": "ilbey",
                 "date": "8/11/2020"
+            },
+            "kucuktasel-musicv1": {
+                "isim": "kucuktasel-musicv1",
+                "id": "xceKbOyKWR",
+                "desc": "KucukTasel Müzik Botu V1",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-musicv1",
+                "komutlar_code": "https://bit.ly/kucuktasel-musicv1",
+                "kod_rank": "hazir",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
+            },
+            "kucuktasel-kayit-bot": {
+                "isim": "kucuktasel-kayit-bot",
+                "id": "W6Xajgz0Ay",
+                "desc": "KucukTasel Kayıt Botu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-kayit-bot",
+                "komutlar_code": "https://bit.ly/kucuktasel-kayit-bot",
+                "kod_rank": "hazir",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
             }
         }
     }

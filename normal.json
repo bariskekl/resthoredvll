@@ -951,6 +951,62 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/11/2020"
+            },
+            "Bot Etiket Prefix": {
+                "isim": "Bot Etiket Prefix",
+                "id": "4M7D1ep9qG",
+                "desc": "Botu etiketleyince botun prefixini belirtir.",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/327064201245753344/47065092ded33fbcb78210437e01e8e8.png",
+                "main_code": "\r\nconst prefix = ayarlar.prefix;\r\nconst prefixembed = Discord.RichEmbed()\r\n.setColor(\"RANDOM\")\r\n.setDescription(`Buyur Kankam Prefixim ${prefix}`);\r\n\r\n\r\nclient.on('message', message => {\r\n  if (message.content === '<@BotİD>') {\r\n    message.channel.send(prefixembed);\r\n  }",
+                "komutlar_code": "ONLY Main",
+                "kod_rank": "normal",
+                "k_adi": "Bay Ördekcik",
+                "date": "8/12/2020"
+            },
+            "kucuktasel-musicv2": {
+                "isim": "kucuktasel-musicv2",
+                "id": "F4qSxU7qAs",
+                "desc": "KucukTasel Müzik Botu V2",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-musicv2",
+                "komutlar_code": "https://bit.ly/kucuktasel-musicv2",
+                "kod_rank": "normal",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
+            },
+            "kucuktasel-musicv3": {
+                "isim": "kucuktasel-musicv3",
+                "id": "jRou2riYRP",
+                "desc": "KucukTasel Müzik Botu V3",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-musicv3",
+                "komutlar_code": "https://bit.ly/kucuktasel-musicv3",
+                "kod_rank": "normal",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
+            },
+            "discord-sesli-mesaj-bot": {
+                "isim": "discord-sesli-mesaj-bot",
+                "id": "LfIxCbj49I",
+                "desc": "KucukTasel Sesli Mesaj Bot",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/604201849247105024/c223c634157cb1c9f86993b28875f7f1.png",
+                "main_code": "https://bit.ly/kucuktasel-soylet-botu",
+                "komutlar_code": "https://bit.ly/kucuktasel-soylet-botu",
+                "kod_rank": "normal",
+                "k_adi": "KucukTasel",
+                "date": "8/12/2020"
             }
         }
     }
