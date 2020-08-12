@@ -2666,10 +2666,10 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
     padding:.5rem 0;
     margin:.125rem 0 0;
     font-size:1rem;
-    color:#212529;
+    color:#ffffff;
     text-align:left;
     list-style:none;
-    background-color:#fff;
+    background-color:#363636;
     background-clip:padding-box;
     border:1px solid rgba(0,0,0,.15);
     border-radius:.25rem
@@ -5551,7 +5551,7 @@ a.bg-danger:focus,a.bg-danger:hover,button.bg-danger:focus,button.bg-danger:hove
     background-color:#bd2130!important
 }
 .bg-light{
-    background-color:#f8f9fa!important
+    background-color:#363636!important
 }
 a.bg-light:focus,a.bg-light:hover,button.bg-light:focus,button.bg-light:hover{
     background-color:#dae0e5!important
