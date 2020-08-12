@@ -2830,7 +2830,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .dropdown-item.active,.dropdown-item:active{
     color:#fff;
     text-decoration:none;
-    background-color:#f5c4ff;
+    background-color:#fff;
 }
 .dropdown-item.disabled,.dropdown-item:disabled{
     color:#6c757d;
