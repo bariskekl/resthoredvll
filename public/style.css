@@ -121,8 +121,50 @@ ul.twPc-Arrange {
     color: #fff;
     text-align: center;
 }
-.index-button index-button-normal{
-   box-sizing:content-box;
-  display: block;
-  background-color;#8899a6;
+
+
+
+.index-button1 {
+  background-color: #2a2d2f; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.index-button2 {
+  background-color: #ffdd19; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.index-button3 {
+  background-color: #1b7ce3; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.index-button4 {
+  background-color: #b81135; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
 }
