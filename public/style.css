@@ -128,18 +128,18 @@ ul.twPc-Arrange {
   background-color: #2a2d2f; /* Green */
   border: none;
   color: white;
-  padding: 10px 32px;
+  padding: 5px 16px;
   text-align: center;
-  text-decoration: none;
+  text-decoration: null;
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
 }
 .index-button2 {
-  background-color: #ffdd19; /* Green */
+  background-color: #c4aa15; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -150,7 +150,7 @@ ul.twPc-Arrange {
   background-color: #1b7ce3; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -161,10 +161,13 @@ ul.twPc-Arrange {
   background-color: #b81135; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 12px;
+}
+.index-box{
+    text-decoration: none;
 }
