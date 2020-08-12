@@ -121,3 +121,8 @@ ul.twPc-Arrange {
     color: #fff;
     text-align: center;
 }
+.index-button index-button-normal{
+   box-sizing:content-box;
+  display: block;
+  background-color;#8899a6;
+}
