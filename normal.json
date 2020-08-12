@@ -1021,6 +1021,34 @@
                 "kod_rank": "normal",
                 "k_adi": "€LĘCTUS",
                 "date": "8/12/2020"
+            },
+            "invite sıralaması": {
+                "isim": "invite sıralaması",
+                "id": "xu9duEbyzs",
+                "desc": "Fynx Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet-sıralaması     ",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7c01c9262b7f8cd854aa094727da6bd9.png",
+                "main_code": "main dosyası yok",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\nmodule.exports.run = async (bot, message, args) => {\r\n  \r\n    let invites = await message.guild.fetchInvites().catch(error => {\r\n        return message.channel.send('Davetleri göremiyorum yeterli iznim yok');\r\n    });\r\n\r\n    invites = invites.array();\r\n\r\n    let possibleinvites = [];\r\n    invites.forEach(function(invites) {\r\n        possibleinvites.push(`${invites.inviter.username} ||  ${invites.uses}`)\r\n    })\r\n\r\n    const embed = new Discord.RichEmbed()\r\n        .setTitle(`**DAVET SIRALAMASİ** Fynx Code`)\r\n      .setColor('RED')\r\n        .addField('Invites', `\\`\\`\\`${possibleinvites.join('\\n')}\\`\\`\\``)\r\n        .setTimestamp();\r\n    message.channel.send(embed);\r\n\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"davet-sırası\"],\r\n  permLevel: 2,\r\n  kategori: \"sunucu\",  // Botunuzda Kategorili bir yardım menüsü yoksa burayı silin örnek prefix yardım sunucu\r\n \r\n};\r\n\r\nexports.help = {\r\n  name: 'davet-sıralaması',\r\n  description: 'Sunucunuza en çok kullanıcı getirenleri sıralar.',\r\n  usage: 'davet-sıralaması',\r\n \r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "€LĘCTUS",
+                "date": "8/12/2020"
+            },
+            "fbi": {
+                "isim": "fbi",
+                "id": "LX1tisO2Ut",
+                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    Kullanım prefix fbi",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7c01c9262b7f8cd854aa094727da6bd9.png",
+                "main_code": "main dosyası yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\n    let mesaj = args.slice(0).join(' ');\r\n    const embed = new Discord.RichEmbed()\r\n    .setAuthor('FBI OPEN UP')\r\n    .setColor(\"#36393F\")\r\n    .setDescription(` ${mesaj} ` + message.author.username + ' FBI Open the door !')\r\n    .setImage(`https://media1.tenor.com/images/93d11bc59526ce49f60766f0045d819b/tenor.gif?itemid=11500735`)\r\n    return message.channel.sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'fbi',\r\n  description: 'fbi',\r\n  usage: 'fbi',\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "€LĘCTUS",
+                "date": "8/12/2020"
             }
         }
     }
