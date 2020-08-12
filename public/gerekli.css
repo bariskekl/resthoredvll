@@ -2814,7 +2814,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
     color:#212529;
     text-align:inherit;
     white-space:nowrap;
-    background-color:#f5c4ff;
+    background-color:transparent;
     border:0
 }
 
@@ -2830,7 +2830,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .dropdown-item.active,.dropdown-item:active{
     color:#fff;
     text-decoration:none;
-    background-color:#007bff
+    background-color:#f5c4ff;
 }
 .dropdown-item.disabled,.dropdown-item:disabled{
     color:#6c757d;
