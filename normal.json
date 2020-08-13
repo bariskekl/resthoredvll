@@ -1091,6 +1091,34 @@
                 "kod_rank": "normal",
                 "k_adi": "tp ๖ۣۜRookie⁰⁷ ㄊ",
                 "date": "8/13/2020"
+            },
+            "SA-AS (EMOJİLİ-TEPKİLİ)": {
+                "isim": "SA-AS (EMOJİLİ-TEPKİLİ)",
+                "id": "rqtZ9teCCL",
+                "desc": "SA-AS KOMUDU EMOJİ VE TEPKİ ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "client.on('message', async msg => { \r\nif (msg.content.toLowerCase() === 'sa') {\r\n  msg.reply(\"**Aleyküm Selam,Hoşgeldin Kral.<a:elmas:713810223009235075>**\")\r\nawait msg.react('🇦'); \r\nmsg.react('🇸'); \r\n} \r\n});\r\n//Emoji Sizde Çıkmayacağı İçin Kendi Sunucuzdaki Emojiyi Kullanacaksınız O Yüzden Yerine <a:emojiadı:emojiid>",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "DEĞİŞEN KANAL AÇIKLAMASI": {
+                "isim": "DEĞİŞEN KANAL AÇIKLAMASI",
+                "id": "cqIGBKtetA",
+                "desc": "DEĞİŞEN KANAL AÇIKLAMASI",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "let yazılar = [\r\n\"\", //burdan yazmak istedikeriniz tırnak içine yazın \r\n\"\", //burdan yazmak istedikeriniz tırnak içine yazın \r\n\"\", //burdan yazmak istedikeriniz tırnak içine yazın \r\n\"\", //burdan yazmak istedikeriniz tırnak içine yazın \r\n];\r\nlet i = 0;\r\nsetInterval(() => {\r\nconst channel = client.channels.get(\"KANAL İD\").setTopic(yazılar[i])\r\ni++;\r\nif(i > yazılar.length) i = 0;\r\n}, 10000)  // burda değişme hızı (10000= 10 saniye)",
+                "komutlar_code": "YOK",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
             }
         }
     }
