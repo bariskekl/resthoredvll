@@ -1119,6 +1119,62 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/13/2020"
+            },
+            "AVATAR": {
+                "isim": "AVATAR",
+                "id": "PePrYyKrhi",
+                "desc": "AVATAR",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, args) => {\r\n     \r\nlet mention = message.mentions.users.first();\r\nlet sender = \"\";\r\n\r\nif (message.channel.guild.member(message.author).nickname == null) {\r\n  sender = message.author.username;\r\n} else {\r\n  sender = message.channel.guild.member(message.author).nickname;\r\n}\r\nif (mention != null || mention != undefined) {\r\n  var name = mention.username + \"'s \";\r\n  if (mention.username.endsWith(\"s\")) {\r\n    name = mention.username + \"' \";\r\n  }\r\n  const avatarEmbedOther = new Discord.RichEmbed()\r\n  .setAuthor(mention.username, mention.avatarURL)\r\n  .setColor(0x3)\r\n  .setImage(mention.avatarURL)\r\n .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL)\r\n  message.channel.sendEmbed(avatarEmbedOther);\r\n  return;\r\n} else {\r\n  const avatarEmbedYou = new Discord.RichEmbed()\r\n  .setAuthor(sender, message.author.avatarURL)\r\n  .setColor(0x3)\r\n  .setImage(message.author.avatarURL)\r\n  .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL)\r\n  message.channel.sendEmbed(avatarEmbedYou);\r\n  return;\r\n}\r\nmessage.channel.sendMessage(\"Bir hata oldu galiba?\");\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['avatar', 'pp'],\r\n  kategori: \"AVATAR KOMUTLARI\",\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'avatar',\r\n  description: 'Etiketlediğiniz veya kendinizin profil fotosunu gösterir.',\r\n  usage: '/pp <etiket> veya /avatar'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "ATAMIZIN SÖZLERİ": {
+                "isim": "ATAMIZIN SÖZLERİ",
+                "id": "JVOUJKsbML",
+                "desc": "ATAMIZIN SÖZLERİ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, params) => {\r\n    var sans = [\"Yurtta sulh, cihanda sulh!\", \"Ey yükselen yeni nesil, istikbal sizindir. Cumhuriyet'i biz kurduk, O'nu yükseltecek ve sürdürecek sizlersiniz.\", \"Ne mutlu Türküm diyene!\", \"Hayatta en hakiki mürşit ilimdir.\", \"Egemenlik verilmez, alınır.\", \"Şuna inanmak gerekir ki, dünya yüzünde gördüğümüz her şey kadının eseridir.\", \"Hayatı ve özgürlüğü için ölümü göze alan bir millet asla yenilmez\", \"Bir ulus sanattan ve sanatçıdan yoksunsa, tam bir hayata sahip olamaz.\", \"Vuruşa Vuruşa Ölmeyi Tercih Ederiz!\"];\r\n    var sonuc = sans[Math.floor((Math.random() * sans.length))];\r\n    const embed = new Discord.RichEmbed()\r\n    .addField(`Atatürk sözleri: `, `${sonuc}`)\r\n    .setTimestamp()\r\n    return message.channel.sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'atatürk-sözleri',\r\n  description: 'Atatürk ün sözlerini gönderir',\r\n  usage: 'atatürk-sözleri'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "ATA SÖZÜ": {
+                "isim": "ATA SÖZÜ",
+                "id": "lVSpfp9c8K",
+                "desc": "ATA SÖZÜ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\nconst fs = require(\"fs\");\r\nexports.run = (client, message, params) => {\r\nvar Random = [\r\n'**Acele ile menzil alınmaz.**',\r\n'**Acı söz insanı dininden çıkarır, tatlı söz yılanı deliğinden çıkarır.**',\r\n'**Akıllı sır saklar; aptal sır verir.**', '**Baba oğluna bir bağ bağışlamış, oğul babaya bir salkım üzüm vermemiş.**',\r\n'**Bağ dua değil, çapa dua ister.**',\r\n'**Leyleği kuştan mı sayarsın, yazın gelir, kışın gider.**',\r\n];\r\nvar atasozuver = Math.floor(Math.random()*Random.length);\r\nconst atasozu= new Discord.RichEmbed()\r\n.setDescription(`${Random[atasozuver]}`)\r\n.setColor(0xe2ff00)\r\n.setTimestamp()\r\nmessage.channel.send(atasozu)\r\n};\r\nexports.conf = {\r\nenabled: true,\r\nguildOnly: false,\r\naliases: [],\r\npermLevel: 0\r\n};\r\n\r\nexports.help = {\r\nname: 'atasözü',\r\ndescription: 'Bot Tarafından Rasgele Atasözleri Gönderilir',\r\nusage: 'atasozu'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "ALKIŞ": {
+                "isim": "ALKIŞ",
+                "id": "5oGSNYsdjD",
+                "desc": "JOKER SİZİ ALKIŞLAR",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = function(client, message, args) {\r\n  const embed = new Discord.RichEmbed()\r\n  .setAuthor(\"ŞAK ŞAK AMQ\")\r\n  .setColor(\"RANDOM\")\r\n  .setImage(\"https://thumbs.gfycat.com/WarpedAdmiredCormorant-size_restricted.gif\")\r\n  message.channel.send({embed});\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'alkış',\r\n  description: 'Bot Alkışlar',\r\n  usage: 'alkış'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
             }
         }
     }
