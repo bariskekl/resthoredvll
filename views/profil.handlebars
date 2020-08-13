@@ -30,25 +30,25 @@
       <div class="twPc-divStats">
         <h3>Görebildiği Kodlar</h3>
         <ul class="twPc-Arrange">
-          <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-secondary" href="/normal">Normal Kodlar</a></span></li>
+          <a href="/normal" style="text-decoration:none" class="index-button1"><i class="fas fa-code"></i> Normal Kodlar</a>
           {{#if perms.yetkili}}
-            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
-            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
-            <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+       <a href="/altin"  style="text-decoration:none" class="index-button2"><i class="fas fa-code"></i> Altın Kodlar</a>
+       <a href="/elmas" style="text-decoration:none" class="index-button3"><i class="fas fa-code"></i> Elmas Kodlar</a>
+       <a href="/hazir" style="text-decoration:none" class="index-button4"><i class="fas fa-code"></i> Hazır Sistemler</a>
           {{else}}
             {{#if perms.destekçi}}
-              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
-              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
-              <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+            <a href="/altin"  style="text-decoration:none" class="index-button2"><i class="fas fa-code"></i> Altın Kodlar</a>
+            <a href="/elmas" style="text-decoration:none" class="index-button3"><i class="fas fa-code"></i> Elmas Kodlar</a>
+            <a href="/hazir" style="text-decoration:none" class="index-button4"><i class="fas fa-code"></i> Hazır Sistemler</a>
             {{else}}
               {{#if perms.altin}}
-                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-warning" href="/altin">Altın Kodlar</a></span></li>
+            <a href="/altin"  style="text-decoration:none" class="index-button2"><i class="fas fa-code"></i> Altın Kodlar</a>
               {{/if}}
               {{#if perms.elmas}}
-                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-primary" href="/elmas">Elmas Kodlar</a></span></li>
+            <a href="/elmas" style="text-decoration:none" class="index-button3"><i class="fas fa-code"></i> Elmas Kodlar</a>
               {{/if}}
               {{#if perms.hazir}}
-                <li class="twPc-ArrangeSizeFit"><span class="twPc-StatValue"><a class="btn btn-outline-danger" href="/hazir">Hazır Sistemler</a></span></li>
+           <a href="/hazir" style="text-decoration:none" class="index-button4"><i class="fas fa-code"></i> Hazır Sistemler</a>
               {{/if}}
             {{/if}}
           {{/if}}  
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+
