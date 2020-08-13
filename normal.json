@@ -1231,6 +1231,20 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/13/2020"
+            },
+            "BALIK TUT": {
+                "isim": "BALIK TUT",
+                "id": "uPg1XMPDvG",
+                "desc": "BALIK TUTARSINIZ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message) => {\r\n   message.channel.send('Balık Tuttun Balığı Çekiyorsun..').then(message => {\r\n   var baliklar = ['``Sazan Tuttun!`` :fish:' ,'``Köpek Balığı Tuttun İyi Para Eder Sat Sat`` :D' ,'``Uskumru Tuttun!`` :fish:' ,'``Mezgit Tuttun! Havyarıda Var Hee`` :) :fish:' ,'``Japon Balığı Tuttun Yemeyi Düşünmüyorsun Herhalde?``' ,'``Hamsi Tuttun!`` :fish:' ,'``Levrek Tuttun!`` :fish:' ,'``Hiçbirşey Tutamadın Maalesef!`` :wastebasket:' ,'``Alabalık Tuttun!`` :fish:' ,'``Maalesef Balık Oltadan Kaçtı!`` :wastebasket:' ,'``İstavrit Tuttun!`` :fish:'];\r\n      var balik = baliklar[Math.floor(Math.random() * baliklar.length)];\r\n            message.edit(`${balik}`);\r\n });\r\n  }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['balık', 'balıktut', 'balık-tut'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'balıktut',\r\n  description: 'Balık Tutarsın.',\r\n  usage: 'balıktut'\r\n};\r\n   ",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
             }
         }
     }
