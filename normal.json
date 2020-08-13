@@ -1245,6 +1245,34 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/13/2020"
+            },
+            "BAN LİST": {
+                "isim": "BAN LİST",
+                "id": "SWRJTzQB9O",
+                "desc": "BAN",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nexports.run = (bot, message, args) => {\r\n  let Discord = require(\"discord.js\");\r\n  var userlist = message.guild.fetchBans();\r\n  userlist.then(collection => {\r\n    if (collection.first() == null) {\r\n      const embed = new Discord.RichEmbed()\r\n        .setTitle(\r\n          `:no_entry_sign: Banlanan Kullanıcı bulunamadı :no_entry_sign:`\r\n        )\r\n        .setColor(\"RED\");\r\n      message.channel.send({ embed });\r\n    } else {\r\n      const embed = new Discord.RichEmbed()\r\n        .setTitle(\":no_entry_sign: Banlistesi | Sunucudan Banlananlar\")\r\n        .setColor(\"RED\");\r\n      for (userlist of collection) {\r\n        var user = userlist[1];\r\n        embed.addField(` **${user.tag}**`, `_________ _____________`);\r\n      }\r\n      message.channel.send({ embed });\r\n    }\r\n  });\r\n};\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"banlılar\", \"banliste\"],\r\n  permLevel: 0\r\n};\r\nmodule.exports.help = {\r\n  name: \"banlist\",\r\n  description: \"Sunucundan Banlanan üyeleri gösterir.\",\r\n  usage: \"banlananlar\"\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "BOKS": {
+                "isim": "BOKS",
+                "id": "CP7JUf7Oce",
+                "desc": "BOKS MAKİNESİ ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst client = new Discord.Client();\r\n\r\nexports.run = (client, message, args) => {\r\n var cevaplar = ['Boks Makinesi Sonucu : **Boks makinesi kırıldı :D=3000** !', \r\n                 'Boks Makinesi Sonucu : **Çok yavaş vurdun bir daha dene :smile: 100** !', \r\n                 'Boks Makinesi Sonucu : **Eh,yani 900** !', \r\n                 'Boks Makinesi Sonucu : **1000** !',\r\n                 'Boks Makinesi Sonucu : **Acayip yavaş vurdun :nauseated_face: =50** !', \r\n                 'Boks Makinesi Sonucu : **Çok iyi! :boxing_glove: =2000** !', \r\n                 'Boks Makinesi Sonucu : **Daha iyisini yapabilirsin! :muscle: =700** !',\r\n                 'Boks Makinesi Sonucu : **Daha iyisini yapabilirsin! :muscle: = 550** !', \r\n                 'Boks Makinesi Sonucu : **Niye 1000 değil :D=999** !', \r\n                 'Boks Makinesi Sonucu : **Orta! :crown:=1250** !', \r\n                 'Boks Makinesi Sonucu : **Yine iyisin :white_check_mark: =1150** !', \r\n                 'Boks Makinesi Sonucu : **Fena değil :smile: =1200** !'\r\n                ];\r\n var cevap = cevaplar[Math.floor(Math.random() * cevaplar.length)]; \r\n const ping = new Discord.RichEmbed()\r\n .setColor(2828)\r\n .setDescription(\":boxing_glove: \" + cevap)\r\n return  message.channel.sendEmbed(ping)\r\n};\r\n\r\nexports.conf = {\r\n   enabled: true,\r\n   guildOnly: false,\r\n   aliases: ['boks-makinası'],\r\n   permLevel: 0\r\n };\r\n\r\n exports.help = {\r\n   name: 'boks-makinesi',\r\n   description: 'Boks makinesine vurur.',\r\n   usage: 'boks-makinesi'\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
             }
         }
     }
