@@ -251,8 +251,11 @@ font-family: cairo,sans-serif;
   color:#1b7ce3
 }
 .ccc{
-  margin:0 0 0 1285px;
+  margin:0 0 0 1200px;
 }
 .utku{
   margin:0 0 0 0;
+}
+body{
+  overflow-x: hidden !important;
 }
