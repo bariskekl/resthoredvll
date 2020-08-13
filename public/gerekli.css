@@ -8371,3 +8371,8 @@ a.text-dark:focus,a.text-dark:hover{
     border: 2px solid white;
     padding: 1px;
 }
+
+@media (max-width:800px) { 
+.banner {         
+display:none !important;     
+} }
