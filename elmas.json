@@ -88,6 +88,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "nwa",
                 "date": "8/11/2020"
+            },
+            "GUARD": {
+                "isim": "GUARD",
+                "id": "GZpe0Ru1eF",
+                "desc": "Botunuz için gelişmiş bir koruma sistemidir",
+                "modules": [
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "https://paste.ee/p/444lP\r\nKodlar bana ait değildir\r\n",
+                "komutlar_code": "pastede belirtilmiş",
+                "kod_rank": "elmas",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/13/2020"
             }
         }
     }
