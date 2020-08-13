@@ -1063,6 +1063,34 @@
                 "kod_rank": "normal",
                 "k_adi": "❦RC Deneyzamani",
                 "date": "8/13/2020"
+            },
+            "Dm duyuru": {
+                "isim": "Dm duyuru",
+                "id": "H9GM2PzHPa",
+                "desc": "istediğiniz gibi ayar",
+                "modules": [
+                    "komutlar kısmına dm.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/605858875358445707/a37d82077f8281e02bdda278cdc9cf40.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\nexports.run = (client, message, args) => {\r\n    const mesaj = args.slice(0).join(' ');\r\n   if (message.author.id !== \"kullanacak kişi id\") return message.channel.send(\"Bunu sahibim kullanabilir!\")\r\n    if(mesaj.length < 1) return message.reply(\"Özelden Atılacak Mesajı Yazın\")\r\n      try {\r\n        message.guild.members.forEach(m=> {\r\n         \r\n        m.send(mesaj)\r\n        console.log(`${m.user.tag} Kişisine Attım.`)\r\n         \r\n          }) \r\n        message.channel.send(\"Özelden Mesajlar Gönderildi\")\r\n          }\r\n        catch(e) {\r\n        return console.log(`Bir Kişiye Atamadım`)\r\n       \r\n      } \r\n    \r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'dmduyuru',\r\n  description: 'dm mesajı atar.',\r\n  usage: 'dmduyuru'\r\n};",
+                "komutlar_code": "https://alpha-hastebin.glitch.me/NQwFVB3yCA",
+                "kod_rank": "normal",
+                "k_adi": "tp ๖ۣۜRookie⁰⁷ ㄊ",
+                "date": "8/13/2020"
+            },
+            "Yardım Menüsü (MC-AT)": {
+                "isim": "Yardım Menüsü (MC-AT)",
+                "id": "raUxJ4smBx",
+                "desc": "Bu komut MC-AT yardım menüsü'dür ",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/605858875358445707/a37d82077f8281e02bdda278cdc9cf40.png",
+                "main_code": "//Main Yoktur Komutlara atılacaktır\r\nconst Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\nvar prefix = ayarlar.prefix;\r\nexports.run = (client, message, args) => {\r\n  \r\n    const codemarefi= new Discord.RichEmbed()\r\n    .setColor('GOLD')\r\n    .setAuthor(`MC-AT`, client.user.avatarURL) \r\n      .setDescription('**[Website](https://)**')\r\n.setThumbnail(client.user.avatarURL)\r\n      .addField('** !komut (14)**', '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')\r\n      .addField('** !komut (13)**', '`küfür`, `modlog`, `otorol`, `otoselam`, `reklam`, `sayaç`, `sil-üye`, `sil`, `vkanal`, `yasakla`, `yaz`')\r\n      .addField('** !komut (4)**', '`dmduyur`, `yaps`, `evals`, `yenile`')\r\n    .setFooter(``, client.user.avatarURL)\r\n    .setTimestamp()\r\n    message.channel.send(codemarefi).catch()\r\n\r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: ['y'],\r\n    permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: 'yardım',\r\n      category: 'MC-AT Yardım Menüsü',\r\n      description: 'yardım',\r\n};",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\nvar prefix = ayarlar.prefix;\r\nexports.run = (client, message, args) => {\r\n  \r\n    const codemarefi= new Discord.RichEmbed()\r\n    .setColor('GOLD')\r\n    .setAuthor(`MC-AT`, client.user.avatarURL) \r\n      .setDescription('**[Website](https://)**')\r\n.setThumbnail(client.user.avatarURL)\r\n      .addField('** !komut (14)**', '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')\r\n      .addField('** !komut (13)**', '`küfür`, `modlog`, `otorol`, `otoselam`, `reklam`, `sayaç`, `sil-üye`, `sil`, `vkanal`, `yasakla`, `yaz`')\r\n      .addField('** !komut (4)**', '`dmduyur`, `yaps`, `evals`, `yenile`')\r\n    .setFooter(``, client.user.avatarURL)\r\n    .setTimestamp()\r\n    message.channel.send(codemarefi).catch()\r\n\r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: ['y'],\r\n    permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: 'yardım',\r\n      category: 'MC-AT Yardım Menüsü',\r\n      description: 'yardım',\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "tp ๖ۣۜRookie⁰⁷ ㄊ",
+                "date": "8/13/2020"
             }
         }
     }
