@@ -2675,7 +2675,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
     background-color:#363636;
     background-clip:padding-box;
     border:1px solid rgba(0,0,0,.15);
-    border-radius:.25rem
+    border-radius:.25rem;
 }
 .dropdown-menu-left{
     right:auto;
@@ -2781,7 +2781,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
     content:""
 }
 .dropleft .dropdown-toggle::after{
-    display:none
+    display:none;
 }
 .dropleft .dropdown-toggle::before{
     display:inline-block;
@@ -2826,7 +2826,8 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .dropdown-item:focus,.dropdown-item:hover{
     color:#16181b;
     text-decoration:none;
-    background-color:#363636
+    background-color:#363636;
+    background-color:white;
 }
 
 
