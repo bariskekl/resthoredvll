@@ -1175,6 +1175,48 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/13/2020"
+            },
+            "ALİ VEFA OLURSUN ": {
+                "isim": "ALİ VEFA OLURSUN ",
+                "id": "NYqVk299pi",
+                "desc": "ALİ VEFA OLURSUN ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nvar Jimp = require('jimp');\r\n\r\nexports.run = async (client, message, args) => {\r\n    var user = message.mentions.users.first() || message.author;\r\n    if (!message.guild) user = message.author;\r\n    message.channel.send(`Fotoğraf işleniyor, lütfen bekleyin...`).then(m => m.delete(1000));\r\n\r\nJimp.read('https://cdn.discordapp.com/attachments/646293539713449996/685179152189489240/indir.jpg', (err, image) => {\r\n    image.resize(350, 250)\r\n    Jimp.read(user.avatarURL, (err, avatar) => {\r\n        avatar.resize(116, 116)\r\n        image.composite(avatar, 113, 2).write(`./img/rip/${client.user.id}-${user.id}.png`);\r\n        setTimeout(function() {message.channel.send(new Discord.Attachment(`./img/rip/${client.user.id}-${user.id}.png`));\r\n        }, 1000);\r\n    });\r\n\r\n});\r\n}\r\nexports.conf = {\r\n enabled: true,\r\n guildOnly: false,\r\n aliases: [],\r\n permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n name: 'alivefa-ol'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "1v1": {
+                "isim": "1v1",
+                "id": "G8LzmszSVM",
+                "desc": "DÜELLO ATARSINIZ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst { stripIndents } = require('common-tags');\r\nconst { randomRange, verify } = require('../util/Util.js');\r\n\r\nexports.run = async (client, message, args) => {\r\n  \r\n  this.fighting = new Set();\r\n  \r\n\tlet opponent = message.mentions.users.first()\r\n\tif (!opponent) return message.reply(\"Oynamak istediğin kişiyi etiketlemelisin!\")\r\n  \r\n  if (opponent.bot) return message.reply('Botlar ile oynayamazsın!');\r\n  if (opponent.id === message.author.id) return message.reply('Kendin ile düello atamazsın!');\r\n\t\tif (this.fighting.has(message.channel.id)) return message.reply('Kanal başına sadece bir düello meydana gelebilir.');\r\n\t\tthis.fighting.add(message.channel.id);\r\n\t\ttry {\r\n\t\t\tif (!opponent.bot) {\r\n                await message.channel.send(`${opponent}, düello isteği geldi. Düello'yu kabul ediyor musun? (\\`evet\\` veya \\`hayır\\` olarak cevap veriniz.)`);\r\n\t\t\t\tconst verification = await verify(message.channel, opponent);\r\n\t\t\t\tif (!verification) {\r\n\t\t\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\t\t\treturn message.channel.send(`Düello kabul edilmedi...`);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tlet userHP = 500;\r\n\t\t\tlet oppoHP = 500;\r\n\t\t\tlet userTurn = false;\r\n\t\t\tlet guard = false;\r\n\t\t\tconst reset = (changeGuard = true) => {\r\n\t\t\t\tuserTurn = !userTurn;\r\n\t\t\t\tif (changeGuard && guard) guard = false;\r\n\t\t\t};\r\n\t\t\tconst dealDamage = damage => {\r\n\t\t\t\tif (userTurn) oppoHP -= damage;\r\n\t\t\t\telse userHP -= damage;\r\n\t\t\t};\r\n\t\t\tconst forfeit = () => {\r\n\t\t\t\tif (userTurn) userHP = 0;\r\n\t\t\t\telse oppoHP = 0;\r\n\t\t\t};\r\n\t\t\twhile (userHP > 0 && oppoHP > 0) { // eslint-disable-line no-unmodified-loop-condition\r\n\t\t\t\tconst user = userTurn ? message.author : opponent;\r\n\t\t\t\tlet choice;\r\n\t\t\t\tif (!opponent.bot || (opponent.bot && userTurn)) {\r\n\t\t\t\t\tawait message.channel.send(stripIndents`\r\n\t\t\t\t\t\t${user}, ne yapmak istersin? \\`saldır\\`, \\`savun\\`, \\`ultra güç\\`, veya \\`kaç\\`?\r\n\t\t\t\t\t\t**${message.author.username}**: ${userHP} :heartpulse:\r\n\t\t\t\t\t\t**${opponent.username}**: ${oppoHP} :heartpulse:\r\n\t\t\t\t\t`);\r\n\t\t\t\t\tconst filter = res =>\r\n\t\t\t\t\t\tres.author.id === user.id && ['saldır', 'savun', 'ultra güç', 'kaç'].includes(res.content.toLowerCase());\r\n\t\t\t\t\tconst turn = await message.channel.awaitMessages(filter, {\r\n\t\t\t\t\t\tmax: 1,\r\n\t\t\t\t\t\ttime: 30000\r\n\t\t\t\t\t});\r\n\t\t\t\t\tif (!turn.size) {\r\n\t\t\t\t\t\tawait message.reply(`Üzgünüm ama, süre doldu!`);\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n\t\t\t\t\tchoice = turn.first().content.toLowerCase();\r\n\t\t\t\t} else {\r\n\t\t\t\t\tconst choices = ['saldır', 'savun', 'ultra güç'];\r\n\t\t\t\t\tchoice = choices[Math.floor(Math.random() * choices.length)];\r\n\t\t\t\t}\r\n\t\t\t\tif (choice === 'saldır') {\r\n\t\t\t\t\tconst damage = Math.floor(Math.random() * (guard ? 10 : 100)) + 1;\r\n\t\t\t\t\tawait message.channel.send(`${user}, **${damage}** hasar vurdu!`);\r\n\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'savun') {\r\n\t\t\t\t\tawait message.channel.send(`${user}, kendisini süper kalkan ile savundu!`);\r\n\t\t\t\t\tguard = true;\r\n\t\t\t\t\treset(false);\r\n\t\t\t\t} else if (choice === 'ultra güç') {\r\n\t\t\t\t\tconst miss = Math.floor(Math.random() * 4);\r\n\t\t\t\t\tif (!miss) {\r\n\t\t\t\t\t\tconst damage = randomRange(100, guard ? 150 : 300);\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`);\r\n\t\t\t\t\t\tdealDamage(damage);\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tawait message.channel.send(`${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`);\r\n\t\t\t\t\t}\r\n\t\t\t\t\treset();\r\n\t\t\t\t} else if (choice === 'kaç') {\r\n\t\t\t\t\tawait message.channel.send(`${user}, kaçtı! Korkak!`);\r\n\t\t\t\t\tforfeit();\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t} else {\r\n\t\t\t\t\tawait message.reply('Ne yapmak istediğini anlamadım.');\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n            const winner = userHP > oppoHP ? message.author : opponent;\r\n\t\t\treturn message.channel.send(`Oyun bitti! Tebrikler, **${winner}** kazandı! \\n**${message.author.username}**: ${userHP} :heartpulse: \\n**${opponent.username}**: ${oppoHP} :heartpulse:`);\r\n\t\t} catch (err) {\r\n\t\t\tthis.fighting.delete(message.channel.id);\r\n\t\t\tthrow err;\r\n\t\t}\r\n  }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['1vs1', '1v1', 'savaş'],\r\n  permLevel: `Yetki gerekmiyor.`\r\n};\r\n\r\nexports.help = {\r\n  name: 'düello',\r\n  category: \"eğlence\",\r\n  description: 'İstediğiniz bir kişi ile düello atarsınız!',\r\n  usage: 'düello <@kullanıcı>'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
+            },
+            "ATIŞ YAPARSINIZ ": {
+                "isim": "ATIŞ YAPARSINIZ ",
+                "id": "OvC5sTwXKI",
+                "desc": "ATIŞ YAPARSINIZ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_4ab802fd3712d08dae3b5de4defc35b4.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, args) => {\r\n  if (!message.guild) {\r\n  const ozelmesajuyari = new Discord.RichEmbed()\r\n  .setColor(0xFF0000)\r\n  .setTimestamp()\r\n  .setAuthor(message.author.username, message.author.avatarURL)\r\n  .addField(':warning: Uyarı :warning:', '`kafasınasık` adlı komutu özel mesajlarda kullanamazsın.');\r\n  return message.author.sendEmbed(ozelmesajuyari); }\r\n  let guild = message.guild\r\n  let reason = args.slice(1).join(' ');\r\n  let user = message.mentions.users.first();\r\n  if (message.mentions.users.size < 1) return message.reply('Kimin kafasınası kacağını yazmalısın.').catch(console.error);\r\n    message.channel.send('Kafasına sıkılıyor....')\r\n      .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/fWHUqt'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/fWHUqt'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/fWHUqt'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/fWHUqt'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/fWHUqt'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))\r\n      .then(nmsg => nmsg.edit('https://goo.gl/91Y2az'))\r\n      .then(nmsg => nmsg.edit(`${Random[kafasınasık]}`));\r\n     var Random = [\r\n      'Tam isabet',\r\n      'Iskaladın tekrar dene.',\r\n    ];\r\n    var kafasınasık = Math.floor(Math.random()*Random.length);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'ateşle',\r\n  description: 'İstediğiniz kişinin kafasına sıkar.',\r\n  usage: 'İstediğiniz kişinin kafasına sıkar.'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/13/2020"
             }
         }
     }
