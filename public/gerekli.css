@@ -944,7 +944,12 @@ pre code{
     .col-md-4{
         -ms-flex:0 0 33.333333%;
         flex:0 0 33.333333%;
-        max-width:33.333333%
+        max-width:33.333333%;
+        float:left;
+        margin-bottom: 100px;  
+        margin-left: 20%;
+        margin-right:20%;
+      
     }
     .col-md-5{
         -ms-flex:0 0 41.666667%;
