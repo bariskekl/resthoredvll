@@ -82,6 +82,7 @@ pre code {
     min-width: 100%;
     padding: 0;
     table-layout: auto;
+  margin: 10px 20px;
 }
 ul.twPc-Arrange {
     list-style: outside none none;
