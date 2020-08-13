@@ -1,14 +1,17 @@
 <title>Fynx Code | {{member.user.username}}</title> <br><br> <div class="container">
     <div>
 
+      <center>
       <a href="https://discordapp.com/users/{{member.user.id}}" class="twPc-avatarLink">
         <img alt="Avatar" src="{{avatarURL}}" class="twPc-avatarImg">
       </a>
       <div class="twPc-divUser">
         <div class="twPc-divName">
           {{member.user.username}}
-        </div>       
-      <div class="twPc-divStats">
+        </div>
+
+        
+        <div class="twPc-divStats">
         <ul class="twPc-Arrange">
           <a href="/normal" style="text-decoration:none" class="index-button1"><i class="fas fa-code"></i> Normal Kodlar</a>
           {{#if perms.yetkili}}
@@ -34,15 +37,9 @@
           {{/if}}  
         </ul>
       </div>
-    </div>
-  </div>
-</div>
-
-
-Paylaştığı Kodlar & Yardım Ettiği Kodlar ( {{#if stats}} {{stats.paylasilan}} {{/if}}  )
-
-
-        <span>
+        
+<hr>
+                <span>
           {{#if perms.yetkili}}
             <span>Kod Paylaşım Yetkilisi</span>
           {{else}}
@@ -53,3 +50,13 @@ Paylaştığı Kodlar & Yardım Ettiği Kodlar ( {{#if stats}} {{stats.paylasila
             {{/if}}
           {{/if}}
         </span>
+    </div>
+        
+        
+  </div>
+</div>
+
+
+Paylaştığı Kodlar & Yardım Ettiği Kodlar ( {{#if stats}} {{stats.paylasilan}} {{/if}}  )
+
+
