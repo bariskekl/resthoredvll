@@ -1049,6 +1049,20 @@
                 "kod_rank": "normal",
                 "k_adi": "€LĘCTUS",
                 "date": "8/12/2020"
+            },
+            "Prefix": {
+                "isim": "Prefix",
+                "id": "u7m1fLePJw",
+                "desc": "Prefix değiştirir",
+                "modules": [
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "Kodun main dosayası yoktur message.js ısmı vardır\r\nconst db = require('quick.db')\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require('../ayarlar.json');\r\nlet talkedRecently = new Set();\r\nmodule.exports = async message => {\r\n\r\n  let client = message.client;\r\n  if (message.author.bot) return;\r\n\r\n  let prefix = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix \r\n    if (!message.content.startsWith(prefix)) return;\r\n  let command = message.content.split(' ')[0].slice(ayarlar.prefix.length);\r\n  let params = message.content.split(' ').slice(1);\r\n  let perms = client.elevation(message);\r\n  let cmd;\r\n  if (client.commands.has(command)) {\r\n    cmd = client.commands.get(command);\r\n  } else if (client.aliases.has(command)) {\r\n    cmd = client.commands.get(client.aliases.get(command));\r\n  }\r\n    \r\n  if (cmd) {\r\n    if (perms < cmd.conf.permLevel) return;\r\n    cmd.run(client, message, params, perms);\r\n  }\r\n\r\n};",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db');\r\nconst ayarlar = require('../z/ayarlar/ayarlar.json')\r\nexports.run = async (client, message, args) => {\r\nlet a = ayarlar.prefix\r\n    let p = await db.fetch(`prefix.${message.guild.id}`) || ayarlar.prefix\r\n let o = await db.fetch(`prefix.${message.guild.id}`)\r\n  if(!message.member.hasPermission(\"MANAGE_MESSAGES\")) return message.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Bu Komutu Kullanabilmek İçin Mesajları Yönet Yetkisine Sahip Olmalısınız. Şuanki Prefix: ${p}`));\r\n  \r\nif(args[0] === \"ayarla\") {\r\nif(o) { return message.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Ayarlanmış Şeyi Tekrar Ayarlıyamassın. Şuanki Prefix: ${p} Sıfırlamak İçin ${p}prefix sıfırla`));\r\n      }\r\nif(!args[1]) return message.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Bir Prefix Girip Tekrar Dene. Şuanki Prefix: ${p}`));\r\ndb.set(`prefix.${message.guild.id}`, args[1])\r\nmessage.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Prefix Başarıyla Ayarlandı. Şuanki Prefix: ${args[1]}`));\r\n}\r\n    if(args[0] === \"sıfırla\") {\r\n    if(!o) {\r\n       return message.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Ayarlanmayan Prefixi Sıfırlayamazsınız. Şuanki Prefix: ${p}`));\r\n    }\r\n    db.delete(`prefix.${message.guild.id}`)       \r\n   return message.channel.send(new Discord.RichEmbed()\r\n.setDescription(`Prefix Başarıyla Sıfırlandı. Şuanki Prefix: ${a}`));\r\n  }\r\n \r\n if(!args[0]) return message.channel.send(new Discord.RichEmbed()        \r\n.setDescription(`Prefix Ayarlamak İçin ${p}prefix ayarla <prefix> / Sıfırlamak İçin ${p}prefix sıfırla Şuanki Prefix: ${p}`));\r\n  \r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: ['p'],\r\n    permLevel: 0\r\n};\r\n  \r\n  exports.help = {\r\n    name: 'prefix',      \r\n    description: '',\r\n    usage: 'prefix <giriceğiniz şey>'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/13/2020"
             }
         }
     }
