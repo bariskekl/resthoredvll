@@ -425,6 +425,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Ryawֆδﾎ∞",
                 "date": "8/14/2020"
+            },
+            "Müq kayıt sistemi ": {
+                "isim": "Müq kayıt sistemi ",
+                "id": "ISvPFUTAX7",
+                "desc": "Sunucunuza girenleri daha öncedeki sunucularda kaydoluşunu kopyalayarak oto kayıt eder",
+                "modules": [
+                    "Bot token Kanal id User id"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/743104158076502037/94647ee1adbdcc67dd1f52a891c00d95.png",
+                "main_code": "glitc.me oftershorcks coming",
+                "komutlar_code": "Burayı doldurub",
+                "kod_rank": "topluluk",
+                "k_adi": "Dark_Lord",
+                "date": "8/14/2020"
             }
         }
     }
