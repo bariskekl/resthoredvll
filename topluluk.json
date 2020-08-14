@@ -59,17 +59,17 @@
             },
             "Reboot": {
                 "isim": "Reboot",
-                "id": "xUEPmS7gWQ",
-                "desc": "Botunuzun Yeniden Başlamasını Sağlar",
+                "id": "ODVIHvb8tB",
+                "desc": "botu yeniden başlatır",
                 "modules": [
                     "discord.js"
                 ],
-                "icon": "https://cdn.discordapp.com/avatars/714377057693335603/6adec31843fb7c4643dfe88d7c581784.png",
-                "main_code": "Main Dosyası Yok",
-                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message) {\r\n\r\n  if (!message.member.hasPermission(\"MANAGE_SERVER\")) return message.channel.send(`Bu komutu kullanabilmek için \"\\`Sunucuyu Yönet\\`\" yetkisine sahip olmalısın.`);\r\n\r\n    message.channel.send(\"Bot: yeniden başlatılıyor\").then(msg => {\r\n        console.log(\"[BOT]Yeniden başlatılıyor\");\r\n        process.exit(0);\r\n    });\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n  aliases: []\r\n};\r\n\r\nexports.help = {\r\n  name: 'reboot', \r\n  description: 'Botu yeniden başlatır',\r\n  usage: 'reboot'\r\n};",
+                "icon": "https://cdn.discordapp.com/avatars/555434831794798592/1061feacfed738925075d1e2f1024d9c.png",
+                "main_code": "main yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\nmessage.delete();\r\nmessage.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Reboot;').setDescription('Eğer Kabul Ediyorsan => `onay` <=').setFooter('15 Saniye İçinde İptal!', client.user.avatarURL).setTimestamp())\r\n.then(() => {\r\nmessage.channel.awaitMessages(response => response.content === 'onay', {\r\nmax: 1,\r\ntime: 15000,\r\nerrors: ['time'],\r\n})\r\n.then((collected) => {\r\n  message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Reboot;').setDescription('Onay Verildi! Yeniden Başlatılıyorum...').setFooter('TheRenk', client.user.avatarURL).setTimestamp()).then(msg => {\r\nconsole.log(`BOT : Yeniden Başlatılıyor...`);\r\nprocess.exit(0);\r\n})\r\n})\r\n.catch(() => {\r\n  message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Yeniden Başlatma;').setDescription('Komut İptal Edildi!').setFooter('', client.user.avatarURL).setTimestamp())\r\n});\r\n});\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 4\r\n};\r\n\r\nexports.help = {\r\n  name: 'reboot',\r\n  description: 'Botu Yeniden Başlatır.',\r\n  usage: 'reboot'\r\n};",
                 "kod_rank": "topluluk",
-                "k_adi": "BDGO-By_DARKx",
-                "date": "8/7/2020"
+                "k_adi": "RTUK",
+                "date": "8/14/2020"
             },
             "Ayarlamalı Sa-As": {
                 "isim": "Ayarlamalı Sa-As",
