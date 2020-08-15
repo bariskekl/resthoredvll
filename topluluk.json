@@ -453,6 +453,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "⋟ xLondon",
                 "date": "8/15/2020"
+            },
+            "Reklamengel": {
+                "isim": "Reklamengel",
+                "id": "1FJnIgxTFE",
+                "desc": "Sunucuda reklam yapıldığı görünce engeller.",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/735082731909939241/4cddbe12f9b51203e43a1587b92fb08d.png",
+                "main_code": "//------------------------------------------------------------------\\\\\r\nclient.on(\"message\", msg => {\r\n  const reklama = db.fetch(`linkK_${msg.channel.id}`)\r\n  if (!reklama) return\r\n  var regex = new RegExp(\"^(http[s]?:\\\\/\\\\/(www\\\\.)?|ftp:\\\\/\\\\/(www\\\\.)?|www\\\\.){1}([0-9A-Za-z-\\\\.@:%_\\+~#=]+)+((\\\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\\\?(.)*)?\");\r\n    if (regex.test(msg.content) == true) {\r\n    if (msg.member.hasPermission(\"BAN_MEMBERS\")) {\r\n      return;\r\n    }\r\n    \r\n   msg.delete()\r\n    const Embed = new Discord.RichEmbed()\r\n    .setColor(\"BLUE\")\r\n    .setAuthor(\"Botun İsimini Yazabilirsin\", client.user.avatarURL)\r\n    .setDescription(`${msg.author} **Reklam Yasak Bunu Bilmiyormusun**!`)\r\n    msg.channel.send(Embed).then(sil => sil.delete(15000))\r\n  }\r\n})\r\n\r\nclient.on(\"message\", msg => {\r\n  const reklama = db.fetch(`reklamK_${msg.channel.id}`)\r\n  if (!reklama) return\r\n    const kelime = [\"discord.gg\", \"discord.me\", \"discordapp.com\", \"discord.io\", \"discord.tk\"];\r\n  if (kelime.some(reklam => msg.content.includes(reklam))) {\r\n    if (msg.member.hasPermission(\"BAN_MEMBERS\")) {\r\n      return;\r\n    }\r\n    \r\n   msg.delete()\r\n    const Embed = new Discord.RichEmbed()\r\n    .setColor(\"BLUE\")\r\n    .setAuthor(\"Botun İsimini Yazabilirsin\", client.user.avatarURL)\r\n    .setDescription(`${msg.author} **Reklam Yasak Bunu Bilmiyormusun**!`)\r\n    msg.channel.send(Embed).then(sil => sil.delete(15000))\r\n  }\r\n})\r\n\r\n//------------------------------------------------------------------\\\\",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = (client, message, args) => { \r\n      if (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(` Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n  if (db.fetch(`reklamK_${message.channel.id}`)) {\r\n  return message.reply(`Sanırım bu özellik zaten açıkmış :slight_smile:`)\r\n}\r\n  db.set(`reklamK_${message.channel.id}`, message.channel.id)\r\n  message.reply(`Bu özellik **başarıyla açıldı.**`)\r\n};\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: [], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'reklamengel',\r\n  description: 'reklamengel', \r\n  usage: 'reklamengel'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "Erkin",
+                "date": "8/15/2020"
+            },
+            "Reklamkapat": {
+                "isim": "Reklamkapat",
+                "id": "nBBVtP7EkV",
+                "desc": "Sunucuda reklam korumasını kapatır.",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/735082731909939241/4cddbe12f9b51203e43a1587b92fb08d.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\nexports.run = (client, message, args) => { \r\n      if (!message.member.hasPermission(\"ADMINISTRATOR\")) return message.channel.send(` Bu komutu kullanabilmek için \"\\`Yönetici\\`\" yetkisine sahip olmalısın.`);\r\n  if (!db.fetch(`reklamK_${message.channel.id}`)) {\r\n  return message.reply(`Sanırım bu özellik zaten kapalıymış :slight_smile:`)\r\n}\r\n  db.delete(`reklamK_${message.channel.id}`)\r\n  message.reply(`Bu özellik **sadece bu kanalda** devre dışı bırakıldı.`)\r\n};\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: [], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'reklamkapat',\r\n  description: 'reklamkapat', \r\n  usage: 'reklamkapat'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "Erkin",
+                "date": "8/15/2020"
             }
         }
     }
