@@ -1301,6 +1301,20 @@
                 "kod_rank": "normal",
                 "k_adi": "❦RC Deneyzamani",
                 "date": "8/15/2020"
+            },
+            "Dil sistemi": {
+                "isim": "Dil sistemi",
+                "id": "pGBtlEAACd",
+                "desc": "Dil sistemi kodu",
+                "modules": [
+                    "quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "client.on('message', async message => {\r\n  let dil = await db.fetch(`dil_${message.guild.id}`);\r\n   if (message.content ===  'komut'){\r\n if (dil === undefined){\r\n    message.channel.send(\"Diliniz Ayarlanmamış\")\r\n    }\r\n     if (dil === \"en\"){\r\n    message.channel.send(\"en\")\r\n    } else if (dil === 'tr'){\r\n   \r\n    message.channel.send(\"tr\")\r\n  }\r\n  \r\n   }\r\n})\r\nörnek kod :const db = require(\"quick.db\")\r\nconst ayarlar = require(\"../ayarlar.json\")\r\nexports.run = async function(client, message, args) {\r\nlet dil = await db.fetch(`dil_${message.guild.id}`);\r\nif (dil ==undefined){\r\n //Ayarlanmamis ise\r\nmessage.channel.send('Pingim '+ client.ping+\"ms\") \r\n\r\n}\r\nif (dil == 'tr'){\r\n //dil turkce ise\r\nmessage.channel.send('Pingim '+ client.ping+\"ms\") \r\n}\r\nif (dil == 'en'){\r\n //dil ingilizce ise ise\r\nmessage.channel.send('My Ping'+ client.ping+\"ms\") \r\n\r\n}\r\n};\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nmodule.exports.help = {\r\n  name: 'ping',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "komutlar_code": "const db = require(\"quick.db\")\r\nconst ayarlar = require(\"../ayarlar.json\")\r\nexports.run = async function(client, message, args) {\r\nlet dil = await db.fetch(`dil_${message.guild.id}`);\r\nconst secenek = args[0]\r\n  if (!message.member.hasPermission(\"MANAGE_GUILD\")) return message.channel.send(`/**SUNUCUYU-YONET**/ yetkin yok.`)\r\nif(!secenek) return message.channel.send(ayarlar.prefix+'dilayarla tr yada en şeklinde kullanın')\r\n\r\nif(secenek == 'tr'){\r\ndb.set(`dil_${message.guild.id}`, 'tr')\r\nmessage.channel.send('Botun Dili Turkce Olarak Kaydedildi!')\r\n}\r\n\r\nif(secenek == 'en'){\r\ndb.set(`dil_${message.guild.id}`, 'en')\r\nmessage.channel.send('Botun Dili Ingilizce Olarak Kaydedildi!')\r\n}   \r\nif(secenek == 'sıfırla'){\r\ndb.delete(`dil_${message.guild.id}`)\r\nmessage.channel.send('Botun Dili Sifirlandi!')\r\n}    \r\n};\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n\r\nmodule.exports.help = {\r\n  name: 'botdil',\r\n  description: '',\r\n  usage: ''\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/15/2020"
             }
         }
     }
