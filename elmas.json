@@ -102,6 +102,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "❦RC Deneyzamani",
                 "date": "8/13/2020"
+            },
+            "Rol kur": {
+                "isim": "Rol kur",
+                "id": "ScmbX3zeiZ",
+                "desc": "Sunucu için birkaç rol kurar",
+                "modules": [
+                    "ms"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "client.on('message', async message => {\r\nconst ms = require('ms');\r\nconst args = message.content.slice(prefix.length).trim().split(/ +/g);\r\nconst command = args.shift().toLowerCase();\r\nlet u = message.mentions.users.first() || message.author;\r\nif (command === \"rol-kur\") {\r\nif (message.guild.channels.find(channel => channel.name === \"Bot Kullanımı\")) return message.channel.send(\" Bot Paneli Zaten Ayarlanmış.\")\r\nmessage.channel.send(`Bot Gerekli Rollerin kurulumu başlatılsın mı? başlatılacak ise **evet** yazınız.`)\r\nif (!message.member.hasPermission('ADMINISTRATOR'))\r\nreturn message.channel.send(\" Bu Kodu `Yönetici` Yetkisi Olan Kişi Kullanabilir.\");\r\nmessage.channel.awaitMessages(response => response.content === 'evet', {\r\nmax: 1,\r\ntime: 10000,\r\nerrors: ['time'],\r\n})\r\n\r\nmessage.guild.createRole({\r\nname: '💎 | Sunucu Sahip',\r\ncolor: 'ff0000',\r\npermissions: [\r\n\"ADMINISTRATOR\",\r\n]\r\n})\r\n\r\n\r\nmessage.guild.createRole({\r\nname: '🌺 | Genel Sorumlu',\r\ncolor: '49ff00',\r\npermissions: [\r\n\"MANAGE_GUILD\",\r\n\"MANAGE_ROLES\",\r\n\"MUTE_MEMBERS\",\r\n\"DEAFEN_MEMBERS\",\r\n\"MANAGE_MESSAGES\",\r\n\"MANAGE_NICKNAMES\",\r\n\"KICK_MEMBERS\"\r\n]\r\n})\r\n\r\nmessage.guild.createRole({\r\nname: '💮 | Yönetici',\r\ncolor: 'ffb400',\r\npermissions: [\r\n\"MANAGE_GUILD\",\r\n\"MANAGE_ROLES\",\r\n\"MUTE_MEMBERS\",\r\n\"DEAFEN_MEMBERS\",\r\n\"MANAGE_MESSAGES\",\r\n\"MANAGE_NICKNAMES\"\r\n]\r\n})\r\n  \r\n  \r\nmessage.guild.createRole({\r\nname: '🔨 | Partner Sorumlusu',\r\ncolor: '#FF4D00'\r\n})\r\n\r\nmessage.guild.createRole({\r\nname: '💸 | Booster',\r\ncolor: '#FF77FF',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '♾️ | Mustafa Kemal Atatürk',\r\ncolor: '#ED9121',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '🎑 | Developer',\r\ncolor: '#FFCC00',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '🌻 | Family',\r\ncolor: '#FF8C69',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '⚜ | Partner',\r\ncolor: '#002FA7'\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '🔫 | Tek Tabanca',\r\ncolor: '#00CCCC',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '💖 | Sevgiler',\r\ncolor: '#CD00CC',\r\n})\r\n  \r\nmessage.guild.createRole({\r\nname: '🌌 | Kız',\r\ncolor: 'd300ff',\r\n})\r\n\r\nmessage.guild.createRole({\r\nname: '🌃 | Erkek',\r\ncolor: '#0000FF',\r\n})\r\n\r\nmessage.guild.createRole({\r\nname: '🛡 | Discord Bot',\r\ncolor: '0006ff',\r\n})\r\n\r\nmessage.channel.send(\"⍫ Gerekli Roller 🌹\")\r\n\r\n\r\n}\r\n});",
+                "komutlar_code": "Not : prefixi tanımlamayı unutmayın ! kodu be yazmadım alıntıdır\r\n",
+                "kod_rank": "elmas",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/15/2020"
             }
         }
     }
