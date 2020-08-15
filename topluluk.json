@@ -439,6 +439,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Dark_Lord",
                 "date": "8/14/2020"
+            },
+            "Fynx": {
+                "isim": "Fynx",
+                "id": "anLV9aH9Q1",
+                "desc": "Fynx",
+                "modules": [
+                    "   https://discord.gg/asCQAEA"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/699263405537886310/3d3840633aca105e93e749325370d318.png",
+                "main_code": "   https://discord.gg/asCQAEA",
+                "komutlar_code": "   https://discord.gg/asCQAEA",
+                "kod_rank": "topluluk",
+                "k_adi": "⋟ xLondon",
+                "date": "8/15/2020"
             }
         }
     }
