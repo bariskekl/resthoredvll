@@ -116,6 +116,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "❦RC Deneyzamani",
                 "date": "8/15/2020"
+            },
+            "Shard": {
+                "isim": "Shard",
+                "id": "eQzHq5TfnI",
+                "desc": "Shard kodudur.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "sonra pacacge.jsonu da main ve start kısmını şöyle yapın\r\n  \"main\": \"shard.js\",\r\n  \"scripts\": {\r\n    \"start\": \"node shard.js\"\r\n  ",
+                "komutlar_code": "Shard.js\r\nconst Discord = require('discord.js');\r\nconst shard= new Discord.ShardingManager('./main.js', { // main dosyanızın ismi: server.js - main.js - bot.js olabilir\r\n    totalShards: 2, // shard sayısı ya da auto yazılabilir // 2k veya 1k sunucularda ideali: 2'dir.\r\n    token: 'token' // token\r\n});\r\n\r\nshard.spawn(); // S2Ş ahanda burada başlıyor\r\n\r\nshard.on('launch', shard => {\r\n  console.log(`${shard.id} IDli shard başarıyla başlatıldı .`)\r\n});\r\n\r\nsetTimeout(() => {\r\n    console.log(\"yeniden başlatılıyor..\")\r\n    shard.broadcastEval(\"process.exit()\");\r\n}, 21600000);",
+                "kod_rank": "elmas",
+                "k_adi": "❦RC Deneyzamani",
+                "date": "8/15/2020"
             }
         }
     }
