@@ -525,6 +525,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "✧ Hujix",
                 "date": "8/15/2020"
+            },
+            "Davet Kodu": {
+                "isim": "Davet Kodu",
+                "id": "Oh8j13KsZb",
+                "desc": "Prefix-davet Yazan Kişilere Botunuzun Davet Linkini Verir",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/719839583701041154/646a1c3fec6dc3dc1891c3cb2d737ceb.png",
+                "main_code": "Komutlar Klasörüne",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\nmodule.exports.run = async (client, message) => {\r\n  \r\n  const embed = new Discord.RichEmbed()\r\n    .setColor(\"BLUE\")\r\n    .addField(`Botu Sunucunuza Davet Edin !`, `[Tıkla](Botunuzun Davet Linkini Buraya Atınız)`)\r\n.setFooter(client.user.username, client.user.avatarURL)\r\n\r\n  message.channel.send(embed);\r\n};\r\n\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['davet'],\r\n  permLevel: 0,\r\n  kategori: \"sunucu\"\r\n};\r\n\r\nmodule.exports.help = {\r\n  name: \"davet\",\r\n  description: \"davet\",\r\n  usage: \"davet\"\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "™ ' Âłøñę 🎈",
+                "date": "8/15/2020"
             }
         }
     }
