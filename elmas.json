@@ -144,6 +144,20 @@
                 "kod_rank": "elmas",
                 "k_adi": "Gweep Creative",
                 "date": "8/15/2020"
+            },
+            "Şüpheli/güvenli rol verme": {
+                "isim": "Şüpheli/güvenli rol verme",
+                "id": "F8ITsgO2N4",
+                "desc": "Şüpheli Hesabı şüpheli güvenli hesaba güvenli rolü veriri rol verir",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700436078414528583/364c14505ff2fedb73f9a482bedee841.png",
+                "main_code": "client.on(\"guildMemberAdd\", async (member) => {\r\n      let gkisi = client.users.get(member.id);\r\n      const ktarih = new Date().getTime() - gkisi.createdAt.getTime();\r\n\r\n    if (ktarih < 604800000) {\r\n    member.addRole(\"\") //şüpheli rol id\r\n\r\n    }else{\r\n\r\n    member.addRole(\"\") //güvenli rol id\r\n\r\n      }\r\n});\r\n",
+                "komutlar_code": "Kodu paylaşan arkadaşımız :FuelLow#3365",
+                "kod_rank": "elmas",
+                "k_adi": "❖❦RC Deneyzamani",
+                "date": "8/15/2020"
             }
         }
     }
