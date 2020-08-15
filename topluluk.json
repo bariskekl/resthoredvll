@@ -539,6 +539,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "™ ' Âłøñę 🎈",
                 "date": "8/15/2020"
+            },
+            "unban": {
+                "isim": "unban",
+                "id": "sfzLtM1A44",
+                "desc": "ID sini verdiğiniz kişinin banını kaldırır",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/578227672879202306/71084d9e81ae2607cbff7a8465934bcb.png",
+                "main_code": "Main Dosyası Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nmodule.exports.run = async (client, message, args) => {\r\n  message.delete();\r\n  let fynx_code = args[0]\r\nif(!fynx_code) return message.reply('** Doğru kullanım : ``-unban <ID>`` **')\r\n  message.guild.unban(fynx_code);\r\n  message.react(\"✅\")\r\n};\r\nexports.conf = {\r\n  enabled:false,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permlevel: 2\r\n};\r\nexports.help = {\r\n  name: \"unban\",\r\n  description: \"Herhangi bir kullanıcının banını açarsınız.\",\r\n  usage: \"unban kullanıcı id\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "raveN ☨",
+                "date": "8/15/2020"
             }
         }
     }
