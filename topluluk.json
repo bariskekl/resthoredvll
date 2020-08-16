@@ -553,6 +553,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "raveN ☨",
                 "date": "8/15/2020"
+            },
+            "Botu Sesli Kanala Çekme": {
+                "isim": "Botu Sesli Kanala Çekme",
+                "id": "fHVGrXnL9H",
+                "desc": "Botu Kendinizizde Bulunduğu Sesli Kanala Çeker",
+                "modules": [
+                    "Normal"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/728863497915596872/a_90fa983d71c1c3d00e66e9d92fc40a4a.png",
+                "main_code": "https://discord.gg/SeRK6mM",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db')\r\n\r\nmodule.exports.run = async (bot, message, args) => {\r\n     if (!message.member.hasPermission('MANAGE_SERVER')) return message.channel.send('You need to `Manage Server` permission.');\r\n      const voiceChannel = message.member.voiceChannel;\r\n    if (!voiceChannel) return this.client.embed('noVoiceChannel', message);\r\n    const permissions = voiceChannel.permissionsFor(message.guild.me).toArray();\r\n    if (!permissions.includes('CONNECT')) return this.client.embed('noPerms-CONNECT', message);\r\n    if (!permissions.includes('SPEAK')) return this.client.embed('noPerms-SPEAK', message);\r\n    voiceChannel.join();\r\n    this.client.embed('summoned', message);\r\n\r\n} \r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: ['join', 'katıl'],\r\n    permLevel: 2\r\n}\r\n\r\nexports.help = {\r\n    name: 'katıl',\r\n    description: 'Log kanalını belirler.',\r\n    usage: '&kanal <#kanal>'\r\n}",
+                "kod_rank": "topluluk",
+                "k_adi": "ٴMiesa ꋿ",
+                "date": "8/16/2020"
             }
         }
     }
