@@ -1359,6 +1359,20 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/16/2020"
+            },
+            "oto-rol": {
+                "isim": "oto-rol",
+                "id": "cltzIcproR",
+                "desc": "millete oto-rol atar",
+                "modules": [
+                    "node.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/739482264160960573/da4cd3741e3a13fec09535c26fe8e4e9.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\n\r\nexports.run = async (client, message, args) => {\r\n  \r\n  let rol = message.mentions.roles.first();\r\n  if (!rol) return message.reply('Otorol için bir rol etiketlemelisiniz!')\r\n  \r\n  db.set(`otoR_${message.guild.id}`, rol.id)\r\n  \r\n  const emb = new Discord.RichEmbed()\r\n  .setAuthor(client.user.username, client.user.displayAvatarURL)\r\n  .setDescription(`Otorol Rol'ü başarıyla ${rol} olarak ayarlandı!`)\r\n  .setColor(\"RANDOM\")\r\n  .setTimestamp()\r\n  message.channel.send(emb)\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['otorol-ayarla','oto-rol-ayarla'],\r\n  permLevel: 2,\r\n  kategori: \"ayar\"\r\n}\r\nexports.help = {\r\n  name: 'otorol',\r\n  description: 'Sunucuya özel otorol ayarlar.',\r\n  usage: '!!otorol'\r\n}",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\n\r\nexports.run = async (client, message, args) => {\r\n  \r\n  let rol = message.mentions.roles.first();\r\n  if (!rol) return message.reply('Otorol için bir rol etiketlemelisiniz!')\r\n  \r\n  db.set(`otoR_${message.guild.id}`, rol.id)\r\n  \r\n  const emb = new Discord.RichEmbed()\r\n  .setAuthor(client.user.username, client.user.displayAvatarURL)\r\n  .setDescription(`Otorol Rol'ü başarıyla ${rol} olarak ayarlandı!`)\r\n  .setColor(\"RANDOM\")\r\n  .setTimestamp()\r\n  message.channel.send(emb)\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['otorol-ayarla','oto-rol-ayarla'],\r\n  permLevel: 2,\r\n  kategori: \"ayar\"\r\n}\r\nexports.help = {\r\n  name: 'otorol',\r\n  description: 'Sunucuya özel otorol ayarlar.',\r\n  usage: '!!otorol'\r\n}",
+                "kod_rank": "normal",
+                "k_adi": "Atreus",
+                "date": "8/16/2020"
             }
         }
     }

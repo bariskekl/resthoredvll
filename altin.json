@@ -131,6 +131,20 @@
                 "kod_rank": "altin",
                 "k_adi": "`TosunPasa",
                 "date": "8/16/2020"
+            },
+            "GELİŞMİŞ KORONA (6 ÜLKE)": {
+                "isim": "GELİŞMİŞ KORONA (6 ÜLKE)",
+                "id": "ZMpeRLJWWM",
+                "desc": "GELİŞMİŞ KORONA (6 ÜLKE)",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_b292684469d773a7fb570db527d23971.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst snekfetch = require('snekfetch');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nexports.run = async (client, message, args) => {\r\n  if(!args[0]) return message.channel.send(\r\n  new Discord.RichEmbed()\r\n  .setDescription(`Bir ülke girmeyi unuttunuz Örnek: ${ayarlar.prefix}korona TR(TÜRKİYE) ,CH(CHINA), US(A.B.D), FR (FRANSA), NE(NORVEÇ), IS(İSVEÇ)`));\r\n  let a = args[0].toLowerCase()\r\n  .replace('türkiye', 'TR')\r\n  .replace('çin', 'CH')\r\n  .replace('amerika', 'US')\r\n  .replace('japonya', 'JP')\r\n  .replace('fransa', 'FR')\r\n  .replace('norveç', 'NE')\r\n  .replace('isveç',  'IS')\r\n  \r\n    const text = await snekfetch.get(`https://thevirustracker.com/free-api?countryTotal=${a}`);\r\n    const body = text.body;\r\n  let ülk = body.countrydata[0].info.title\r\n\r\n    let darkcode = new Discord.RichEmbed()\r\n    .setColor('0x00000')\r\n    .setTitle('COVID-19')\r\n    .setDescription(`**COVID-19 İstatics** **${ülk}**`)\r\n    .setThumbnail('https://dfcby4322olzt.cloudfront.net/wp-content/uploads/2020/03/1800x1200_coronavirus_1.jpg')\r\n    .addField(' **_ :mask: Toplam vaka sayısı_**:', body.countrydata[0].total_cases, true)\r\n    .addField(' **_ :heartpulse: İyileşen_**:', body.countrydata[0].total_recovered, true)\r\n    .addField(' **_ :white_check_mark: Enfekte_**:', body.countrydata[0].total_active_cases, true)\r\n    .addField(' **_ :skull: Ölümler_**:', body.countrydata[0].total_deaths, true)\r\n    .addField(' **_ :mask: Bugün yeni vakalar_**:', body.countrydata[0].total_new_cases_today, true)\r\n    .addField(' **_ :skull: Bugün yeni ölümler_**:', body.countrydata[0].total_new_deaths_today, true)\r\n    .addField(' **_ :x: Ciddi Vakalar_**:', body.countrydata[0].total_serious_cases, true)\r\n    .setTimestamp()\r\n    .setFooter('COVID-19 ', client.user.avatarURL);\r\n    message.channel.send(darkcode);\r\n};\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: false, \r\n  aliases: [\"corona\", \"covid\", \"covid19\"],\r\n  permLevel: 0 \r\n};\r\n\r\nexports.help = {\r\n  name: 'korona'\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "`TosunPasa",
+                "date": "8/16/2020"
             }
         }
     }
