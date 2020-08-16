@@ -567,6 +567,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "ٴMiesa ꋿ",
                 "date": "8/16/2020"
+            },
+            "Bot Koruma": {
+                "isim": "Bot Koruma",
+                "id": "2LRnDJwF28",
+                "desc": "Sunucunuza Sizden Habersiz Gelen Botları Atar",
+                "modules": [
+                    "Normal"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/728863497915596872/a_90fa983d71c1c3d00e66e9d92fc40a4a.png",
+                "main_code": "https://discord.gg/SeRK6mM",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst db = require(\"quick.db\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nexports.run = async (client, message, args) => {\r\n  //ٴMiesa ꋿ#1881\r\n\r\n  let prefix =\r\n    (await require(\"quick.db\").fetch(`prefix_${message.guild.id}`)) ||\r\n    ayarlar.prefix;\r\n  if (!message.member.hasPermission(\"MANAGE_GUILD\"))\r\n    return message.channel.send(\r\n      `Bu Komutu Kullanabilmek İçin \"\\`Sunucuyu Yönet\\`\" Yetkisine Sahip Olmalısın.`\r\n    );\r\n\r\n  let aktif = await db.fetch(`bottemizle_${message.guild.id}`);\r\n  if (aktif) {\r\n    db.delete(`bottemizle_${message.guild.id}`);\r\n    message.channel.send(`🛑 **Koruma Sistemi Başarılı Bir Şekilde Devre Dışı Bırakıldı.** 🛑`);\r\n  }\r\n\r\n  if (!aktif) {\r\n    db.set(`bottemizle_${message.guild.id}`, \"aktif\");\r\n    message.channel.send(`✅ **Koruma Sistemi Başarılı Bir Şekilde Aktif Edildi.**`);\r\n  }\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"koruma-sistemi\", \"koruma\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"bot-koruma-sistemi\",\r\n  description:\r\n    \"Sunucuya Bot Eklendiğinde Atılmasını Sağlayan Sistemi Başarıyla Aktifleştirirsiniz/Kapatırsınız.\",\r\n  usage: \"koruma-sistemi | Code Resort\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "ٴMiesa ꋿ",
+                "date": "8/16/2020"
+            },
+            "dm duyuru ": {
+                "isim": "dm duyuru ",
+                "id": "ykOACuJGIy",
+                "desc": "dm duyuru",
+                "modules": [
+                    "dıscord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/723296120091967668/a_f671ba280b356220d0513cc901faf88f.png",
+                "main_code": "const Discord = require('discord.js');\r\nconst ayarlar = require('../ayarlar.json');\r\n\r\nvar prefix = ayarlar.prefix;\r\n\r\nexports.run = (client, message, args) => {\r\n    const mesaj = args.slice(0).join(' ');\r\n   if (message.author.id !== \"kullanacak kişi id\") return message.channel.send(\"Bunu sahibim kullanabilir!\")\r\n    if(mesaj.length < 1) return message.reply(\"Özelden Atılacak Mesajı Yazın\")\r\n      try {\r\n        message.guild.members.forEach(m=> {\r\n         \r\n        m.send(mesaj)\r\n        console.log(`${m.user.tag} Kişisine Attım.`)\r\n         \r\n          }) \r\n        message.channel.send(\"Özelden Mesajlar Gönderildi\")\r\n          }\r\n        catch(e) {\r\n        return console.log(`Bir Kişiye Atamadım`)\r\n       \r\n      } \r\n    \r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'dmduyuru',\r\n  description: 'dm mesajı atar.',\r\n  usage: 'dmduyuru'\r\n};",
+                "komutlar_code": "Yok",
+                "kod_rank": "topluluk",
+                "k_adi": "!ᘔmreˢʳᶰ",
+                "date": "8/16/2020"
             }
         }
     }
