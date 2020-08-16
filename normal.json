@@ -1329,6 +1329,20 @@
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/16/2020"
+            },
+            "Bot Atılma Mesaj": {
+                "isim": "Bot Atılma Mesaj",
+                "id": "TOitoGoJW5",
+                "desc": "Bot Bir Sunucudan Atıldığında Ayarladığınız Kanalda Gösterir Komut V12 Dir !!!!!",
+                "modules": [
+                    "modül yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "client.on(\"guildCreate\", guild => {\r\n  let log = client.channels.cache.find(x => x.id === \"Kanal İd\")  ;\r\n  const embed = new Discord.MessageEmbed()\r\n    .setAuthor(\"Yeni bir sunucuya eklendim!\")\r\n    .setThumbnail(\r\n      guild.iconURL ||\r\n        \"https://cdn.discordapp.com/attachments/663343412031782947/670657121423196201/mafya_gif.gif\"\r\n    )\r\n    .setColor(\"GREEN\")\r\n         .addField(\"» Sunucu İsmi:\", `**${guild.name}**`)\r\n    .addField(\"» Sunucu ID:\", `\\`\\`\\`${guild.id}\\`\\`\\``)\r\n    .addField(\r\n      \"Sunucu Bilgisi:\",\r\n      `**Sunucu Sahibi: \\`${guild.owner}\\`\\nSunucu Bölgesi: \\`${guild.region}\\`\\nÜye Sayısı: \\`${guild.members.cache.size}\\`\\nKanal Sayısı: \\`${guild.channels.cache.size}\\`**`\r\n    )\r\n    .setTimestamp()\r\n    .setFooter(client.user.username, client.user.avatarURL);\r\n  log.send(embed);\r\n});",
+                "komutlar_code": "Tek Main",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/16/2020"
             }
         }
     }
