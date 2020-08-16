@@ -1343,6 +1343,22 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/16/2020"
+            },
+            "AYARLANABİLİR READY": {
+                "isim": "AYARLANABİLİR READY.JS(İZLİYOR-OYNUYOR-DİNLİYOR)",
+                "id": "c6BNn9yVNH",
+                "desc": "AYARLANABİLİR READY.JS(İZLİYOR-OYNUYOR-DİNLİYOR)",
+                "modules": [
+                    "discord.js",
+                    "moment",
+                    "chalk"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_b292684469d773a7fb570db527d23971.png",
+                "main_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(`Fynx Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
+                "komutlar_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(`Fynx Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "`TosunPasa",
+                "date": "8/16/2020"
             }
         }
     }
