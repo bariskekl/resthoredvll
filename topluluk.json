@@ -271,17 +271,17 @@
             },
             "Rol Koruma": {
                 "isim": "Rol Koruma",
-                "id": "jbU1ViN2EV",
-                "desc": "Yetkiliniz Sizi Tuzağı Düşürüp Herhangi bi kanalı silmeye çalışırsa,silemez! ve sildiği rol yeniden oluşturur",
+                "id": "zUxCTomWka",
+                "desc": "Herhangi Bir Rol Silme Durumunda Rolü Tekrar Geri Kurar.",
                 "modules": [
-                    "Bu Kod bot.js ye atılıcak"
+                    "altın"
                 ],
-                "icon": "https://cdn.discordapp.com/avatars/426784890948943873/a_de5eb4e62a4d6da5c0d1881373fd3861.png",
-                "main_code": "//rolkoruma\r\n///////\r\n  client.on(\"roleDelete\", async(role , guild) => {\r\n  let a = await db.fetch(`rol_${role.guild.id}`);\r\n    if (a == \"açık\") {\r\n  role.guild.createRole({name: role.name, color: role.color,  permissions: role.permissions}) \r\n        role.guild.owner.send(` **${role.name}** Adlı Rol Sılındı Aynısından Ben Tekrar Olusturdum Efendim`)\r\n\r\n  \r\n}\r\n})\r\n",
-                "komutlar_code": "Ğ",
+                "icon": "https://cdn.discordapp.com/avatars/728863497915596872/a_90fa983d71c1c3d00e66e9d92fc40a4a.png",
+                "main_code": "const db = require(\"quick.db\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\n//ٴMiesa ꋿ#1881\r\n\r\nexports.run = async (client, message, args) => {\r\n  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || \"e?\";\r\n\r\n  if (!args[0]) {\r\n    const embed = new Discord.RichEmbed()\r\n      .setColor(\"BLACK\")\r\n      .setTitle(\"🔒 Rol Koruma Sistemi 🔒\")\r\n      .setDescription(\r\n        \"**🛑 Hatalı kullanım! Örnek Kullanım !rol-koruma aç & kapat**\"\r\n      );\r\n\r\n    message.channel.send(embed);\r\n    return;\r\n  }\r\n  let rol = await db.fetch(`rolk_${message.guild.id}`);\r\n  if (args[0] == \"aç\") {\r\n    if (rol) {\r\n      const embed = new Discord.RichEmbed()\r\n        .setColor(\"BLACK\")\r\n        .setTitle(\"🔒 Rol Koruma Sistemi 🔒\")\r\n        .setDescription(\"**🔎 Rol Koruma Sistemi Zaten Açık!**\");\r\n\r\n      message.channel.send(embed);\r\n      return;\r\n    } else {\r\n      db.set(`rolk_${message.guild.id}`, \"acik\");\r\n      const embed = new Discord.RichEmbed()\r\n        .setColor(\"BLACK\")\r\n        .setTitle(\"🔒 Rol Koruma Sistemi 🔒\")\r\n        .setDescription(\"**🏷 Rol Koruma Siste Aktif! Silinen Rolleri Tekrar Kuracağım.**\");\r\n\r\n      message.channel.send(embed);\r\n    }\r\n  } else if (args[0] == \"kapat\") {\r\n    db.delete(`rolk_${message.guild.id}`);\r\n    const embed = new Discord.RichEmbed()\r\n      .setColor(\"BLACK\")\r\n      .setTitle(\"🔒 Rol Koruma Sistemi 🔒\")\r\n      .setDescription(\"**🛑 Rol Koruma Sistemi Kapatıldı !**\");\r\n\r\n    message.channel.send(embed);\r\n  }\r\n};\r\n//ٴMiesa ꋿ#1881\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"rol-koruma\"],\r\n  permLevel: 3,\r\n  kategori: \"koruma\"\r\n};\r\n\r\nexports.help = {\r\n  name: \"rol-koruma\",\r\n  description: \"Rol koruma sistemini açıp kapatırsınız.\",\r\n  usage: \"rol-koruma\"\r\n}; ",
+                "komutlar_code": "• Kod Yapımcı : ٴMiesa ꋿ#1881\r\n• İyi Günlerde Kullanmanız Dileğiyle.\r\n• Fynx Code • 3.7K",
                 "kod_rank": "topluluk",
-                "k_adi": "∾`Leͥgeͣnͫd",
-                "date": "8/11/2020"
+                "k_adi": "ٴMiesa ꋿ",
+                "date": "8/16/2020"
             },
             "Sayaç hg": {
                 "isim": "Sayaç hg",
