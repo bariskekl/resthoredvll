@@ -651,6 +651,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "⋟ xMoonie",
                 "date": "8/16/2020"
+            },
+            "Oy verdim": {
+                "isim": "Oy verdim",
+                "id": "5JVrovpPz1",
+                "desc": "Oy verdim komutu",
+                "modules": [
+                    "'oy veren kişiye rolü verir'"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/520564502136356864/null.png",
+                "main_code": "Main dosyası yok",
+                "komutlar_code": "const emran = require(\"discord.js\"); \r\nconst client = new emran.Client();\r\n\r\nconst DBL = require(\"dblapi.js\");\r\nconst emirhan = new DBL('DBL TOKENİNİZ', client);\r\n\r\n/*\r\n\r\nhttps://top.gg/api/docs#mybots Sitesinden DBL Tokeninizi alabilirsiniz.\r\n\r\n*/\r\n\r\nexports.run = (client, message) => {\r\n    emirhan.hasVoted(message.author.id).then(voted => { \r\n        if (!voted) {\r\n            message.channel.send( new emran.MessageEmbed()\r\n.setTitle(\"Hata\")\r\n.setColor(\"RED\")\r\n.setDescription(\"Sunucumuz da özel role sahip olabilmen için ilk öncelikle oy vermen gerekiyor!\")\r\n.addField(\"Oy Vermek için:\", `[Buraya Tıkla!](https://top.gg/bot/${client.user.id}/vote)`)\r\n.setFooter(client.user.username)\r\n)\r\n\r\n        } else {\r\n  message.channel.send( new emran.MessageEmbed()\r\n.setTitle(\"Başarılı!\")\r\n.setDescription(\"Sunucumuz da başarılı bir şekilde rolünüz verildi!\")\r\n.setColor(\"GREEN\")\r\n)\r\n            message.member.roles.add(\"Rol ID\")    //Vericek rol id.\r\n        }\r\n    })\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"oyverdim\"],\r\n  permLevel: 0,\r\n   \r\n};\r\n\r\nexports.help = {\r\n  name: 'oy-verdim',\r\n description: 'Bota oy verirseniz rolü kaparsınız',\r\n usage: 'oyverdim'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "BayUslanmazٴ",
+                "date": "8/16/2020"
             }
         }
     }
