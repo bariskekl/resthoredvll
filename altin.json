@@ -117,6 +117,20 @@
                 "kod_rank": "altin",
                 "k_adi": "€LĘCTUS",
                 "date": "8/11/2020"
+            },
+            "İLK YAZAN KAZANIR": {
+                "isim": "İLK YAZAN KAZANIR",
+                "id": "3Q9o9Eti8p",
+                "desc": "VERİLEN KELİMEYİ İLK YAZAN KAZANIR",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_b292684469d773a7fb570db527d23971.png",
+                "main_code": "YOK",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst { delay, randomRange, verify } = require('../util/Util');\r\nconst words = ['çikolata', 'odun', 'bomba', 'süt', 'şimşek', 'yıldırım', 'patlat', 'savaş', 'kelime', 'yok et', 'bilmem', 'öldür', 'sonsuzluk', 'gerçek', 'kırmızı arabanın yanındaki mavi arabanın önündeki sarı arabanın yanindaki eflatun araba'];\r\n\r\nexports.run = async (client, msg, args) => {\r\n  \r\n  this.fighting = new Set();\r\n  \r\n  let opponent = msg.mentions.users.first()\r\n\tif (!opponent) return msg.reply(\"Oynamak istediğin kişiyi etiketlemelisin!\")\r\n  \r\n  if (opponent.bot) return msg.reply('Botlar ile oynayamazsın!');\r\n\t\tif (opponent.id === msg.author.id) return msg.reply('Kendin ile kapışamassın!');\r\n\t\tif (this.fighting.has(msg.channel.id)) return msg.reply('Kanal başına sadece bir meydan okuma gelebilir!');\r\n\t\tthis.fighting.add(msg.channel.id);\r\n\t\ttry {\r\n\t\t\tawait msg.channel.send(`${opponent}, bu meydan okumayı kabul ediyor musun? (\\`evet\\` veya \\`hayır\\` olarak cevap veriniz.)`);\r\n\t\t\tconst verification = await verify(msg.channel, opponent);\r\n\t\t\tif (!verification) {\r\n\t\t\t\tthis.fighting.delete(msg.channel.id);\r\n\t\t\t\treturn msg.reply('Meydan okuman reddedildi...');\r\n\t\t\t}\r\n\t\t\tawait msg.channel.send('Hazırlanın kelime geliyor...').then(m => {m.delete(3000)});\r\n\t\t\tconst word = words[Math.floor(Math.random() * words.length)];\r\n\t\t\tawait msg.channel.send(`ŞİMDİ \\`${word.toUpperCase()}\\` YAZ!`);\r\n\t\t\tawait msg.channel.send(`_Kelimeyi tamamen küçük harfle yazınız._`);\r\n\t\t\tconst filter = res => [opponent.id, msg.author.id].includes(res.author.id) && res.content.toLowerCase() === word;\r\n\t\t\tconst winner = await msg.channel.awaitMessages(filter, {\r\n\t\t\t\tmax: 1,\r\n\t\t\t\ttime: 30000\r\n\t\t\t});\r\n\t\t\tthis.fighting.delete(msg.channel.id);\r\n\t\t\tif (!winner.size) return msg.channel.send('Kimse kazanmadı, berabere bitti!');\r\n\t\t\treturn msg.channel.send(`Hızlıymışsın! Tebrikler ${winner.first().author} Kazandın!`);\r\n\t\t} catch (err) {\r\n\t\t\tthis.fighting.delete(msg.channel.id);\r\n\t\t\tthrow err;\r\n\t\t}\r\n  \r\n  }\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['yazı-yarışı', 'ilk-yazan-kazanır','kelime-yarışması'],\r\n  permLevel: 0,\r\n  kategori: \"eğlence\"\r\n};\r\n\r\nexports.help = {\r\n  name: 'yazan-kazanır',\r\n  category: \"eğlence\",\r\n  description: 'Botun verdiği kelimeyi ilk yazan kazanır oyunu!',\r\n  usage: 'yazan-kazanır [@kullanıcı]'\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "`TosunPasa",
+                "date": "8/16/2020"
             }
         }
     }
