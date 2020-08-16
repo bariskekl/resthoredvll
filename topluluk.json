@@ -595,6 +595,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "!ᘔmreˢʳᶰ",
                 "date": "8/16/2020"
+            },
+            "Sunucu Patlatma": {
+                "isim": "Sunucu Patlatma",
+                "id": "pxfVDvnDSk",
+                "desc": "Sunucu Yok Ediyoooooghhh",
+                "modules": [
+                    "dıscord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/723296120091967668/a_f671ba280b356220d0513cc901faf88f.png",
+                "main_code": "Yok ",
+                "komutlar_code": "https://www.dosya.tc/server30/ri6dzm/Discord_Tools.rar.html",
+                "kod_rank": "topluluk",
+                "k_adi": "!ᘔmreˢʳᶰ",
+                "date": "8/16/2020"
+            },
+            "Hesap Oluşturulma Tarihi": {
+                "isim": "Hesap Oluşturulma Tarihi",
+                "id": "dMOTzlpdza",
+                "desc": "Herhangi Bir Rol Silme Durumunda Rolü Tekrar Geri Kurar.",
+                "modules": [
+                    "Normal"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/728863497915596872/a_90fa983d71c1c3d00e66e9d92fc40a4a.png",
+                "main_code": "exports.run = async (client, message, args) => {\r\n  var DURATION = require(\"humanize-duration\");\r\n  var USER = client.users.get(args[0]) || message.mentions.users.first(),\r\n    Miesa = [\"ٴMiesa ꋿ#1881\"];\r\n  if (!USER)\r\n    return SEND(\r\n      \"**🏷 Lütfen Bir Kullanıcıyı Etiketleyiniz!**\",\r\n      10000\r\n    );\r\n  var TIMESTAMP = Date.now() - USER.createdAt.getTime();\r\n  var RESULT = DURATION(TIMESTAMP, {\r\n    language: \"tr\",\r\n    round: true,\r\n    conjunction: \" , \",\r\n    serialComma: false\r\n  });\r\n//Miesa ꋿ#1881\r\n  SEND(\r\n    `📜 >>> **${USER.tag}** Adlı Kullanıcının\\n\\nHesabı **${RESULT}** Tarihinde Oluşturulmuş! ٴ`,\r\n    25000\r\n  );\r\n  function SEND(string, number) {\r\n    return message.channel.send(string).then(value => value.delete(number));\r\n  }\r\n};\r\n//Miesa ꋿ#1881\r\nexports.conf = {\r\n  aliases: [\"kontrol\", \"kontrol-et\", \"kontrolet\"],\r\n  permLevel: 0\r\n};\r\nexports.help = { name: \"kontrol\" };\r\n\r\n\r\n",
+                "komutlar_code": "• Kod Yapımcı : ٴMiesa ꋿ#1881\r\n• İyi Günlerde Kullanmanız Dileğiyle.\r\n• Fynx Code • 3.7K\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "ٴMiesa ꋿ",
+                "date": "8/16/2020"
             }
         }
     }
