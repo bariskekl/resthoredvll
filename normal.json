@@ -811,17 +811,17 @@
             },
             "botun pingi": {
                 "isim": "botun pingi",
-                "id": "JKStz32CgA",
-                "desc": "bot pingini gösterir v12 dir v11 i yakında !!",
+                "id": "mZ6vlUciFE",
+                "desc": "V11 Dir Bir Önceki V12 !!!!!!!",
                 "modules": [
                     "discord.js"
                 ],
-                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/bff6a2c99454da31646f9436cd885582.png",
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
                 "main_code": "yok",
-                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = async (client, message, args, color) => {\r\n \r\n    let start = Date.now(); message.channel.send( 'Yükleniyor! ').then(message => {\r\n    let diff = (Date.now() - start);\r\n    let API = (client.ws.ping).toFixed(2)\r\n\r\n        let embed = new Discord.MessageEmbed()\r\n        .setTitle(`Bot Pingim !`)\r\n        .setColor(0xff2f2f)\r\n        .addField(\"📶 Mesaj Gecikmesi\", `${diff}ms`, true)\r\n        .addField(\"💻 Bot Gecikmesi\", `${API}ms`, true)\r\n        message.edit(embed);\r\n\r\n    });\r\n\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [\"ping\"],\r\n    permLevel: 0\r\n  };\r\n\r\nexports.help = {\r\n    name: 'bping',\r\n    category: 'INFO'\r\n}\r\n",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = async (client, message, args, color) => {\r\n \r\n    let start = Date.now(); message.channel.send( 'Yükleniyor! ').then(message => {\r\n    let diff = (Date.now() - start);\r\n    let API = (client.ping).toFixed(2)\r\n\r\n        let embed = new Discord.MessageEmbed()\r\n        .setTitle(`Bot Pingim !`)\r\n        .setColor(0xff2f2f)\r\n        .addField(\"📶 Mesaj Gecikmesi\", `${diff}ms`, true)\r\n        .addField(\"💻 Bot Gecikmesi\", `${API}ms`, true)\r\n        message.edit(embed);\r\n\r\n    });\r\n\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [\"ping\"],\r\n    permLevel: 0\r\n  };\r\n\r\nexports.help = {\r\n    name: 'bping',\r\n    category: 'INFO'\r\n}\r\n",
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
-                "date": "8/11/2020"
+                "date": "8/16/2020"
             },
             "Coffing Dance": {
                 "isim": "Coffing Dance",

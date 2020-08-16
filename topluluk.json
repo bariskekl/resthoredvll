@@ -623,6 +623,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "ٴMiesa ꋿ",
                 "date": "8/16/2020"
+            },
+            "ready": {
+                "isim": "ready.js",
+                "id": "wLZ7kiwRyS",
+                "desc": "yayında- oynuyor kodu",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/709690707253657600/a_0f1d7f0a4b48888f74b8d32b0807f33f.png",
+                "main_code": "YOK",
+                "komutlar_code": "const chalk = require('chalk');\r\nconst moment = require('moment');\r\nconst Discord = require('discord.js');\r\nconst settings = require('../ayarlar.json');\r\n\r\nvar prefix = settings.prefix;\r\n\r\nmodule.exports = client => {\r\n  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ONLİNE`);\r\n  \r\n  client.user.setStatus(\"online\");\r\n  var game = [\r\n    \r\n    \" :zap: Aurøra Bot v1.1 \",\r\n    \" :fire: 7/24 Online \",\r\n    \" :fire: a!yardım-a!yenilikler :fire:\",\r\n    \":zap: Aurøra Beta v1.1 :fire:\",\r\n    \"Developed by ⋟ xMoonie\" /////buraya istediğini yazabilirsin.\r\n    ];\r\n\r\n    setInterval(function() {\r\n\r\n        var random = Math.floor(Math.random()*(game.length-0+1)+0);\r\n\r\n        client.user.setGame(game[random], \"https://www.twitch.tv/xmoonie6730\");\r\n        }, 4000); // 4000ms = 3.5 saniye istediğiniz gibi hızını değisebilirsiniz\r\n  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT ONLİNE.`);\r\n                  \r\n  /////xMoonie                \r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "⋟ xMoonie",
+                "date": "8/16/2020"
+            },
+            "yayında-oynuyor": {
+                "isim": "yayında-oynuyor",
+                "id": "VocdIYGTxi",
+                "desc": "yayında- oynuyor events/ready.js atılcak",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/709690707253657600/a_0f1d7f0a4b48888f74b8d32b0807f33f.png",
+                "main_code": "YOK",
+                "komutlar_code": "const chalk = require('chalk');\r\nconst moment = require('moment');\r\nconst Discord = require('discord.js');\r\nconst settings = require('../ayarlar.json');\r\n\r\nvar prefix = settings.prefix;\r\n\r\nmodule.exports = client => {\r\n  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ONLİNE`);\r\n  \r\n  client.user.setStatus(\"online\");\r\n  var game = [\r\n    \r\n    \" :zap: Aurøra Bot v1.1 \",\r\n    \" :fire: 7/24 Online \",\r\n    \" :fire: a!yardım-a!yenilikler :fire:\",\r\n    \":zap: Aurøra Beta v1.1 :fire:\",\r\n    \"Developed by ⋟ xMoonie\" /////buraya istediğini yazabilirsin.\r\n    ];\r\n\r\n    setInterval(function() {\r\n\r\n        var random = Math.floor(Math.random()*(game.length-0+1)+0);\r\n\r\n        client.user.setGame(game[random], \"https://www.twitch.tv/xmoonie6730\");\r\n        }, 4000); // 4000ms = 3.5 saniye istediğiniz gibi hızını değisebilirsiniz\r\n  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT ONLİNE.`);\r\n                  \r\n  /////xMoonie                \r\n};\r\n\r\n///////////events/ready.js atılcak!!",
+                "kod_rank": "topluluk",
+                "k_adi": "⋟ xMoonie",
+                "date": "8/16/2020"
             }
         }
     }
