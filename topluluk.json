@@ -679,6 +679,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "⌨  Ed1s✦n B4CK3R",
                 "date": "8/16/2020"
+            },
+            "Ban Komutu": {
+                "isim": "Ban Komutu",
+                "id": "BdBKG4fGfP",
+                "desc": "Sorun Olursa Kusura Bakmayın Kendi Botumda Kullanıyorum",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/739511216547823708/b52bfe62baa215a7f5c57b8f2b892f87.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\nmodule.exports = {\r\n    komut: \"ban\", \r\n    açıklama: \".\",\r\n    kategori: \"komutlar\", \r\n    alternatifler: ['.'],\r\n    kullanım: \"!ban\", \r\n    yetki: \"BAN_MEMBERS\",\r\n    args: [\r\n        {\r\n           anahtar:\"banlanacakkisi\",\r\n           soru:\"Hangi üyeyi banlamak istiyorsunuz?\",\r\n           tip:\"kullanici\"  \r\n        },\r\n        {\r\n            anahtar:\"banlanmanedeni\",\r\n            soru:\"Bu kişyi neden banlamak istiyorsunuz?\",\r\n            tip:\"yazi\"\r\n        }\r\n    ]\r\n};\r\n\r\nmodule.exports.baslat = (client,message, args) => {\r\n\r\n//verilerimizi çekelim\r\nlet banlanacakkisi = args.banlanacakkisi;\r\nlet banlanmanedeni = args.banlanmanedeni;\r\nlet banlogchannel = message.guild.channels.find(x => x.name === \"ban-log\")\r\n\r\nif(!banlogchannel) {\r\n    message.channel.send(\"Ban atabilmek için lütfen ban-log adlı kanalı oluşturunuz.\")\r\n}\r\n\r\nmessage.guild.member(banlanacakkisi).ban()\r\n\r\nmessage.channel.send(\":white_check_mark: | Başarı ile \"+ banlanacakkisi.username + \" kullanıcısı banlandı.\")\r\n\r\n\r\nmessage.guild.channels.get(banlogchannel.id).send(new Discord.RichEmbed()\r\n.addField(\"Banlanan kişi:\",banlanacakkisi.username,true)\r\n.addField(\"Banlayan kişi:\",message.author.username, true)\r\n.addField(\"Banlanma Nedeni:\",banlanmanedeni, true)\r\n.setColor(\"RANDOM\")\r\n.setTimestamp()\r\n.setFooter(\"Ban-Log Sistemi | Utku..\")\r\n.setTitle(\"Ban-Log Sistemi\")\r\n)\r\n\r\n}",
+                "kod_rank": "topluluk",
+                "k_adi": "ꋿ  Tatlı Bir Kedi ¹⁵'⁰⁸",
+                "date": "8/16/2020"
             }
         }
     }
