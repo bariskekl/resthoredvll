@@ -665,6 +665,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "BayUslanmazٴ",
                 "date": "8/16/2020"
+            },
+            "git": {
+                "isim": "git",
+                "id": "wlMlObmW9M",
+                "desc": "Birinin Yanına Gitmek İçin Kullanılan Komut",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/451033109782200331/e9a7cda56ad71575b915ab8cb2702500.png",
+                "main_code": "MAİN YOK",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nconst filter = m => m.content.includes(\"discord\");\r\nmodule.exports.run = async (client, message, args) => {\r\n  const msg = message;\r\n  const reactionFilter = (reaction, user) => {\r\n    return (\r\n      [\"✅\"].includes(reaction.emoji.name) &&\r\n      user.id === msg.mentions.users.first().id\r\n    );\r\n  };\r\n  if (!msg.mentions.users.first())\r\n    return message.channel.send(\"Birini etiketlemelisin.\");\r\n  if (message.mentions.users.first() === message.author)\r\n    return message.channel.send(\"Kendini seçemezsin.\");\r\n  msg.channel\r\n    .send(Biri Senin Yanına Gelmek İstiyo)\r\n    .then(async asd => {\r\n      await asd.react(\"✅\");\r\n      asd\r\n        .awaitReactions(reactionFilter, {\r\n          max: 1,\r\n          time: 30000,\r\n          errors: [\"time\"]\r\n        })\r\n        .then(async c => {\r\n          if (!msg.guild.member(msg.mentions.users.first()).voiceChannel) {\r\n            msg.channel.send(\r\n              `Gönderdiğin Kişi Odada Değil Odaya Girip Tekrar Dene`\r\n            );\r\n            msg.mentions.users\r\n              .first()\r\n              .send(`Bir Odada Değilsin Bro`);\r\n            return;\r\n          }\r\n          await msg.member.setVoiceChannel(\r\n            msg.guild.member(msg.mentions.users.first()).voiceChannelID\r\n          );\r\n          asd.delete();\r\n        })\r\n        .catch(async e => {\r\n          await asd.delete();\r\n          msg.author.send(``).then(hehe => {\r\n            hehe.delete(120000);\r\n          });\r\n        });\r\n    });\r\n};\r\n\r\n\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  category: \"admin\",\r\n  permLevel: 0\r\n};\r\nmodule.exports.help = {\r\n  name: \"git\",\r\n  description: \"\",\r\n  usage: \"\"\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "⌨  Ed1s✦n B4CK3R",
+                "date": "8/16/2020"
             }
         }
     }
