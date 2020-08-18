@@ -1373,6 +1373,20 @@
                 "kod_rank": "normal",
                 "k_adi": "Atreus",
                 "date": "8/16/2020"
+            },
+            "Hata Bildir": {
+                "isim": "Hata Bildir",
+                "id": "7RwYV6RTn9",
+                "desc": "Bot Sahibine Hatayı Bildirir V12 Dir Yakında V11 İ Gelicek !!!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "Yok",
+                "komutlar_code": "\r\nconst Discord = require('discord.js');\r\n\r\n\r\nexports.run = function(client, message, args) {\r\n\r\n\tlet mesaj = args.slice().join(' ')\r\nif (!mesaj) return message.reply('lütfen Hata Bildirimini yazın')\r\nmessage.delete()\r\nclient.users.cache.get(\"Kendi İd\").send(new Discord.MessageEmbed()\r\n.addField('Eylem', 'Hata Bildirimi')\r\n.addField('Kullanıcı', message.author.tag)\r\n.addField('Sunucu', message.guild.name)\r\n.addField('Hata', mesaj)\r\n).then(a => message.channel.send('***Hatayı Bildirdiğiniz İçin Teşkkürler En Kısa Zamanda Düzelicektir İyi Günler.***'))\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"hatabildir\", \"hata-bildir\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'bildir',\r\n  description: \"bot hakkındaki önerilerinizi bot sahiplerine ulaştırır\",\r\n  usage: 'hata <mesaj>'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
             }
         }
     }
