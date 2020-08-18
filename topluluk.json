@@ -752,6 +752,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Topràk.ᶰᵒˣ",
                 "date": "8/18/2020"
+            },
+            "Sohbet-Kapat": {
+                "isim": "Sohbet-Kapat",
+                "id": "km1MIZUuNU",
+                "desc": "Sohbetinizi Kapatır.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/cc2b25644dd4c2a8fb9f95b5c5ffad0d.png",
+                "main_code": "Yok.",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nexports.run = (client, message, args) => {\r\n  let every = message.guild.roles.find(r => r.name === \"everyone yazın!\");\r\n  message.channel.overwritePermissions(every, {\r\n    SEND_MESSAGES: false\r\n  });\r\n\r\n  message.channel.send(\"Sohbet kanalı ``Yazılamaz`` Durumuna Getirildi.\");\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"k\", \"skapat\", \"kapat\"],\r\n  kategori: \"sohbet\",\r\n  permLevel: 3\r\n};\r\n///Fynx Code Destek Ekibi\r\nexports.help = {\r\n  name: \"sohbet-kapat\",\r\n  description: \"Sohbetinizi kapatmaya yarar.\",\r\n  usage: \"kapat\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/18/2020"
+            },
+            "Sohbet-Aç": {
+                "isim": "Sohbet-Aç",
+                "id": "9PS90le4Cs",
+                "desc": "Sohbetinizi Açar.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/cc2b25644dd4c2a8fb9f95b5c5ffad0d.png",
+                "main_code": "Yok.",
+                "komutlar_code": "const Discord = require('discord.js);\r\nexports.run = (client, message, args) => {\r\n\r\n   let every = message.guild.roles.find(r => r.name === 'everyone yazın')\r\nmessage.channel.overwritePermissions(every, {\r\n      'SEND_MESSAGES' : true,\r\n\r\n})\r\n\r\n\r\n    message.channel.send('Sohbet Kanalı ``Yazılabilir`` Hale Getirildi.');\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnl: false,\r\n    aliases: ['aç','a','saç'],\r\nkategori: 'sohbet',\r\n    permlevel: 3\r\n};\r\n///Fynx Code Destek Ekibi † мя𝘾𝙝𝙞𝙫𝙖𝙨'\r\nexports.help = {\r\n    name: 'sohbet-aç',\r\n    description: 'Sohbetinizi Açmaya Yarar',\r\n    usage: 'aç'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/18/2020"
             }
         }
     }
