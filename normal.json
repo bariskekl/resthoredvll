@@ -1418,6 +1418,63 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/18/2020"
+            },
+            "Mesaj At": {
+                "isim": "Mesaj At",
+                "id": "t7R1CFsXZT",
+                "desc": "Bot Sahibinin Etikelediği Kişiye Mesaj Atar V12 !!!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nexports.run = (client, message, args) => {\r\n  if (message.author.id != \"Kendi İD\") return message.reply('Bunu Sadece Sahibim Kullanabilir');\r\n\r\n  if (!message.guild) {\r\n  const ozelmesajuyari = new Discord.MessageEmbed()\r\n  .setColor(0xFF0000)\r\n  .setTimestamp()\r\n  .setAuthor(message.author.username, message.author.avatarURL)\r\n  .addField('⚠ Uyarı ⚠', 'Bu  komutu özel mesajlarda kullanamazsın.');\r\n  return message.author.sendEmbed(ozelmesajuyari); }\r\n  let guild = message.guild;\r\n  let reason = args.slice(1).join(' ');\r\n  let user = message.mentions.users.first();\r\n  if (reason.length < 1) return message.reply('Ne göndericem onuda yazı ver.');\r\n  if (message.mentions.users.size < 1) return message.reply('Kime Mesaj atacam onuda yazı ver.').catch(console.error);\r\n  message.delete();\r\n  message.reply('Mesajını Gönderdim.')\r\n  const embed = new Discord.MessageEmbed()\r\n  .setColor('RANDOM')\r\n  .setTitle(`**Sahibimden Bir Mesajın Var**`)\r\n  .setTimestamp()\r\n  .setDescription(reason);\r\n  return user.send(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['pm','öm'],\r\n  permlevel: 4\r\n};\r\n\r\nexports.help = {\r\n  name: 'mesajat',\r\n  description: 'Bir üyeye özel mesaj yollar.',\r\n  usage: 'mesajat'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
+            },
+            "Küfür Engel": {
+                "isim": "Küfür Engel",
+                "id": "j1QLrnY4QX",
+                "desc": "Küfürleri Engeller ! V12",
+                "modules": [
+                    "discord.js",
+                    " megadb"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "client.on(\"message\", async msg => {\r\n  if(msg.author.bot) return;\r\n  if(msg.channel.type === \"dm\") return;\r\n      \r\n  let i = await server.get(`küfürT_${msg.guild.id}`) \r\n        if (i == 'acik') {\r\n            const kelime = [\"amk\", \"aq\", \"p!ç\", \"pç\", \"piç\", \"velet\", \"göt\", \"amcık\", \"sikiyim\", \"sik\", \"vld\", \"amına\", \"pipi\", \"annesiz\", \"amık\", \"sg\", \"a-q\", \"a--q\", \"a.q\", \"a+q\", \"anan\", \"orusbu\", \"pezevenk\"];\r\n            if (kelime.some(word => msg.content.toLowerCase().includes(word))) {\r\n              try {\r\n                if (!msg.member.hasPermission(\"MANAGE_GUILD\")) {\r\n                  msg.delete();                   \r\n                  let embed = new Discord.MessageEmbed()\r\n                  .setColor(0xffa300)\r\n                  .setFooter('Guzzy Bots  -|-  Kötü Kelime Engellendi.', client.user.avatarURL)\r\n                  .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)\r\n                  .setDescription(\"BOT Kötü Kelime Engelleme Sistemi, \" + `***${msg.guild.name}***` + \" adlı sunucunuzda Kötü Kelime yakaladım.\")\r\n                  .addField('Kötü Kelime Kullanan Kişi', 'Kullanıcı: '+ msg.author.tag +'\\nID: '+ msg.author.id, true)\r\n                  .addField('Engellenen mesaj', msg.content, true)\r\n                  .setTimestamp()                   \r\n                  msg.guild.owner.user.send(embed)                       \r\n                  return msg.channel.send(`\\`${msg.author.tag}, Lütfen Kötü Kelime Kullanmayalım. !!!!!\\``).then(msg => msg.delete(25000));\r\n                }             \r\n              } catch(err) {\r\n                console.log(err);\r\n              }\r\n            }\r\n        }\r\n        if (!i) return;\r\n});",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('megadb');\r\nlet server = new db.crearDB('server')\r\n\r\n\r\nexports.run = async(client, message, args) => {\r\n\r\n  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için \"Sunucuyu Yönet\" yetkisine sahip olman gerek.`)\r\n  if (!args[0]) return message.channel.send(`:no_entry: Kötü Kelime Engelleyici Ayarlamak İçin \\`.küfür-engel aç\\` | Kapatmak İstiyorsanız \\`.küfür-engel kapat\\` Yazabilirsiniz`)\r\n  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Kötü Kelime Engelleyiciyi Ayarlamak İçin \\`.küfür-engel aç\\` | Kapatmak İstiyorsanız \\`.küfür-engel kapat\\` Yazabilirsiniz`)\r\n\r\n    if (args[0] == 'aç') {\r\n    server.set(`küfürT_${message.guild.id}`, 'acik')\r\n    let i = await server.get(`küfürT_${message.guild.id}`)\r\n  message.channel.send(`<a:yes:735061119168806922> Kötü Kelime Engelleyici Başarıyla Ayarlandı. <a:yes:735061119168806922>`)   \r\n    \r\n  }\r\n\r\n  if (args[0] == 'kapat') {\r\n      \r\n    server.delete(`küfürT_${message.guild.id}`)\r\n    \r\n    message.channel.send(`<a:yes:735061119168806922> Kötü Kelime Engelleyiciyi Kapattım. <a:yes:735061119168806922>`)\r\n  }\r\n \r\n};\r\n\r\n\r\nexports.conf = {\r\n enabled: true,\r\n guildOnly: false,\r\n  aliases: ['küfür', 'küfürengel'],\r\n permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n name: 'küfür-engel',\r\n description: 'küfür engelleyici',\r\n usage: 'küfür-engel'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
+            },
+            "Başvuru": {
+                "isim": "Başvuru",
+                "id": "YF9jfECAX9",
+                "desc": "Başvuru Komutu v12 !!",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\n  let reason = args.slice(1).join(' ');\r\n  let guild = message.guild\r\n  let terfiler = message.guild.channels.cache.find(x => x.name === \"yetki-başvurusu\")  ;\r\n  if (!terfiler) return message.reply('`yetki-başvurusu` kanalını bulamıyorum.');\r\n  let user = message.mentions.users.first();\r\n  if (reason.length < 1) return message.reply('Ne Kazandirirsiniz,Istediniz Yetki,Kac Saat Aktif Olacaginiz,Adiniz,Yasiniz ve Kendinizi Etiketleyin.');\r\n  if (message.mentions.users.size < 1) return message.reply('Isminizi Etiketleyin.').catch(console.error);\r\n  const embed = new Discord.MessageEmbed()\r\n    .setColor(0xD97634)\r\n\t.setThumbnail(\"https://i.hizliresim.com/mJ20o2.jpg\")\r\n    .setTimestamp()\r\n    .addField('Durum:', 'Bekleniyor')\r\n    .addField('Gonderen Kisi:', `${user.username}#${user.discriminator} (${user.id})`)\r\n    .addField('Bilgiler', reason);\r\n\t\r\n\treturn guild.channels.cache.get(terfiler.id).sendEmbed(embed);\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['basvuru'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'başvuru',\r\n  description: 'Kullanıcıyı terfi ettirir.',\r\n  usage: 'başvuru [kullanıcı]'\r\n};",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
+            },
+            "Türk": {
+                "isim": "Türk",
+                "id": "CCkj2ybCU1",
+                "desc": "Türk Bayrağı Gifleri Atar",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client, message, args) => {\r\n  if ( message.react(':flag_tr:')) {\r\n      var gif = [\r\n      'https://media.giphy.com/media/yDm4Ry6XU77Py/giphy.gif', 'https://media1.tenor.com/images/6052fceee3bab1c98cde4e590c8be111/tenor.gif?itemid=11841187', 'https://media1.tenor.com/images/6878bb87d692b3989a80c31cdf13e9da/tenor.gif?itemid=12338397', 'https://media.tenor.com/images/a607e013adc87fc3a792cf1876b79800/tenor.gif', 'https://media.tenor.com/images/31c9000ffd5dcbc7337ada12d23eaac2/tenor.gif', 'https://media1.tenor.com/images/dbe865a1d72910f0a4e26211ffda5e5c/tenor.gif?itemid=12498400', 'https://media.tenor.com/images/5b72a84f80a8d1ceec341d5d639080dc/tenor.gif'];\r\n\r\n      var gifler = gif[Math.floor(Math.random() * gif.length)];\r\n  }\r\n\r\n    if (message.react(':flag_tr:')) {\r\n    const op = new Discord.MessageEmbed()\r\n    .setDescription(`**NE MUTLU TÜRKÜM DİYENE!** :flag_tr:`)\r\n    .setColor('RANDOM')\r\n    .setImage(gifler)\r\n    .setFooter(`By İlbey Yapımcı`)\r\n    return message.channel.send(op)\r\n    }\r\n\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: ['flag','trflag','türk-resim','türkresim'],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'türk',\r\n  description: 'Türk bayrağı gönderir.',\r\n  usage: 'türk'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
             }
         }
     }
