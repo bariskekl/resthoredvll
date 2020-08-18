@@ -1475,6 +1475,20 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/18/2020"
+            },
+            "Üye Durumu": {
+                "isim": "Üye Durumu",
+                "id": "RfF8fUPHCJ",
+                "desc": "Üyelerin Durumunu Gösterir v11",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nmodule.exports.run = async (bot, message, args) => {\r\n    let üyesayi = message.guild.memberCount;\r\n    let botlar = message.guild.members.filter(m => m.user.bot).size;\r\n    let kullanıcılar = üyesayi - botlar;\r\nconst embed = new Discord.RichEmbed()\r\n.setColor(`#CE2D0B`)\r\n.setTimestamp()\r\n.addField(`Toplam Üye`, `**${üyesayi}**`, true)\r\n.addField(`Kullanıcılar`, `**${kullanıcılar}**`, true)\r\n.addField(`Botlar`, `**${botlar}**`, true)\r\n.addField(`Üye Durumları`, `**${message.guild.members.filter(o => o.presence.status === 'online').size}** Çevrimiçi\\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Boşta\\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Rahatsız Etmeyin\\n**${message.guild.members..filter(off => off.presence.status === 'offline').size}** Çevrimdışı/Görünmez`, true)\r\nmessage.channel.send(embed)\r\n}\r\nmodule.exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"üyedurum\",\"üyeler\",\"durumlar\",\"durum\"],\r\n  permLevel: 0\r\n};\r\n\r\nmodule.exports.help = {\r\n  name: 'üyedurum',\r\n  description: 'Üye Durumlarını ve sunucudaki üye sayısını gösterir',\r\n  usage: 'üyedurum'\r\n};\r\n",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/18/2020"
             }
         }
     }
