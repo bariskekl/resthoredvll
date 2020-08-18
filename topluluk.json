@@ -780,6 +780,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
                 "date": "8/18/2020"
+            },
+            "Johnny Sins Ol": {
+                "isim": "Johnny Sins Ol",
+                "id": "jvaYAwVypC",
+                "desc": "avatarın sins reis olur",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/447480379092500482/546c6a1680d464ece942bc61fa262a74.png",
+                "main_code": ".",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nvar Jimp = require('jimp');\r\n\r\nexports.run = async (client, message, args) => {\r\n    var user = message.mentions.users.first() || message.author;\r\n    if (!message.guild) user = message.author;\r\n    message.channel.send(Fotoğraf işleniyor, lütfen bekleyin...).then(m => m.delete(1000));\r\n\r\nJimp.read('https://cdn.glitch.com/35fbe2e8-3d99-4acb-87e3-684aa9860590%2F7155.jpg?v=1597773974826', (err, image) => {\r\n    image.resize(350, 250)\r\n    Jimp.read(user.avatarURL, (err, avatar) => {\r\n        avatar.resize(116, 116)\r\n        image.composite(avatar, 113, 2).write(./img/rip/${client.user.id}-${user.id}.png);\r\n        setTimeout(function() {message.channel.send(new Discord.Attachment(./img/rip/${client.user.id}-${user.id}.png));\r\n        }, 1000);\r\n    });\r\n\r\n});\r\n}\r\nexports.conf = {\r\n enabled: true,\r\n guildOnly: false,\r\n aliases: [],\r\n permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n name: 'conisins-ol'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "Efe",
+                "date": "8/18/2020"
             }
         }
     }
