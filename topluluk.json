@@ -707,6 +707,51 @@
                 "kod_rank": "topluluk",
                 "k_adi": "!    Carmella*★",
                 "date": "8/16/2020"
+            },
+            "yaz komutu": {
+                "isim": "yaz komutu",
+                "id": "uBEyUmGuUN",
+                "desc": "boynunuza istediğinizi yazdırırsınız",
+                "modules": [
+                    "komutlar",
+                    " yaz.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/691081024024608848/a6935113c2653387dfe9e92688a5aec6.png",
+                "main_code": ". ",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\n\r\n  let mesaj = args.slice(0).join(' ');\r\n\r\nif (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');\r\n\r\n  message.delete();\r\n\r\n  message.channel.send(mesaj);\r\n\r\n};\r\n\r\nexports.conf = {\r\n\r\n  enabled: true,\r\n\r\n  guildOnly: false,\r\n\r\n  aliases: ['say', 'söyle'],\r\n\r\n  permLevel: 3\r\n\r\n};\r\n\r\nexports.help = {\r\n\r\n  name: 'yaz',\r\n\r\n  description: 'İstediğiniz şeyi bota yazdırır.',\r\n\r\n  usage: 'yaz [yazdırmak istediğiniz şey]'\r\n\r\n};\r\n\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "Topràk.ᶰᵒˣ",
+                "date": "8/18/2020"
+            },
+            "sesli say ": {
+                "isim": "sesli say ",
+                "id": "ZVs8sy29vu",
+                "desc": "seste ki üyeleri ve toplam üye sayısını gösterir ",
+                "modules": [
+                    "komutlar",
+                    " say.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/691081024024608848/a6935113c2653387dfe9e92688a5aec6.png",
+                "main_code": ". ",
+                "komutlar_code": " const Discord = require(\"discord.js\")\r\n\r\nmodule.exports.run = async (client, message, args) => {\r\n  if(message.author.bot || message.channel.type === \"dm\") return;\r\n  const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');\r\n    let count = 0;\r\n   \r\n    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;\r\n      const emoji = client.emojis.find(emoji => emoji.name === \"tik\");\r\n  const arrifentembed = new Discord.RichEmbed()\r\n  .setColor(\"RANDOM\")\r\n  .setAuthor('Bilgi', `${message.author.displayAvatarURL}`)\r\n        .addField(`Ses kanallarında ${count} kişi bulunmaktadır.`, `unucuda ${message.guild.memberCount} kişi bulunmaktadır.`)\r\n        .setTimestamp()\r\n \r\n  message.channel.sendEmbed(arrifentembed)\r\n  message.react(emoji)\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"seslisay\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: 'sesli-say',\r\n  description: 'sesli sayar',\r\n  usage: 'say'\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "Topràk.ᶰᵒˣ",
+                "date": "8/18/2020"
+            },
+            "Botunuzun olduğu sunucuları gösterir ": {
+                "isim": "Botunuzun olduğu sunucuları gösterir ",
+                "id": "0Hc1tcQNVl",
+                "desc": " bu kod dbl de yasak kullanmanızı tavsiye etmem ama ihtiyacı olan vardır ",
+                "modules": [
+                    "komutlar",
+                    " sunucular.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/691081024024608848/a6935113c2653387dfe9e92688a5aec6.png",
+                "main_code": ". ",
+                "komutlar_code": "const Discord = require(\"discord.js\")\r\nexports.run = (bot, message) => {\r\n  const guildArray = bot.guilds.array()\r\n  while (guildArray.length) {\r\n    const embed = new Discord.RichEmbed();\r\n    const guilds = guildArray.splice(0,25);\r\n    for (const guild of guilds) {\r\n      embed.addField(`**${guild.name}** - Üyeleri : **${guild.memberCount}**`, guild.id)\r\n      embed.setTitle('Botun bulunduğu sunucuların listesi!')\r\n      embed.setDescription(`**${bot.guilds.size}**  tane sunucu beni kullanıyor ve fazlasıyla memnunlar 🙂`)\r\n    }\r\n    message.channel.send({embed: embed});\r\n  }\r\n}\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: []\r\n};\r\n\r\nexports.help = {\r\n  name: \"sunucular\",\r\n  description: \"Botun olduğu sunucuları görüntülersiniz.\",\r\n  usage: \"sunucular\"\r\n};\r\n ",
+                "kod_rank": "topluluk",
+                "k_adi": "Topràk.ᶰᵒˣ",
+                "date": "8/18/2020"
             }
         }
     }
