@@ -808,6 +808,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
                 "date": "8/19/2020"
+            },
+            "Avatar": {
+                "isim": "Avatar",
+                "id": "ElPuy5mERZ",
+                "desc": "Avatar Kodu",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/4598cc5d1f1cb15b6b539d154af6047a.png",
+                "main_code": "Yok.",
+                "komutlar_code": "const Discord = require(''discord.js'');\r\n\r\n\r\nexports = async (client, message, args) => {\r\n\r\nlet user = message.mentions.users.first() | | message.author\r\n\r\nconst exampleEmbed = new Discord.Message.Embed()\r\n  .setImage(user.avatarURL())\r\n    message.channel.send(exampleEmbed)\r\n\r\n\r\n}\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [],\r\n    permlevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: 'avatar',\r\n    description: 'Avatarınızı Atar.',\r\n    usage: 'avatar'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/19/2020"
             }
         }
     }
