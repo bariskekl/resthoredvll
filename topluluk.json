@@ -794,6 +794,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "Efe",
                 "date": "8/18/2020"
+            },
+            "Bot Yeniden Başladığında Mesaj Atma": {
+                "isim": "Bot Yeniden Başladığında Mesaj Atma",
+                "id": "FXo3eFpkKb",
+                "desc": "Bot Yeniden Başladığında Veya Aktif Olduğunda Bir Kanala Mesaj Atar.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/4598cc5d1f1cb15b6b539d154af6047a.png",
+                "main_code": "Yok.",
+                "komutlar_code": "client.on('ready', msg => {\r\nlet kanal = \"KANALİD\"\r\nclient.channels.get(kanal).send(\"Artık Aktifim\")\r\n})",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/19/2020"
             }
         }
     }
