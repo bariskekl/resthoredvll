@@ -822,6 +822,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
                 "date": "8/19/2020"
+            },
+            "öp komutu": {
+                "isim": "öp komutu",
+                "id": "ONfVwf9DXM",
+                "desc": "etiketlediğiniz kişiyi öper ",
+                "modules": [
+                    "öp"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/445098637865779230/cd7450e0026040d6c5d99da5563d3edb.png",
+                "main_code": "main yok sadece komutlar",
+                "komutlar_code": "const Discord = require('discord.js')\r\n\r\nexports.run = (client, message, args) => {\r\n  let user = message.mentions.users.first();\r\n  if(!user) return message.channel.send('Öpüceğin birisini etiketlemelisin')\r\n  \r\n    \r\n  if ( message.react('??')) {\r\n      var gif = [\r\n      'https://media.giphy.com/media/l2Je2M4Nfrit0L7sQ/giphy.gif', 'https://media.giphy.com/media/fyM2loi1ZpOV2/giphy.gif', 'https://media.giphy.com/media/HKQZgx0FAipPO/giphy.gif', 'https://media.giphy.com/media/iqaUZ6JmobeBG/giphy.gif', 'https://media.giphy.com/media/9P8t4wusRUdSE/giphy.gif', 'https://media.giphy.com/media/GkD7czAx7AmRy/giphy.gif', 'https://media.giphy.com/media/Fk3mzoEJVRH8s/giphy.gif', 'https://media.giphy.com/media/wEXhfyMLA24Ug/giphy.gif', 'https://media.giphy.com/media/Dl8d4g1CeFDq0/giphy.gif'];\r\n\r\n      var gifler = gif[Math.floor(Math.random() * gif.length)];\r\n  }\r\n    \r\n    if (message.react('??')) {\r\n    const op = new Discord.RichEmbed()\r\n    .setDescription(`<@${message.author.id}>` + ` <@${user.id}> adlı kullanıcıyı öptü. :kiss:`)\r\n    .setColor('RANDOM')\r\n    .setImage(gifler)\r\n    return message.channel.send(op)\r\n    }\r\n  \r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0,\r\n  kategori: \"eğlence\"\r\n};\r\n\r\nexports.help = {\r\n  name: 'öp',\r\n  description: 'öp',\r\n  usage: 'öp'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "creative",
+                "date": "8/19/2020"
+            },
+            "oylama komutu": {
+                "isim": "oylama komutu",
+                "id": "NDQB71jZsN",
+                "desc": "oylama yaparsınız",
+                "modules": [
+                    "(prefix) oylama"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/445098637865779230/cd7450e0026040d6c5d99da5563d3edb.png",
+                "main_code": "main yok komutlar",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\n exports.run = (client, message, args) => {\r\n   message.delete();\r\n\r\n   let question = args.join(' ');\r\n\r\n   let user = message.author.username\r\n\r\n   if (!question) return message.channel.sendEmbed(\r\n\r\n     new Discord.RichEmbed()\r\n\r\n     .addField(`:x:yazı yazman gerek :x:`)).then(m => m.delete(5000));\r\n\r\n     console.log(\"oylama komutu \" + message.author.username + '#' + message.author.discriminator + \" tarafından kullanıldı.\")\r\n     message.channel.sendEmbed(\r\n\r\n       new Discord.RichEmbed()\r\n\r\n       .setColor(\"RED\")\r\n       .setThumbnail(client.user.avatarURL)\r\n       .setTimestamp()\r\n       .setFooter('Oylama Sistemi', client.user.avatarURL)\r\n\r\n       .addField(`**Oylama**`, `**${question}**`)).then(function(message) {\r\n\r\n         message.react('✅');\r\n\r\n         message.react('❌');\r\n\r\n       });\r\n\r\n     };\r\n\r\n     exports.conf = {\r\n       enabled: true,\r\n       guildOnly: false,\r\n       aliases: ['oylama'],\r\n\r\n  permLevel: 2\r\n};\r\n\r\nexports.help = {\r\n  name: 'oylama',\r\n  description: 'Oylama yapmanızı sağlar.',\r\n  usage: 'oylama <oylamaismi>'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "creative",
+                "date": "8/19/2020"
             }
         }
     }
