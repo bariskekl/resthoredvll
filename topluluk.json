@@ -865,6 +865,48 @@
                 "kod_rank": "topluluk",
                 "k_adi": "ツLordCoderX",
                 "date": "8/20/2020"
+            },
+            "Botunuza Oy Vererek Rol Alma": {
+                "isim": "Botunuza Oy Vererek Rol Alma",
+                "id": "ddYGLjsOvx",
+                "desc": "Botunuza Oy Verdirterek Rol Alma Kodu",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/39ee0ed0d213612ef70121b049bf7d3a.png",
+                "main_code": "Yok.",
+                "komutlar_code": "const emran = require(\"discord.js\"); \r\nconst client = new emran.Client();\r\n\r\nconst DBL = require(\"dblapi.js\");\r\nconst emirhan = new DBL('DBL TOKENİNİZ', client);\r\n\r\n/*\r\n\r\nhttps://top.gg/api/docs#mybots Sitesinden DBL Tokeninizi alabilirsiniz.\r\n\r\n*/\r\n\r\nexports.run = (client, message) => {\r\n    emirhan.hasVoted(message.author.id).then(voted => { \r\n        if (!voted) {\r\n            message.channel.send( new emran.MessageEmbed()\r\n.setTitle(\"Hata\")\r\n.setColor(\"RED\")\r\n.setDescription(\"Sunucumuz da özel role sahip olabilmen için ilk öncelikle oy vermen gerekiyor!\")\r\n.addField(\"Oy Vermek için:\", `[Buraya Tıkla!](https://top.gg/bot/${client.user.id}/vote)`)\r\n.setFooter(client.user.username)\r\n)\r\n\r\n        } else {\r\n  message.channel.send( new emran.MessageEmbed()\r\n.setTitle(\"Başarılı!\")\r\n.setDescription(\"Sunucumuz da başarılı bir şekilde rolünüz verildi!\")\r\n.setColor(\"GREEN\")\r\n)\r\n            message.member.roles.add(\"Rol ID\")    //Vericek rol id.\r\n        }\r\n    })\r\n}\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [\"oyverdim\"],\r\n  permLevel: 0,\r\n   \r\n};\r\n\r\nexports.help = {\r\n  name: 'oy-verdim',\r\n description: 'Bota oy verirseniz rolü kaparsınız',\r\n usage: 'oyverdim'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/20/2020"
+            },
+            "Gelişmiş Afk Sistemi": {
+                "isim": "Gelişmiş Afk Sistemi",
+                "id": "T6ukt2Mv0q",
+                "desc": "Gelişmiş Bir Afk Sistemidir Sorunsuz Çalışıyor.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/39ee0ed0d213612ef70121b049bf7d3a.png",
+                "main_code": "client.on(\"message\" , async msg => {\r\n  if(msg.content.startsWith(ayarlar.prefix+\"afk\")) return;\r\n \r\n  let afk = msg.mentions.users.first()\r\n \r\n  const kisi = db.fetch(`afkid_${msg.author.id}_${msg.guild.id}`)\r\n \r\n  const isim = db.fetch(`afkAd_${msg.author.id}_${msg.guild.id}`)\r\n if(afk){\r\n   const sebep = db.fetch(`afkSebep_${afk.id}_${msg.guild.id}`)\r\n   const kisi3 = db.fetch(`afkid_${afk.id}_${msg.guild.id}`)\r\n   if(msg.content.includes(kisi3)){\r\n \r\n       msg.reply(`Etiketlediğiniz Kişi Afk \\n Sebep : ${sebep}`)\r\n   }\r\n }\r\n  if(msg.author.id === kisi){\r\n \r\n       msg.reply(`Afk'lıktan Çıktınız`)\r\n  db.delete(`afkSebep_${msg.author.id}_${msg.guild.id}`)\r\n  db.delete(`afkid_${msg.author.id}_${msg.guild.id}`)\r\n  db.delete(`afkAd_${msg.author.id}_${msg.guild.id}`)\r\n   msg.member.setNickname(isim)\r\n   \r\n }\r\n \r\n});",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst db = require(\"quick.db\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nexports.run = async (client, message, args) => {\r\n  const kisi = db.fetch(`afkid_${message.author.id}_${message.guild.id}`);\r\n  if (kisi) return;\r\n  const sebep = args[0];\r\n  if (!args[0]) {\r\n    let kullanıcı = message.guild.members.get(message.author.id);\r\n    const b = kullanıcı.displayName;\r\n \r\n    await db.set(\r\n      `afkSebep_${message.author.id}_${message.guild.id}`,\r\n      \"Sebep Girilmemiş\"\r\n    );\r\n    await db.set(\r\n      `afkid_${message.author.id}_${message.guild.id}`,\r\n      message.author.id\r\n    );\r\n    await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);\r\n \r\n    const a = await db.fetch(\r\n      `afkSebep_${message.author.id}_${message.guild.id}`\r\n    );\r\n \r\n    message.channel.send(`Başarıyla Afk Oldunuz \\n Sebep: ${a}`);\r\n \r\n    message.member.setNickname(`[AFK] ` + b);\r\n  }\r\n  if (args[0]) {\r\n    let sebep = args.join(\" \");\r\n    let kullanıcı = message.guild.members.get(message.author.id);\r\n    const b = kullanıcı.displayName;\r\n    await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);\r\n    await db.set(\r\n      `afkid_${message.author.id}_${message.guild.id}`,\r\n      message.author.id\r\n    );\r\n    await db.set(`afkAd_${message.author.id}_${message.guild.id}`, b);\r\n    const a = await db.fetch(\r\n      `afkSebep_${message.author.id}_${message.guild.id}`\r\n    );\r\n \r\n    message.channel.send(`Başarıyla Afk Oldunuz \\n Sebep: ${a}`);\r\n \r\n    message.member.setNickname(`[AFK] ` + b);\r\n  }\r\n};\r\n \r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};\r\n \r\nexports.help = {\r\n  name: \"afk\",\r\n  description: \"Afk Olmanızı Sağlar.\",\r\n  usage: \"afk / afk <sebep>\"\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/20/2020"
+            },
+            "Botunuzu 7/24 Yapma": {
+                "isim": "Botunuzu 7/24 Yapma.",
+                "id": "khK00g17ud",
+                "desc": "Botunuzu 7/24 Yapar.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/39ee0ed0d213612ef70121b049bf7d3a.png",
+                "main_code": "const express = require(\"express\");\r\nconst http = require(\"http\");\r\nconst app = express();\r\n \r\napp.get(\"/\", (request, response) => {\r\n  //console.log(Date.now() + \" BOT Aktif.\");\r\n  //response.sendStatus(200);\r\n});\r\napp.listen(process.env.PORT);\r\nsetInterval(() => {\r\n  http.get(`http://${process.env.PROJECT_NAME}.glitch.me`);\r\n}, 1000 * 60 * 3);",
+                "komutlar_code": "Yok. Sadece Main Dosyanıza.",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/20/2020"
             }
         }
     }
