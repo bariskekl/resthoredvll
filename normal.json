@@ -1489,6 +1489,21 @@
                 "kod_rank": "normal",
                 "k_adi": "ilbey",
                 "date": "8/18/2020"
+            },
+            "Bilgilendirme": {
+                "isim": "Bilgilendirme",
+                "id": "GMSA1WdSEK",
+                "desc": "Bilgilendirme",
+                "modules": [
+                    "megadb",
+                    " quick.db"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/449573143158194186/92ccaed15c1afd69ccc3e36ba4d218b7.png",
+                "main_code": "Komutları Tek Kanalda Kullandırma ;\r\nÖnemli : Bot Kendi Sunucunuza Özel Olması Lazım !!!\r\n\r\nKod;\r\n\r\nif(message.channel.id !== 'Kanal İd') return message.channel.send('*** Kankam Bu Komutu Sadece __<#!KanalİD>__ Kanalında Kullana Bilirsin !***') \r\n\r\nBu Kod Sayesinde Botunuzun Komutlarını Tek Kanala Yaptıra Bilirsiniz.\r\n\r\n\r\nKomut'u Tek Bot Sahibi Kullanma ;\r\n\r\nKod;\r\n\r\nif(message.author.id !== 'Kendi İd') return message.channel.send('***Dostum Bu Komut Sadece Sahibime Özel  Ve Sen Sahibim Değilsin***')\r\n\r\nEval Gibi Komutlara Lütfen Bunu Ekleyin.\r\n\r\n\r\n\r\nHata Olunca Hatayı Konsola Loglatma;\r\n\r\nKod; 1- MegaDB ( V12 )\r\n\r\nlet kod = await <db>.get(`kodD_${member.guild.id}`)\r\n    member.roles.add(kod)\r\nconsole.log(kod)\r\n\r\nEğer Bir Hata Çıkarsa Let'deki kod kısmındaki hatayı konsola logluyacaktır ve hatayı çok basit bir şekilde çözebiliceksiniz.\r\n\r\n\r\nKod; 2- Quick.db ( V12 )\r\n\r\nlet kod = await db.fetch(`kodD_${member.guild.id}`)\r\n    member.roles.add(kod)\r\nconsole.log(kod)\r\n\r\nEğer Bir Hata Çıkarsa Let'deki kod kısmındaki hatayı konsola logluyacaktır ve hatayı çok basit bir şekilde çözebiliceksiniz.\r\n\r\n\r\nKod; 1- MegaDB ( V11 )\r\n\r\nlet kod = await <db>.get(`kodD_${member.guild.id}`)\r\n    member.addRole(kod)\r\nconsole.log(kod)\r\n\r\nEğer Bir Hata Çıkarsa Let'deki kod kısmındaki hatayı konsola logluyacaktır ve hatayı çok basit bir şekilde çözebiliceksiniz.\r\n\r\n\r\nKod; 2- Quick.db ( V11 )\r\n\r\nlet kod = await db.fetch(`kodD_${member.guild.id}`)\r\n    member.addRole(kod)\r\nconsole.log(kod)\r\n\r\nEğer Bir Hata Çıkarsa Let'deki kod kısmındaki hatayı konsola logluyacaktır ve hatayı çok basit bir şekilde çözebiliceksiniz.\r\n",
+                "komutlar_code": "Bu Öğretici Koddur. Lütfen Okuyun V2 V3 ü Yakında !!",
+                "kod_rank": "normal",
+                "k_adi": "ilbey",
+                "date": "8/20/2020"
             }
         }
     }

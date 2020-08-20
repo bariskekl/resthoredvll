@@ -1006,6 +1006,28 @@
                 "kod_rank": "topluluk",
                 "k_adi": "¹⁵'⁰⁸  Tatlı🍓Kedi &Lârk",
                 "date": "8/20/2020"
+            },
+            "xxcoo radyo botu": {
+                "isim": "xxcoo radyo botu",
+                "id": "lhO8eciMPc",
+                "desc": "xxcoo radyo botu 30 tane radyo var",
+                "modules": [
+                    "discord.js",
+                    "chalk",
+                    "fs",
+                    "ms",
+                    "moment",
+                    "jimp",
+                    "quick.db",
+                    "simple-youtube-api",
+                    "ytdl-core"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/589788711928201227/958ac24daf0cf0f1d5fb501e494bc0eb.png",
+                "main_code": "https://glitch.com/~xxcoo-radyo-prje",
+                "komutlar_code": "https://glitch.com/~xxcoo-radyo-prje",
+                "kod_rank": "topluluk",
+                "k_adi": "xxkagancooTR",
+                "date": "8/20/2020"
             }
         }
     }
