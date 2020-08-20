@@ -949,6 +949,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
                 "date": "8/20/2020"
+            },
+            "7/24 aktif etme": {
+                "isim": "7/24 aktif etme",
+                "id": "M804lTYNpM",
+                "desc": "Botunuuz 7 24 boyunca aktif eder.",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/402441379059466241/c792acb93b4768b3f6e186779742829c.png",
+                "main_code": "app.get(\"/\", (request, response) => {\r\n  //console.log(Date.now() + \" BOT Aktif.\");\r\n  //response.sendStatus(200);\r\n});\r\napp.listen(process.env.PORT);\r\nsetInterval(() => {\r\n  http.get(`http://${process.env.PROJECT_NAME}.glitch.me`);\r\n}, 1000 * 60 * 3);",
+                "komutlar_code": "main dosyası",
+                "kod_rank": "topluluk",
+                "k_adi": "ꄟ Romeoᶠˡᵉˣ ✵",
+                "date": "8/20/2020"
             }
         }
     }
