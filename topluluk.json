@@ -992,6 +992,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "!★✧ 1HP Scorp",
                 "date": "8/20/2020"
+            },
+            "Bota Mesaj Attırma": {
+                "isim": "Bota Mesaj Attırma",
+                "id": "qAYi7GvKec",
+                "desc": "Bot Özel Olmalı Ve Bu Kod message.js Ye Atılmalıdır ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/739511216547823708/741d32cae01d442724a8b777734647a8.png",
+                "main_code": "Yok",
+                "komutlar_code": "if(message.channel.id !== 'Kanal Idsi') return message.channel.send('***Maalesef Komutları<#!Kanalİd> Kanalında Kullana Bilirsin.***')\r\n client.channels.get(\"KANAL ID\").send(\" **Bütün Mesajları Silip Bunu Koyma En Altta Şu Yerin }; Üstüne Ekleyebilirsiniz **\")",
+                "kod_rank": "topluluk",
+                "k_adi": "¹⁵'⁰⁸  Tatlı🍓Kedi &Lârk",
+                "date": "8/20/2020"
             }
         }
     }
