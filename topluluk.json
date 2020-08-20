@@ -921,6 +921,34 @@
                 "kod_rank": "topluluk",
                 "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
                 "date": "8/20/2020"
+            },
+            "Küfür Engel V12": {
+                "isim": "Küfür Engel V12",
+                "id": "hpxTP7NM8Q",
+                "desc": "Küfür Engel Kodu V12'Dir!!!!",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/39ee0ed0d213612ef70121b049bf7d3a.png",
+                "main_code": "client.on(\"message\", async msg => {\r\n  \r\n  \r\n const i = await db.fetch(`kufur_${msg.guild.id}`)\r\n    if (i == \"acik\") {\r\n        const kufur = [\"oç\", \"amk\", \"ananı sikiyim\", \"ananıskm\", \"piç\", \"amk\", \"amsk\", \"sikim\", \"sikiyim\", \"orospu çocuğu\", \"piç kurusu\", \"kahpe\", \"orospu\", \"mal\", \"sik\", \"yarrak\", \"am\", \"amcık\", \"amık\", \"yarram\", \"sikimi ye\", \"mk\", \"mq\", \"aq\", \"ak\", \"amq\",];\r\n        if (kufur.some(word => msg.content.includes(word))) {\r\n          try {\r\n            if (!msg.member.hasPermission(\"BAN_MEMBERS\")) {\r\n                  msg.delete();\r\n                          \r\n                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')\r\n            }              \r\n          } catch(err) {\r\n            console.log(err);\r\n          }\r\n        }\r\n    }\r\n    if (!i) return;\r\n});\r\n\r\nclient.on(\"messageUpdate\", (oldMessage, newMessage) => {\r\n  \r\n  \r\n const i = db.fetch(`${oldMessage.guild.id}.kufur`)\r\n    if (i) {\r\n        const kufur = [\"oç\", \"amk\", \"ananı sikiyim\", \"ananıskm\", \"piç\", \"amk\", \"amsk\", \"sikim\", \"sikiyim\", \"orospu çocuğu\", \"piç kurusu\", \"kahpe\", \"orospu\", \"mal\", \"sik\", \"yarrak\", \"am\", \"amcık\", \"amık\", \"yarram\", \"sikimi ye\", \"mk\", \"mq\", \"aq\", \"ak\", \"amq\",];\r\n        if (kufur.some(word => newMessage.content.includes(word))) {\r\n          try {\r\n            if (!oldMessage.member.hasPermission(\"BAN_MEMBERS\")) {\r\n                  oldMessage.delete();\r\n                          \r\n                      return oldMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')\r\n            }              \r\n          } catch(err) {\r\n            console.log(err);\r\n          }\r\n        }\r\n    }\r\n    if (!i) return;\r\n});",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db')\r\n\r\nexports.run = async (client ,message, args) =>{\r\nif(args[0] === 'aktif') {\r\n    db.set(`kufur_${message.guild.id}`, \"acik\")\r\n    message.channel.send('Başarılı Şekilde `Aktif` Edildi.')\r\n  return\r\n}\r\nif (args[0] === 'deaktif') {\r\n  db.delete(`kufur_${message.guild.id}`)\r\nmessage.channel.send('Başarılı Şekilde `Deaktif` Edildi')\r\nreturn\r\n}\r\n  message.channel.send('Lüten `Aktif` yada `Deaktif` Yazın!')\r\n};\r\nexports.conf = {\r\n enabled: true,\r\n guildOnly: false,\r\n aliases: ['küfür'],\r\n permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n name: 'küfür-ayarla',\r\n description: 'Davet Log Kanalını Belirler',\r\n usage: 'davet-kanal-ayarla #kanal'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/20/2020"
+            },
+            "JS Rolü Verme V12": {
+                "isim": "JS Rolü Verme V12",
+                "id": "Kg2hgfSlYd",
+                "desc": "JavaScript Rolü Verir V12 İçindir!!",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/744644178884952174/39ee0ed0d213612ef70121b049bf7d3a.png",
+                "main_code": "client.on('message', msg => {\r\n  if (msg.content.toLowerCase() === 'js') {  // İstediğiniz Komut\r\n    msg.member.roles.add('692739416690524160'); //Rolü bir yerde bahsedin sonra sağ tıklayıp İD'sini alın\r\n    msg.reply('Js Rolünü Başarıyla Aldın.'); //Komutu Yazınca cevap ne yazsın?\r\n  }\r\n});",
+                "komutlar_code": "Main içinidir.",
+                "kod_rank": "topluluk",
+                "k_adi": "† мя𝘾𝙝𝙞𝙫𝙖𝙨'",
+                "date": "8/20/2020"
             }
         }
     }
