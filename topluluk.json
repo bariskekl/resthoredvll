@@ -963,6 +963,35 @@
                 "kod_rank": "topluluk",
                 "k_adi": "ꄟ Romeoᶠˡᵉˣ ✵",
                 "date": "8/20/2020"
+            },
+            "8ball": {
+                "isim": "8ball",
+                "id": "w2hpCHC3Bl",
+                "desc": "sorduğunuz soruya rastgele evet ya da hayır diye cevap verir.",
+                "modules": [
+                    "'discord.js'"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/686617870192345128/416da28f8bcbf14b42b6fcd8e2d56d6d.png",
+                "main_code": "main dosyasına atılacak herhangi bir şey yok.",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nconst cevaplar = [\r\n    \"Evet\",\r\n    \"Hayır\",\r\n    \"Belki\",\r\n];\r\n\r\nexports.run = function(client, message, args) {\r\n    var soru = args.join(' ');\r\n\r\n    var cevap = cevaplar[Math.floor(Math.random() * cevaplar.length)];\r\n\r\n    if(!soru) return message.channel.sendEmbed(new Discord.RichEmbed().setColor('RANDOM').setAuthor('Hata').setDescription('Soru Giriniz'))\r\n    else return message.channel.sendEmbed(new Discord.RichEmbed().setColor('RANDOM').setDescription(cevap).setAuthor('Cevap:'))\r\n\r\n};  \r\n\r\n//FynxCode\r\n//FynxCode\r\n//FynxCode\r\n//FynxCode\r\n//FynxCode\r\n//FynxCode\r\n\r\nexports.conf = {\r\n  enabled: true, \r\n  guildOnly: true, \r\n  aliases: ['8ball'],\r\n  permLevel: 0 ,\r\n    kategori: \"ekstra\",\r\n};\r\n\r\nexports.help = {\r\n  name: '8ball', \r\n  description: 'Sorduğunuz Soruya Rastgele Cevap Verir.',\r\n  usage: '8ball [soru]'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "!★✧ 1HP Scorp",
+                "date": "8/20/2020"
+            },
+            "Gelişmiş Ping ": {
+                "isim": "Gelişmiş Ping ",
+                "id": "UEnfacNjPH",
+                "desc": "Botun pingini gösterir (gelişmiş).",
+                "modules": [
+                    "'discord.js'",
+                    " 'quick.db'"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/686617870192345128/416da28f8bcbf14b42b6fcd8e2d56d6d.png",
+                "main_code": "main dosyası boş!",
+                "komutlar_code": "const Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar db = require(\"quick.db\");\r\n\r\nexports.run = function(client, message, embed, params) {\r\n  let prefix = db.fetch(`prefix_${message.guild.id}`)\r\n    ? db.fetch(`prefix_${message.guild.id}`)\r\n    : ayarlar.prefix;\r\n  const fynxcode = new Discord.RichEmbed()\r\n    .setTitle(\"Ping Menüsü \")\r\n    .setDescription(\"**Ping**\")\r\n    .setColor(\"#1e0ec7\")\r\n    .setThumbnail(client.user.avatarURL)\r\n  .setImage(\"https://media.giphy.com/media/MHKl0gVYw0RTq/giphy.gif\")\r\n    .addField(\r\n      \":ping_pong: Pingim ```\" + client.ping + \"``` ms!\",\r\n      \"**Performansım Nasıl Sizce **\"\r\n    );\r\n  message.react(\"🏓\");\r\n  message.channel.send(fynxcode);\r\n};\r\n\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n//fynxcode\r\n\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"ms\"],\r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n  name: \"ping\",\r\n  description: \"Botun pingini gösterir\",\r\n  usage: \"ping\"\r\n};\r\n",
+                "kod_rank": "topluluk",
+                "k_adi": "!★✧ 1HP Scorp",
+                "date": "8/20/2020"
             }
         }
     }
