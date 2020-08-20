@@ -850,6 +850,21 @@
                 "kod_rank": "topluluk",
                 "k_adi": "creative",
                 "date": "8/19/2020"
+            },
+            "Yapimcim": {
+                "isim": "Yapimcim",
+                "id": "x68N1hGHZz",
+                "desc": "Botun yapimcilarini tanitir",
+                "modules": [
+                    "quick.db",
+                    " discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/700403747624452227/8ae6789353ac8e575602e84706dd069d.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\nconst db = require('quick.db');\r\n//FYNX CODE\r\nexports.run = async(client, message, args) => { \r\nconst sahip = 'isim ve tag'\r\n\r\nmessage.channel.send(\"My Makers: `\" + sahip + \"`\")\r\n}\r\nexports.conf = {\r\n  enabled: true,  \r\n  guildOnly: false, \r\n  aliases: ['yapımcı','mymakers'], \r\n  permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n name: 'sahip'\r\n};",
+                "kod_rank": "topluluk",
+                "k_adi": "ツLordCoderX",
+                "date": "8/20/2020"
             }
         }
     }
