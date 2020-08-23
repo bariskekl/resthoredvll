@@ -43,10 +43,6 @@ const IDler = {
 
 const app = express();
 
-setInterval(() => {
-  http.get(`http://fynxcode.glitch.me/`);
-  console.log(Date.now() + " Ping tamamdır.");
-}, 60000);
 
 app.use(bodyParser.json());
 app.use(
