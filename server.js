@@ -22,23 +22,23 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  botID: "740564699594096678",
-  botToken: "NzQwNTY0Njk5NTk0MDk2Njc4.Xyq2nw.nHJgu_kePTY66vJUfzWGQRwRuG0",
-  botSecret: "kDSx_C7z0FRqNIfeMl9_FbENtRP7BTav",
-  botCallbackURL: "https://fynxcode.glitch.me/callback",
-  sunucuID: "720975143366819932",
-  sunucuDavet: "https://discord.gg/37tKTTt",
-  kodLogKanalı: "741408748131844226",
-  sahipRolü: "720975307439603762",
-  adminRolü: "720975851960664165",
-  kodPaylaşımcıRolü: "720982876652437554",
-  boosterRolü: "724199172651090000",
+  botID: "bot id",
+  botToken: "BOT TOKEN",
+  botSecret: "BOT SECRET",
+  botCallbackURL: "projeurlniz/callback",
+  sunucuID: "sunucu id",
+  sunucuDavet: "sunucu DAVET",
+  kodLogKanalı: "log id",
+  sahipRolü: "sahip rol",
+  adminRolü: "admin rol",
+  kodPaylaşımcıRolü: "kod PAYLAŞIM ROL",
+  boosterRolü: "booster rol",
   kodPaylaşamayacakRoller: ["BANLI ROL İD", "BANLI ROL İD"],
-  hazırAltyapılarRolü: "742072972826640395",
-  hazırSistemlerRolü: "742072972826640395",
-  elmasKodlarRolü: "720983876897472523",
-  altınKodlarRolü: "720983662652424222",
-  normalKodlarRolü: "739025130222649377"
+  hazırAltyapılarRolü: "Hazır Sistem",
+  hazırSistemlerRolü: "Hazır Sistem",
+  elmasKodlarRolü: "Elmas",
+  altınKodlarRolü: "ALTIN KOD ",
+  normalKodlarRolü: "NORMAL"
 };
 
 const app = express();
