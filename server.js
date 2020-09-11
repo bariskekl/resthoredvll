@@ -22,23 +22,23 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  botID: "bot id",
-  botToken: "BOT TOKEN",
-  botSecret: "BOT SECRET",
-  botCallbackURL: "projeurlniz/callback",
-  sunucuID: "sunucu id",
-  sunucuDavet: "sunucu DAVET",
-  kodLogKanalı: "log id",
-  sahipRolü: "sahip rol",
-  adminRolü: "admin rol",
-  kodPaylaşımcıRolü: "kod PAYLAŞIM ROL",
-  boosterRolü: "booster rol",
-  kodPaylaşamayacakRoller: ["BANLI ROL İD", "BANLI ROL İD"],
-  hazırAltyapılarRolü: "Hazır Sistem",
-  hazırSistemlerRolü: "Hazır Sistem",
-  elmasKodlarRolü: "Elmas",
-  altınKodlarRolü: "ALTIN KOD ",
-  normalKodlarRolü: "NORMAL"
+  botID: "732463752531804162",
+  botToken: "NzMyNDYzNzUyNTMxODA0MTYy.Xw0-Bw.2a_Ip1YOGERwZw_R_zJAC_9rkeg",
+  botSecret: "CqlhmnyrScOzOsKKzV_EGetpUXQaOK9f",
+  botCallbackURL: "https://deneme-alt-yapi-kod.glitch.me",
+  sunucuID: "753713898187653261",
+  sunucuDavet: "https://discord.gg/4hFqzh",
+  kodLogKanalı: "753713898187653265",
+  sahipRolü: "753714157597098046  ",
+  adminRolü: "753714158616313906",
+  kodPaylaşımcıRolü: "754021526881304698",
+  boosterRolü: "753882543232778271",
+  kodPaylaşamayacakRoller: ["754021895191396453", "754021895191396453"],
+  hazırAltyapılarRolü: "754021507344236564",
+  hazırSistemlerRolü: "754021507344236564",
+  elmasKodlarRolü: "754021506375352363",
+  altınKodlarRolü: "754021505368588399",
+  normalKodlarRolü: "754021505645674517"
 };
 
 const app = express();
