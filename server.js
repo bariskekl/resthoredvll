@@ -24,7 +24,7 @@ for (let rank in ranks) {
 const IDler = {
   botID: "732463752531804162",
   botToken: "NzMyNDYzNzUyNTMxODA0MTYy.Xw0-Bw.2a_Ip1YOGERwZw_R_zJAC_9rkeg",
-  botSecret: "CqlhmnyrScOzOsKKzV_EGetpUXQaOK9f",
+  botSecret: "YSTNPh3qzK0pO-qH8n_TTB0zfDxkA-7f",
   botCallbackURL: "https://deneme-alt-yapi-kod.glitch.me",
   sunucuID: "753713898187653261",
   sunucuDavet: "https://discord.gg/4hFqzh",
