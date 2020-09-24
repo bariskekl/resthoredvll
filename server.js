@@ -43,6 +43,17 @@ const IDler = {
 
 const app = express();
 
+client.on('ready', async () => {
+   client.appInfo = await client.fetchApplication();
+  setInterval( async () => {
+    client.appInfo = await client.fetchApplication();
+  }, 60000);
+  
+  client.user.setActivity(`Rabel Code`, { type:"WATCHING" })
+  client.channels.ceche.get("750963661975322625").send("**Rabel Code** Aktif!")
+  console.log("Aktif!")
+});
+
 
 app.use(bodyParser.json());
 app.use(
