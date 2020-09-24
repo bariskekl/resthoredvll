@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const handlebarshelpers = require("handlebars-helpers")();
 const path = require("path");
 const fs = require('fs');
+const ayarlar = require("./ayarlar/rabel.json");
 const passport = require("passport");
 const { Strategy } = require("passport-discord");
 const session = require("express-session");
@@ -23,9 +24,7 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  prefix: "!",
   botID: "723266692456906763",
-  botToken: "NzIzMjY2NjkyNDU2OTA2NzYz.XuvImQ.njnPEb5dgU_Z651ZSiI2a4oIPCA",
   botSecret: "qHY8ifVNzb83bhmumwxiyEQ8SxxpCpw_",
   botCallbackURL: "https://rabelcode.glitch.me/callback",
   sunucuID: "720554756556324914",
@@ -642,7 +641,7 @@ app.use((req, res) => {
   );
 });
 
-client.login(IDler.botToken);
+client.login(ayarlar.rabeltoken);
 
 client.on("ready", () => {
   const listener = app.listen(process.env.PORT, function() {
@@ -651,115 +650,5 @@ client.on("ready", () => {
   });
 });
 
-client.on("message", async message => {
-client.commands = new Discord.Collection()
-client.aliases = new Discord.Collection()
-fs.readdir(`./komutlar/`, (err, files) => {
-	let jsfiles = files.filter(f => f.split(".").pop() === "js")
 
-	if(jsfiles.length <= 0) {
-		console.log("Olamazz! Hiç komut dosyası bulamadım!")
-	} else {
-		if (err) {
-			console.error("Hata! Bir komutun name veya aliases kısmı yok!")
-		}
-		console.log(`${jsfiles.length} komut yüklenecek.`)
 
-		jsfiles.forEach(f => {
-			let props = require(`./komutlar/${f}`)
-			client.commands.set(props.help.name, props)
-			props.conf.aliases.forEach(alias => {
-				client.aliases.set(alias, props.help.name)
-			})
-			console.log(`Yüklenen komut: ${props.help.name}`)
-		})
-	}
-});
-  
-	if (message.author.bot) return
-	if (!message.content.startsWith('-')) return
-	var command = message.content.split(' ')[0].slice('-'.length)
-	var args = message.content.split(' ').slice(1)
-	var cmd = ''
-
-	if (client.commands.has(command)) {
-		var cmd = client.commands.get(command)
-	} else if (client.aliases.has(command)) {
-		var cmd = client.commands.get(client.aliases.get(command))
-	}
-
-	if (cmd) {
-    if (cmd.conf.permLevel === 'ozel') { //o komutu web yetkilileri kullanabsiln sadece diye yaptıgım bişe 
-      if (client.yetkililer.includes(message.author.id) === false) {
-        const embed = new Discord.RichEmbed()
-					.setDescription(`Kardeşim sen WebSite yetkilisi değilsin saçma saçma işlerle uğraşma!`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Yetersiz Yetki.")
-				return
-      }
-    }
-    
-		if (cmd.conf.permLevel === 1) {
-			if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-				const embed = new Discord.RichEmbed()
-					.setDescription(`Sen önce mesajları yönetmeyi öğren sonra bu komutu kullanırsın.`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Yetersiz yetki.")
-				return
-			}
-		}
-		if (cmd.conf.permLevel === 2) {
-			if (!message.member.hasPermission("KICK_MEMBERS")) {
-				const embed = new Discord.RichEmbed()
-					.setDescription(`Üyeleri atma yetkin yok.`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Üyeleri atma yetkin yok.")
-				return
-			}
-		}
-		if (cmd.conf.permLevel === 3) {
-			if (!message.member.hasPermission("ADMINISTRATOR")) {
-				const embed = new Discord.RichEmbed()
-					.setDescription(`Yetersiz yetki.`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Yetersiz yetki.")
-				return
-			}
-		}
-		if (cmd.conf.permLevel === 4) {
-			const x = await client.fetchApplication()
-      var arr = [x.owner.id, '276829048943149057','348097494548348940','315218945693188098']
-			if (!arr.includes(message.author.id)) {
-				const embed = new Discord.RichEmbed()
-					.setDescription(`Yetkin yetersiz.`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Yetersiz yetki.")
-				return
-			}
-		}
-		if (cmd.conf.enabled === false) {
-			const embed = new Discord.RichEmbed()
-				.setDescription(`Bu komut devre dışı.`)
-				.setColor(client.ayarlar.renk)
-				.setTimestamp()
-			message.channel.send("Bu komut devre dışı.")
-			return
-		}
-		if(message.channel.type === "dm") {
-			if (cmd.conf.guildOnly === true) {
-				const embed = new Discord.RichEmbed()
-					.setDescription(`Bu komutu özel mesajlarda kullanamazsın.`)
-					.setColor(client.ayarlar.renk)
-					.setTimestamp()
-				message.channel.send("Bu komutu özel mesajlarda kullanamazsın.")
-				return
-			}
-		}
-		cmd.run(client, message, args)
-	}
-});
