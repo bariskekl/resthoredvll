@@ -91,7 +91,7 @@
             "süreli rol ver": {
                 "isim": "süreli rol ver",
                 "id": "3HUWKhCcTZ",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    Kullanım  süreli-rol @kullanıcı @rol süresi       1d gün 1s saniye 1m dakika 1h saat",
+                "desc": "Electus İyi Eğlenceler Diler       |    Kullanım  süreli-rol @kullanıcı @rol süresi       1d gün 1s saniye 1m dakika 1h saat",
                 "modules": [
                     "\" ms \""
                 ],
@@ -105,7 +105,7 @@
             "Gelişmiş Bot İstatistik": {
                 "isim": "Gelişmiş Bot İstatistik",
                 "id": "AHHFjNLLU9",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    ",
+                "desc": "Electus İyi Eğlenceler Diler       |    ",
                 "modules": [
                     "'os'",
                     "'moment-duration-format'",
