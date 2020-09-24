@@ -22,23 +22,23 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  botID: "732463752531804162",
-  botToken: "NzMyNDYzNzUyNTMxODA0MTYy.Xw0-Bw.2a_Ip1YOGERwZw_R_zJAC_9rkeg",
-  botSecret: "YSTNPh3qzK0pO-qH8n_TTB0zfDxkA-7f",
-  botCallbackURL: "https://deneme-alt-yapi-kod.glitch.me",
-  sunucuID: "753713898187653261",
-  sunucuDavet: "https://discord.gg/4hFqzh",
+  botID: "723266692456906763",
+  botToken: "NzIzMjY2NjkyNDU2OTA2NzYz.XuvImQ.njnPEb5dgU_Z651ZSiI2a4oIPCA",
+  botSecret: "qHY8ifVNzb83bhmumwxiyEQ8SxxpCpw_",
+  botCallbackURL: "https://rabelcode.glitch.me/callback",
+  sunucuID: "720554756556324914",
+  sunucuDavet: "https://discord.gg/wdC62b5",
   kodLogKanalı: "753713898187653265",
-  sahipRolü: "753714157597098046  ",
-  adminRolü: "753714158616313906",
-  kodPaylaşımcıRolü: "754021526881304698",
-  boosterRolü: "753882543232778271",
-  kodPaylaşamayacakRoller: ["754021895191396453", "754021895191396453"],
-  hazırAltyapılarRolü: "754021507344236564",
-  hazırSistemlerRolü: "754021507344236564",
-  elmasKodlarRolü: "754021506375352363",
-  altınKodlarRolü: "754021505368588399",
-  normalKodlarRolü: "754021505645674517"
+  sahipRolü: "720557416801894421  ",
+  adminRolü: "755304999797653564",
+  kodPaylaşımcıRolü: "757464932261429360",
+  boosterRolü: "730673500150300702",
+  kodPaylaşamayacakRoller: ["720560854973677578", "745227126583590932"],
+  hazırAltyapılarRolü: "757464930688565268",
+  hazırSistemlerRolü: "757464930688565268",
+  elmasKodlarRolü: "757464933972836484",
+  altınKodlarRolü: "757464928708722709",
+  normalKodlarRolü: "757464935507951668"
 };
 
 const app = express();
