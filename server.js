@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const handlebarshelpers = require("handlebars-helpers")();
 const path = require("path");
 const fs = require('fs');
-const ayarlar = require("./ayarlar/rabel.json");
+const rabel = require("./ayarlar/rabel.json");
 const passport = require("passport");
 const { Strategy } = require("passport-discord");
 const session = require("express-session");
@@ -641,7 +641,8 @@ app.use((req, res) => {
   );
 });
 
-client.login(ayarlar.rabeltoken);
+client.login(rabel.rabeltoken);
+
 
 client.on("ready", () => {
   const listener = app.listen(process.env.PORT, function() {
@@ -649,6 +650,3 @@ client.on("ready", () => {
     console.log("Proje Hazır!");
   });
 });
-
-
-
