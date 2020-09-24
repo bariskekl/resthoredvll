@@ -6,6 +6,7 @@ dependencies:
   express: 4.17.1
   express-handlebars: 4.0.6
   express-session: 1.17.1
+  fs: 0.0.2
   handlebars-helpers: 0.10.0
   passport: 0.4.1
   passport-discord: 0.1.4
@@ -967,6 +968,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
+  /fs/0.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-4fJE7zkzwbKmS9R5kTYGDQ9ZFPg=
   /get-object/0.2.0:
     dependencies:
       is-number: 2.1.0
@@ -2434,6 +2439,7 @@ specifiers:
   express: ^4.17.1
   express-handlebars: ^4.0.6
   express-session: ^1.17.1
+  fs: ^0.0.2
   handlebars-helpers: ^0.10.0
   passport: ^0.4.1
   passport-discord: ^0.1.4
