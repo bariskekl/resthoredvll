@@ -4,7 +4,7 @@
             "Odaya Çek": {
                 "isim": "Odaya Çek",
                 "id": "8N4k3GJLWB",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    prefix çek @kullanıcı ",
+                "desc": " Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    prefix çek @kullanıcı ",
                 "modules": [
                     "yok"
                 ],
@@ -63,7 +63,7 @@
             "süreli mute": {
                 "isim": "süreli mute",
                 "id": "Yq1tx5jS1q",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   mute @kullanıcı (1d gün)  (1s saniye) (1m dakika)   (1h saat)",
+                "desc": " Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   mute @kullanıcı (1d gün)  (1s saniye) (1m dakika)   (1h saat)",
                 "modules": [
                     "ms"
                 ],

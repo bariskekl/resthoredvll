@@ -714,7 +714,7 @@
             "Bottan birine dm atma": {
                 "isim": "Bottan birine dm atma",
                 "id": "Ra0Dttt34M",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   Kullanım ",
+                "desc": "Electus İyi Eğlenceler Diler       |   Kullanım ",
                 "modules": [
                     "yok"
                 ],
@@ -728,7 +728,7 @@
             "kolay  logsuz oto rol": {
                 "isim": "kolay  logsuz oto rol",
                 "id": "mI8dTgzpUp",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   Yapmanız Gereken Tek Şey Sunucu Ayarlarından yeni gelen kişiye verilecek rolü oluşturup id sini kopyalamak ve FYNX yazan yere yapıştırmak",
+                "desc": "Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |   Yapmanız Gereken Tek Şey Sunucu Ayarlarından yeni gelen kişiye verilecek rolü oluşturup id sini kopyalamak ve FYNX yazan yere yapıştırmak",
                 "modules": [
                     "yok"
                 ],
@@ -1011,7 +1011,7 @@
             "davet": {
                 "isim": "davet",
                 "id": "4aFgRS8TVn",
-                "desc": "Fynx Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet Botun Linklerini Gösterir Siz ne link isterseniz o örnek destek sunucusu örnek sitesi örnek davet linki",
+                "desc": "Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet Botun Linklerini Gösterir Siz ne link isterseniz o örnek destek sunucusu örnek sitesi örnek davet linki",
                 "modules": [
                     "yok"
                 ],
@@ -1025,7 +1025,7 @@
             "invite sıralaması": {
                 "isim": "invite sıralaması",
                 "id": "xu9duEbyzs",
-                "desc": "Fynx Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet-sıralaması     ",
+                "desc": " Kod Destek Ekibinden Electus İyi Eğlenceler Diler       |     Kullanım prefix davet-sıralaması     ",
                 "modules": [
                     "yok"
                 ],
@@ -1039,7 +1039,7 @@
             "fbi": {
                 "isim": "fbi",
                 "id": "LX1tisO2Ut",
-                "desc": "Fynx Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    Kullanım prefix fbi",
+                "desc": " Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    Kullanım prefix fbi",
                 "modules": [
                     "yok"
                 ],
@@ -1354,8 +1354,8 @@
                     "chalk"
                 ],
                 "icon": "https://cdn.discordapp.com/avatars/432985180836200448/a_b292684469d773a7fb570db527d23971.png",
-                "main_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(`Fynx Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
-                "komutlar_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(`Fynx Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
+                "main_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(` Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
+                "komutlar_code": "READY.JS'YE\r\nconst chalk = require(\"chalk\");\r\nconst moment = require(\"moment\");\r\nconst Discord = require(\"discord.js\");\r\nconst ayarlar = require(\"../ayarlar.json\");\r\nvar prefix = ayarlar.prefix;\r\n\r\nmodule.exports = client => {\r\n  setInterval(function() {}, 8000);\r\n  client.user.setPresence({\r\n    game: {\r\n      name: `👑TOSUNPASA👑`,\r\n      type: \"WATCHING\"\r\n    },\r\n    status: \"online\"\r\n  });\r\n  console.log(` Code BOT Giriş Yaptı! Komutlar Yüklendi!`);\r\n};\r\n",
                 "kod_rank": "normal",
                 "k_adi": "`TosunPasa",
                 "date": "8/16/2020"
