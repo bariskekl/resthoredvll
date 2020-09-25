@@ -1042,6 +1042,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "MuZuR.js",
                 "date": "9/24/2020"
+            },
+            "debeme": {
+                "isim": "debeme",
+                "id": "hTh9ReyFV7",
+                "desc": "sasd",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/695572904439447602/1f7e676674977b85a8d55071fda47a2e.png",
+                "main_code": "dasdaz",
+                "komutlar_code": "dsad",
+                "kod_rank": "topluluk",
+                "k_adi": "Lady",
+                "date": "9/25/2020"
             }
         }
     }

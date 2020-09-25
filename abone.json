@@ -158,6 +158,20 @@
                 "kod_rank": "abone",
                 "k_adi": "❖❦RC Deneyzamani",
                 "date": "8/15/2020"
+            },
+            "J4J Bot": {
+                "isim": "J4J Bot",
+                "id": "qycnq0HlI6",
+                "desc": "Logo Oluşturan Bot",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/695572904439447602/1f7e676674977b85a8d55071fda47a2e.png",
+                "main_code": "dasda",
+                "komutlar_code": "sdada",
+                "kod_rank": "abone",
+                "k_adi": "Lady",
+                "date": "9/25/2020"
             }
         }
     }
