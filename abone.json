@@ -1,19 +1,103 @@
 [
     {
         "kodlar": {
-            "Odaya Çek": {
-                "isim": "Odaya Çek",
-                "id": "8N4k3GJLWB",
-                "desc": " Kod Paylaşım Ekibinden Electus İyi Eğlenceler Diler       |    prefix çek @kullanıcı ",
+            "Ayarlamalı Kayıt": {
+                "isim": "Ayarlamalı Kayıt",
+                "id": "fdwHx69KnI",
+                "desc": "https://youtu.be/7NJOrntVgYQ ",
                 "modules": [
-                    "yok"
+                    "discord.js"
                 ],
-                "icon": "https://cdn.discordapp.com/avatars/389032915155156994/a_7c01c9262b7f8cd854aa094727da6bd9.png",
-                "main_code": "main yok",
-                "komutlar_code": "const Discord = require(\"discord.js\");\r\n\r\nexports.run = async (client, message, args) => {\r\n\r\n if(!message.member.roles.has('rol id')) return message.channel.send('Bu kodu kullanmak için yeterli yetkin yok!')\r\n\r\n  if (!message.member.voiceChannel) {\r\n    return message.channel.send(  message.author.username + \" **Ses kanalında olman lazım!**\" );\r\n  }\r\n\r\n  let kullanıcı = message.mentions.members.first();\r\n  if (!kullanıcı) return message.channel.send(\"**Kullanıcıyı etiketlemelisin.**\");\r\n\r\n  let rol = message.mentions.roles.first();\r\n  let member = message.guild.member(kullanıcı);\r\n\r\n  if (!member.voiceChannel) return message.channel.send(\"**Etiketlenen kullanıcı bir ses kanalında değil**\").then(m => m.delete(5000));\r\n\r\n  const voiceChannel = message.member.voiceChannel.id;\r\n  if (!voiceChannel) return;\r\n\r\n  member.setVoiceChannel(voiceChannel);\r\n\r\n  const voiceChannel1 = message.member.voiceChannel.name;\r\n  let embed = new Discord.RichEmbed()\r\n    .setColor(\"RANDOM\")\r\n    .setDescription(\r\n      message.author +\r\n        \" **Tarafından** \" +\r\n        kullanıcı +\r\n        \" **Kullanıcısı** `\" +\r\n        voiceChannel1 +\r\n        \"`** Sesli Kanalına Çekildi.**\"\r\n    )\r\n    .setFooter(\r\n      `${message.author.tag}`,\r\n      `${message.author.displayAvatarURL}`\r\n    )\r\n    .setTimestamp();\r\n  message.channel.send(embed).then(m => m.delete(5000));\r\n};\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: true,\r\n  aliases: [\"çek\"],\r\n  kategori : \"moderasyon\",\r\n  permLevel: 0\r\n};\r\nexports.help = {\r\n  name: \"çek\",\r\n  description: \"çek\",\r\n  usage: \"çek\"\r\n};",
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/eNIUR ",
+                "komutlar_code": "https://ay.link/eNIUR ",
                 "kod_rank": "abone",
-                "k_adi": "€LĘCTUS",
-                "date": "8/12/2020"
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "Dm Duyuru Botu": {
+                "isim": "Dm Duyuru Botu",
+                "id": "ZLUTeTRSLB",
+                "desc": "YAKINDA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/G66Llk ",
+                "komutlar_code": "https://ay.link/G66Llk ",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "Kod Sunucusu Botu": {
+                "isim": "Kod Sunucusu Botu",
+                "id": "NulvsgM2jk",
+                "desc": "YAKINDA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/2J3m ",
+                "komutlar_code": "https://ay.link/2J3m ",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "Kayıt Botu": {
+                "isim": "Kayıt Botu",
+                "id": "ZssZ1zp6jB",
+                "desc": "YOK",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/29XmOd",
+                "komutlar_code": "https://ay.link/29XmOd",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "Müzik Botu": {
+                "isim": "Müzik Botu",
+                "id": "78ElbRehcz",
+                "desc": "YAKINDA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/Tx8rE8 ",
+                "komutlar_code": "https://ay.link/Tx8rE8 ",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "J4J Botu": {
+                "isim": "J4J Botu",
+                "id": "DRV2t0BYXs",
+                "desc": "YAKINDA",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/Uquk98 ",
+                "komutlar_code": "https://ay.link/Uquk98 ",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
+            },
+            "Logo Gen": {
+                "isim": "Logo Gen",
+                "id": "ar5CtFaCcu",
+                "desc": "https://youtu.be/BpECokPueIA ",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/586822327568695317/a_3ac6e94d95cce72366a0bc0ac94d60d9.png",
+                "main_code": "https://ay.link/eDrrS",
+                "komutlar_code": "https://ay.link/eDrrS",
+                "kod_rank": "abone",
+                "k_adi": "Gweep Creative",
+                "date": "9/29/2020"
             }
         }
     }
