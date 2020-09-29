@@ -26,7 +26,7 @@ for (let rank in ranks) {
 const IDler = {
   botID: "723266692456906763",
   botSecret: "qHY8ifVNzb83bhmumwxiyEQ8SxxpCpw_",
-  botCallbackURL: "https://rabelcode.glitch.me/callback",
+  botCallbackURL: "https://web.rabelcode.tk/callback",
   sunucuID: "720554756556324914",
   sunucuDavet: "https://discord.gg/wdC62b5",
   kodLogKanalı: "757466299583692821",
