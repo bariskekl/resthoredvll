@@ -1028,34 +1028,6 @@
                 "kod_rank": "topluluk",
                 "k_adi": "xxkagancooTR",
                 "date": "8/20/2020"
-            },
-            "deneme": {
-                "isim": "deneme",
-                "id": "6sSCQou78G",
-                "desc": "deneme",
-                "modules": [
-                    "deneme"
-                ],
-                "icon": "https://cdn.discordapp.com/avatars/717411894897672212/a_a2066981d4133aa869eaa6319c12f9d9.png",
-                "main_code": "deneme",
-                "komutlar_code": "deneme",
-                "kod_rank": "topluluk",
-                "k_adi": "MuZuR.js",
-                "date": "9/24/2020"
-            },
-            "debeme": {
-                "isim": "debeme",
-                "id": "hTh9ReyFV7",
-                "desc": "sasd",
-                "modules": [
-                    "discord.js"
-                ],
-                "icon": "https://cdn.discordapp.com/avatars/695572904439447602/1f7e676674977b85a8d55071fda47a2e.png",
-                "main_code": "dasdaz",
-                "komutlar_code": "dsad",
-                "kod_rank": "topluluk",
-                "k_adi": "Lady",
-                "date": "9/25/2020"
             }
         }
     }
