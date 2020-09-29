@@ -1028,6 +1028,20 @@
                 "kod_rank": "topluluk",
                 "k_adi": "xxkagancooTR",
                 "date": "8/20/2020"
+            },
+            "Botun Durumunu Telefonda Yapma": {
+                "isim": "Botun Durumunu Telefonda Yapma",
+                "id": "E5bGjSwEK6",
+                "desc": "standart bot durumu idle dnd yada online olur fakat bu kodda telefonda gözükecek bot Hata olursa Sepultura#0004 ama yoktur",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/736348554783883374/a_0d1d4997a81b2f618bae132a97dfee68.png",
+                "main_code": "//sadece ready.js atılacak\r\nconst Constants = require('discord.js/src/util/Constants.js');\r\nConstants.DefaultOptions.ws.properties.$browser = `Discord iOS` // yada Discord Android",
+                "komutlar_code": "yok",
+                "kod_rank": "topluluk",
+                "k_adi": "Sepultura",
+                "date": "9/29/2020"
             }
         }
     }
