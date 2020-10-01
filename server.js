@@ -17,7 +17,7 @@ const client = new Discord.Client();
 const randomString = require("random-string");
 const db = (global.db = {});
 
-let ranks = ["normal", "altin", "elmas", "hazir","abone","sistemler", "topluluk", "api"];
+let ranks = ["normal", "altin", "elmas", "hazir","abone","sistemler", "bakimdayiz", "topluluk", "api"];
 for (let rank in ranks) {
   db[ranks[rank]] = new bookman(ranks[rank]);
 }
@@ -41,6 +41,7 @@ const IDler = {
   aboneKodlarRolü: "720557778153766953",
   elmasKodlarRolü: "757464933972836484",
   altınKodlarRolü: "757464928708722709",
+  bakimdayiz: "720557778753814589",
   normalKodlarRolü: "757464935507951668"
 };
 
@@ -127,6 +128,11 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.render("bakimdayiz", {
+    user: req.user
+  });
+});
 app.get("/normal", (req, res) => {
   var data = db.normal.get("kodlar");
   data = sortData(data);
@@ -222,8 +228,30 @@ app.get("/altin/:id", (req, res) => {
   } else {
     res.redirect("/");
   }
+  app.get("/bakimdayiz", (req, res) => {
+  var data = db.bakimdayiz.get("kodlar");
+  data = sortData(data);
+  res.render("bakimdayiz", {
+    user: req.user,
+    kodlar: data
+  });
 });
-app.get("/elmas", (req, res) => {
+app.get("/bakimdayiz/:id", (req, res) => {
+  if (
+    !req.user ||
+    !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
+  )
+    return res.redirect(
+      url.format({
+        pathname: "/hata",
+        query: {
+          statuscode: 137,
+          message:
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
+        }
+      })
+    );
+  app.get("/elmas", (req, res) => {
   var data = db.elmas.get("kodlar");
   data = sortData(data);
   res.render("elmas", {
