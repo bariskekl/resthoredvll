@@ -134,6 +134,17 @@ ul.twPc-Arrange {
   font-size: 16px;
   border-radius: 12px;
 }
+.abone-button1 {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 16px;
+  text-align: center;
+  text-decoration:none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
 .index-button2 {
   background-color: #c4aa15; /* Green */
   border: none;
