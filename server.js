@@ -281,15 +281,15 @@ app.get("/elmas/:id", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/abone", (req, res) => {
+app.get("/videodan", (req, res) => {
   var data = db.abone.get("kodlar");
   data = sortData(data);
-  res.render("abone", {
+  res.render("videodan", {
     user: req.user,
     kodlar: data
   });
 });
-app.get("/abone/:id", (req, res) => {
+app.get("/videodan/:id", (req, res) => {
   if (
     !req.user ||
     !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
@@ -339,15 +339,73 @@ app.get("/abone/:id", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/abone", (req, res) => {
+app.get("/videodan", (req, res) => {
   var data = db.abone.get("kodlar");
   data = sortData(data);
-  res.render("abone", {
+  res.render("videodan", {
     user: req.user,
     kodlar: data
   });
 });
-app.get("/abone/:id", (req, res) => {
+app.get("/videodan/:id", (req, res) => {
+  if (
+    !req.user ||
+    !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
+  )
+    return res.redirect(
+      url.format({
+        pathname: "/hata",
+        query: {
+          statuscode: 137,
+          message:
+            "Kodları Görebilmek İçin Discord Sunucumuza Katılmanız | Siteye Giriş Yapmanız Gerekmektedir."
+        }
+      })
+    );
+
+  var id = req.params.id;
+  if (!id) req.redirect("/");
+  let data = db.abone.get("kodlar");
+  var code = findCodeToId(data, id);
+  if (code) {
+    let guild = client.guilds.cache.get(IDler.sunucuID);
+    let member = req.user ? guild.members.cache.get(req.user.id) : null;
+    if (
+      member &&
+      (member.roles.cache.has(IDler.aboneKodlarRolü) ||
+        member.roles.cache.has(IDler.boosterRolü) ||
+        member.roles.cache.has(IDler.sahipRolü) ||
+        member.roles.cache.has(IDler.kodPaylaşımcıRolü) ||
+        member.roles.cache.has(IDler.adminRolü))
+    ) {
+      res.render("kod", {
+        user: req.user,
+        kod: code
+      });
+    } else {
+      res.redirect(
+        url.format({
+          pathname: "/hata",
+          query: {
+            statuscode: 501,
+            message: "Bu kodu görmek için gerekli yetkiniz yok."
+          }
+        })
+      );
+    }
+  } else {
+    res.redirect("/");
+  }
+});
+app.get("/videodan", (req, res) => {
+  var data = db.abone.get("kodlar");
+  data = sortData(data);
+  res.render("videodan", {
+    user: req.user,
+    kodlar: data
+  });
+});
+app.get("/videodan/:id", (req, res) => {
   if (
     !req.user ||
     !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
