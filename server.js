@@ -126,6 +126,11 @@ app.get("/", (req, res) => {
     user: req.user
   });
 });
+app.get("/", (req, res) => {
+  res.render("videolar", {
+    user: req.user
+  });
+});
 
 app.get("/normal", (req, res) => {
   var data = db.normal.get("kodlar");
