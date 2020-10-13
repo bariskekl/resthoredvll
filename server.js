@@ -24,23 +24,23 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  botID: "",
-  botSecret: "",
-  botCallbackURL: "https://web.rabelcode.tk/callback",
-  sunucuID: "720554756556324914",
+  botID: "745273648805445673",
+  botSecret: "agH1QeOg6nKYUdYF_Hp2Z1icgiNoxuyX",
+  botCallbackURL: "https://code-paylasim-sitesi.glitch.me/callback",
+  sunucuID: "765222160360144956",
   sunucuDavet: "https://discord.gg/wdC62b5",
-  kodLogKanalı: "757466299583692821",
-  sahipRolü: "720557416801894421",
-  adminRolü: "755304999797653564",
-  kodPaylaşımcıRolü: "757464932261429360",
-  boosterRolü: "730673500150300702",
-  kodPaylaşamayacakRoller: ["720560854973677578", "745227126583590932"],
-  hazırAltyapılarRolü: "757464930688565268",
-  hazırSistemlerRolü: "757464930688565268",
-  sistemlerrolü: "730673500150300702",
-  elmasKodlarRolü: "757464933972836484",
-  altınKodlarRolü: "757464928708722709",
-  normalKodlarRolü: "757464935507951668"
+  kodLogKanalı: "765467086150959106",
+  sahipRolü: "765467130963165194",
+  adminRolü: "765467130963165194",
+  kodPaylaşımcıRolü: "765467564523782185",
+  boosterRolü: "765467131553775627",
+  kodPaylaşamayacakRoller: ["765467283899547668", "765467283899547668"],
+  hazırAltyapılarRolü: "765467132481241108",
+  hazırSistemlerRolü: "765467132481241108",
+  sistemlerrolü: "765467132481241108",
+  elmasKodlarRolü: "765467133102391347",
+  altınKodlarRolü: "765467136456917003",
+  normalKodlarRolü: "765467138285633536"
 };
 
 const app = express();
