@@ -34,7 +34,7 @@ const IDler = {
   adminRolü: "894995936823115847",
   kodPaylaşımcıRolü: "894995933497012355",
   boosterRolü: "877968056050135060",
-  kodPaylaşamayacakRoller: ["894995959040311306", "765467283899547668"],
+  kodPaylaşamayacakRoller: ["894995963238830090", "895271162442047498"],
   hazırAltyapılarRolü: "894995932070965268",
   hazırSistemlerRolü: "894995932523954198",
   sistemlerrolü: "765467132481241108",
@@ -769,7 +769,7 @@ app.use((req, res) => {
   );
 });
 
-client.login(rabel.rabeltoken);
+client.login(process.env.token);
 
 
 client.on("ready", () => {
