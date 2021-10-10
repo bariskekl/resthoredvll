@@ -24,23 +24,23 @@ for (let rank in ranks) {
 
 
 const IDler = {
-  botID: "745273648805445673",
-  botSecret: "agH1QeOg6nKYUdYF_Hp2Z1icgiNoxuyX",
-  botCallbackURL: "https://code-paysim-sitesi.glitch.me/callback",
-  sunucuID: "765222160360144956",
-  sunucuDavet: "https://discord.gg/wdC62b5",
-  kodLogKanalı: "765467086150959106",
-  sahipRolü: "765467130963165194",
-  adminRolü: "765467130963165194",
-  kodPaylaşımcıRolü: "765467564523782185",
-  boosterRolü: "765467131553775627",
-  kodPaylaşamayacakRoller: ["765467283899547668", "765467283899547668"],
-  hazırAltyapılarRolü: "765467132481241108",
-  hazırSistemlerRolü: "765467132481241108",
+  botID: "896466133689974824",
+  botSecret: process.env.secret,
+  botCallbackURL: "https://resthoredv.glitch.me/callback",
+  sunucuID: "875458725115224175",
+  sunucuDavet: "https://discord.gg/WcwsggX4MJ",
+  kodLogKanalı: "896049538916315187",
+  sahipRolü: "894995925569785888",
+  adminRolü: "894995936823115847",
+  kodPaylaşımcıRolü: "894995933497012355",
+  boosterRolü: "877968056050135060",
+  kodPaylaşamayacakRoller: ["894995959040311306", "765467283899547668"],
+  hazırAltyapılarRolü: "894995932070965268",
+  hazırSistemlerRolü: "894995932523954198",
   sistemlerrolü: "765467132481241108",
-  elmasKodlarRolü: "765467133102391347",
-  altınKodlarRolü: "765467136456917003",
-  normalKodlarRolü: "765467138285633536"
+  elmasKodlarRolü: "894995950500712520",
+  altınKodlarRolü: "894995945710821406",
+  normalKodlarRolü: "894995933937410070"
 };
 
 const app = express();
