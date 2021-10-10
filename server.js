@@ -774,7 +774,7 @@ client.login(process.env.token);
 
 client.on("ready", () => {
   const listener = app.listen(process.env.PORT, function() {
-    client.user.setActivity(`Rabel Code`, { type:"WATCHING" })
+    client.user.setActivity(`RestHore Development`, { type:"WATCHING" })
     console.log("Proje Hazır!");
   });
 });
