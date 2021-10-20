@@ -169,8 +169,8 @@ app.get("/normal/:id", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/altin", (req, res) => {
-  var data = db.altin.get("kodlar");
+app.get("/bdfd", (req, res) => {
+  var data = db.bdfd.get("kodlar");
   data = sortData(data);
   res.render("bdfd", {
     user: req.user,
@@ -195,7 +195,7 @@ app.get("/bdfd/:id", (req, res) => {
 
   var id = req.params.id;
   if (!id) req.redirect("/");
-  let data = db.altin.get("kodlar");
+  let data = db.bdfd.get("kodlar");
   var code = findCodeToId(data, id);
   if (code) {
     let guild = client.guilds.cache.get(IDler.sunucuID);
@@ -227,8 +227,8 @@ app.get("/bdfd/:id", (req, res) => {
     res.redirect("/");
   }
 });
-app.get("/elmas", (req, res) => {
-  var data = db.elmas.get("kodlar");
+app.get("/aoi", (req, res) => {
+  var data = db.aoi.get("kodlar");
   data = sortData(data);
   res.render("aoi", {
     user: req.user,
@@ -253,7 +253,7 @@ app.get("/aoi/:id", (req, res) => {
 
   var id = req.params.id;
   if (!id) req.redirect("/");
-  let data = db.elmas.get("kodlar");
+  let data = db.aoi.get("kodlar");
   var code = findCodeToId(data, id);
   if (code) {
     let guild = client.guilds.cache.get(IDler.sunucuID);
