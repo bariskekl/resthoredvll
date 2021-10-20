@@ -17,7 +17,7 @@ const client = new Discord.Client();
 const randomString = require("random-string");
 const db = (global.db = {});
 
-let ranks = ["normal", "altin", "elmas", "hazir","sistemler", "topluluk", "api"];
+let ranks = ["normal", "bdfd", "aoi", "hazir","sistemler", "topluluk", "api"];
 for (let rank in ranks) {
   db[ranks[rank]] = new bookman(ranks[rank]);
 }
@@ -172,7 +172,7 @@ app.get("/normal/:id", (req, res) => {
 app.get("/bdfd", (req, res) => {
   var data = db.bdfd.get("kodlar");
   data = sortData(data);
-  res.render("bdfd", {
+  res.render("kod", {
     user: req.user,
     kodlar: data
   });
@@ -230,7 +230,7 @@ app.get("/bdfd/:id", (req, res) => {
 app.get("/aoi", (req, res) => {
   var data = db.aoi.get("kodlar");
   data = sortData(data);
-  res.render("aoi", {
+  res.render("kod", {
     user: req.user,
     kodlar: data
   });
