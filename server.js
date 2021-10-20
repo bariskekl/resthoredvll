@@ -28,11 +28,11 @@ const IDler = {
   botSecret: process.env.secret,
   botCallbackURL: "https://resthoredvl.glitch.me/callback",
   sunucuID: "875458725115224175",
-  sunucuDavet: "https://discord.gg/WcwsggX4MJ",
-  kodLogKanalı: "896049538916315187",
-  sahipRolü: "894995925569785888",
+  sunucuDavet: "https://discord.gg/U9HxhDMYvS",
+  kodLogKanalı: "900331782417842216",
+  sahipRolü: "895256390329851924",
   adminRolü: "894995936823115847",
-  kodPaylaşımcıRolü: "894995933497012355",
+  kodPaylaşımcıRolü: "900325451904479232",
   boosterRolü: "877968056050135060",
   kodPaylaşamayacakRoller: ["900325084001075260"],
   hazırAltyapılarRolü: "900324760456679424",
@@ -172,12 +172,12 @@ app.get("/normal/:id", (req, res) => {
 app.get("/altin", (req, res) => {
   var data = db.altin.get("kodlar");
   data = sortData(data);
-  res.render("altin", {
+  res.render("bdfd", {
     user: req.user,
     kodlar: data
   });
 });
-app.get("/altin/:id", (req, res) => {
+app.get("/bdfd/:id", (req, res) => {
   if (
     !req.user ||
     !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
@@ -230,12 +230,12 @@ app.get("/altin/:id", (req, res) => {
 app.get("/elmas", (req, res) => {
   var data = db.elmas.get("kodlar");
   data = sortData(data);
-  res.render("elmas", {
+  res.render("aoi", {
     user: req.user,
     kodlar: data
   });
 });
-app.get("/elmas/:id", (req, res) => {
+app.get("/aoi/:id", (req, res) => {
   if (
     !req.user ||
     !client.guilds.cache.get(IDler.sunucuID).members.cache.has(req.user.id)
@@ -722,7 +722,7 @@ app.post("/paylasim", (req, res) => {
     .setTimestamp()
     .setAuthor("Bir Kod Paylaşıldı!",client.user.avatarURL)
     .addField("Kod Bilgileri",`**Adı:** ${obj.isim} \n**Açıklaması:** ${obj.desc} \n**Değeri:** ${obj.kod_rank} \n**Paylaşan:** ${obj.k_adi}`)
-    .addField("Kod Sayfası", `[Tıkla!](https://rabelcode.glitch.me/${obj.kod_rank}/${obj.id})`));
+    .addField("Kod Sayfası", `[Tıkla!](https://resthoredvl.glitch.me/${obj.kod_rank}/${obj.id})`));
   res.redirect(`/${obj.kod_rank}/${obj.id}`);
 });
 
