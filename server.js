@@ -26,7 +26,7 @@ for (let rank in ranks) {
 const IDler = {
   botID: "896466133689974824",
   botSecret: process.env.secret,
-  botCallbackURL: "https://resthoredv.glitch.me/callback",
+  botCallbackURL: "https://resthoredvl.glitch.me/callback",
   sunucuID: "875458725115224175",
   sunucuDavet: "https://discord.gg/WcwsggX4MJ",
   kodLogKanalı: "896049538916315187",
