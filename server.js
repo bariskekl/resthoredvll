@@ -253,7 +253,7 @@ app.get("/aoi/:id", (req, res) => {
 
   var id = req.params.id;
   if (!id) req.redirect("/");
-  let data = db.aoi.get("kodlar");
+  let data = db.aoi.cache.get("kodlar");
   var code = findCodeToId(data, id);
   if (code) {
     let guild = client.guilds.cache.get(IDler.sunucuID);
